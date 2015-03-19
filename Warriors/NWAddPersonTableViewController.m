@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
 
+@property (weak, nonatomic) IBOutlet UITextField *addressTextField;
 @property (strong, nonatomic) UIView *containerView;
 @end
 
@@ -136,10 +137,8 @@
     [[note.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue: &keyboardBounds];
     NSNumber *duration = [note.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
     NSNumber *curve = [note.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
-    
     // Need to translate the bounds to account for rotation.
     keyboardBounds = [self.view convertRect:keyboardBounds toView:nil];
-    
     // get a rect for the textView frame
     CGRect containerFrame = self.containerView.frame;
     containerFrame.origin.y = self.view.bounds.size.height - (keyboardBounds.size.height + containerFrame.size.height);
@@ -148,11 +147,9 @@
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:[duration doubleValue]];
     [UIView setAnimationCurve:[curve intValue]];
-    
     // set views with new info
     self.containerView.frame = containerFrame;
     //    self.containerView.frame = CGRectMake(0, 400, 375, 39);
-    
     // commit animations
     [UIView commitAnimations];
 }
@@ -160,17 +157,14 @@
 -(void) keyboardWillHide:(NSNotification *)note{
     NSNumber *duration = [note.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
     NSNumber *curve = [note.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
-    
     // get a rect for the textView frame
     CGRect containerFrame = self.containerView.frame;
     containerFrame.origin.y = self.view.bounds.size.height - containerFrame.size.height;
-    
     // animations settings
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:[duration doubleValue]];
     [UIView setAnimationCurve:[curve intValue]];
-    
     // set views with new info
     self.containerView.frame = containerFrame;
     
@@ -181,7 +175,19 @@
 -(void)keyPressed: (NSNotification*) notification{
     // get the size of the text block so we can work our magic
     //    self.label.text = textView.text;
-    NSLog(@"Pressed");
+    NSDictionary * dict = [self textFieldDictionay:textView.text];
+    
+    self.addressTextField.text = @"";
+    self.nameTextField.text = dict[@"name"];
+    self.companyTextFiled.text = dict[@"company"];
+    self.titleTextField.text = dict[@"title"];
+    self.phoneNumber.text = dict[@"phonenumber"];
+    self.emailTextField.text = dict[@"email"];
+    self.noteTextView.text = dict[@"note"];
+    NSDictionary *addressDict = dict[@"address"];
+    if (addressDict) {
+        self.addressTextField.text = [NSString stringWithFormat:@"%@, %@, %@",addressDict[NSTextCheckingStreetKey], addressDict[NSTextCheckingCityKey], addressDict[NSTextCheckingStateKey]];
+    };
 }
 
 
@@ -203,6 +209,141 @@
 - (IBAction)cameraButtonPressed:(id)sender {
     NSLog(@"Camera Pressed");
 }
+
+#pragma mark - analyzing string
+
+-(NSDictionary *)textFieldDictionay:(NSString *)stringToAnalyze{
+    
+    stringToAnalyze = [stringToAnalyze stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSArray * values = [stringToAnalyze componentsSeparatedByString:@","];
+    NSMutableArray *arrayofString = values.mutableCopy;
+    NSMutableDictionary *dict = [NSMutableDictionary new];
+    NSError *error = nil;
+    NSDataDetector * detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingAllSystemTypes
+                                                                error:&error];
+    
+    int countAt = 0; // dirty way to get around with the problem of multiple words AT appearing in the text
+    for (int i = 0; i< arrayofString.count; i++) {
+        //    NSLog(@"%@",self.valueHolder);
+        __block NSString *phoneString = @"";
+        __block NSDictionary *addressDict = nil;
+        NSString *analyzingString = arrayofString[i];
+        [detector enumerateMatchesInString:analyzingString
+                                   options:kNilOptions
+                                     range:NSMakeRange(0, [analyzingString length])
+                                usingBlock:
+         ^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+             if (result.resultType == NSTextCheckingTypePhoneNumber) {
+                 phoneString = result.phoneNumber;
+             }
+             else if (result.resultType == NSTextCheckingTypeAddress) {
+                 addressDict = result.addressComponents;
+             }
+         }];
+
+        arrayofString[i] = [arrayofString[i] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+             if (i==0) {
+                 //            self.nameTextField.text = stringToAnalyze;
+                 [dict setObject:arrayofString[i] forKey:@"name"];
+                 
+             }
+        // If it is date
+        else if (([arrayofString[i] rangeOfString:@"pm"].location != NSNotFound ) || ([arrayofString[i] rangeOfString:@"am"].location != NSNotFound)) {
+            NSRange tempLoc = NSMakeRange(0, 0);
+            BOOL isItAfternoon;
+            if ([arrayofString[i] rangeOfString:@"pm"].location != NSNotFound) {
+                tempLoc = [arrayofString[i] rangeOfString:@"pm"];
+                isItAfternoon = YES;
+            }
+            else {
+                tempLoc = [arrayofString[i] rangeOfString:@"am"];
+                isItAfternoon = NO;
+            }
+            
+            NSString *hour = [arrayofString[i] substringToIndex:tempLoc.location];
+            hour = [hour stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            NSString *hourString;
+            NSString *minuteString;
+            NSScanner *scanner = [NSScanner scannerWithString:hour];
+            NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+            // Throw away characters before the first number.
+            [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
+            // Collect numbers.
+            [scanner scanCharactersFromSet:numbers intoString:&hourString];
+            
+            [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
+            // Collect numbers.
+            [scanner scanCharactersFromSet:numbers intoString:&minuteString];
+            // Result.
+            NSInteger hourInt = [hourString integerValue];
+            if (isItAfternoon == YES) {
+                if (hourInt < 12) hourInt += 12;
+            }
+            else {
+                if (hourInt == 12) hourInt -= 12;
+            }
+            NSInteger minInt = [minuteString integerValue];
+            //            NSLog(@"%ld:%ld", (long)hourInt,(long)minInt);
+            NSDate* result = [NSDate date];
+            NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+            NSDateComponents *comps = [gregorian components: NSUIntegerMax fromDate: result];
+            [comps setMinute:minInt];
+            [comps setHour:hourInt];
+            
+            result = [gregorian dateFromComponents:comps];
+            
+            NSString *dateString = [NSDateFormatter localizedStringFromDate:result
+                                                                  dateStyle:NSDateFormatterMediumStyle
+                                                                  timeStyle:NSDateFormatterShortStyle];
+            
+            //            self.timeTextField.text = dateString;
+            [dict setObject:dateString forKey:@"time"];
+        }
+        // if it is title and company
+        else if (([arrayofString[i] rangeOfString:@"at"].location != NSNotFound) && (countAt ==0)) {
+            countAt = 1;
+            NSArray * titleAndCompany = [arrayofString[i] componentsSeparatedByString:@"at"];
+            //            self.titleTextField.text = titleAndCompany[0];
+            //            self.companyTextFiled.text = titleAndCompany[1];
+            [dict setObject:titleAndCompany[0] forKey:@"title"];
+            [dict setObject:titleAndCompany[1] forKey:@"company"];
+        }
+        else if ([arrayofString[i] rangeOfString:@".com"].location != NSNotFound) {
+         if ([arrayofString[i] rangeOfString:@"@"].location != NSNotFound) {
+            //            self.emailTextField.text = stringToAnalyze;
+            [dict setObject:arrayofString[i] forKey:@"email"];
+        }
+        else
+            [dict setObject:arrayofString[i] forKey:@"website"];
+        }
+        else if (![phoneString isEqualToString:@""]) {
+            [dict setObject:phoneString forKey:@"phonenumber"];
+        }
+        else if (addressDict != nil) {
+            [dict setObject:addressDict forKey:@"address"];
+        }
+        else {
+
+            //            self.noteTextView.text = stringToAnalyze;
+            [dict setObject:arrayofString[i] forKey:@"note"];
+        }
+    }
+    return dict;
+    
+}
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    if (textField.tag == 2) {
+        //trim spaces at both end
+        
+    }
+    
+    [textField resignFirstResponder];
+    return NO;
+}
+
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
