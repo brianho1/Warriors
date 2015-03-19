@@ -74,6 +74,7 @@
 		EADAFCC41ABA95AA005CF333 /* price_tag-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCC31ABA95AA005CF333 /* price_tag-50.png */; };
 		EADAFCC61ABA95F2005CF333 /* collect-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCC51ABA95F2005CF333 /* collect-50.png */; };
 		EADAFCC81ABA9618005CF333 /* mark_as_favourite-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCC71ABA9618005CF333 /* mark_as_favourite-50.png */; };
+		EADAFCCA1ABAAC32005CF333 /* user_male_circle-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCC91ABAAC32005CF333 /* user_male_circle-50.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +201,7 @@
 		EADAFCC31ABA95AA005CF333 /* price_tag-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "price_tag-50.png"; sourceTree = "<group>"; };
 		EADAFCC51ABA95F2005CF333 /* collect-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "collect-50.png"; sourceTree = "<group>"; };
 		EADAFCC71ABA9618005CF333 /* mark_as_favourite-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mark_as_favourite-50.png"; sourceTree = "<group>"; };
+		EADAFCC91ABAAC32005CF333 /* user_male_circle-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_male_circle-50.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +287,7 @@
 				EADAFCB71ABA9251005CF333 /* camera_filled-50.png */,
 				EADAFCBF1ABA9519005CF333 /* exit-50.png */,
 				EADAFCC11ABA9531005CF333 /* settings3-50.png */,
+				EADAFCC91ABAAC32005CF333 /* user_male_circle-50.png */,
 				EADAFBC91ABA0CA5005CF333 /* blurrybackground.jpg */,
 				EADAFC331ABA5380005CF333 /* MagicalRecord */,
 				EADAFBAD1AB9FCD1005CF333 /* Images.xcassets */,
@@ -526,6 +529,7 @@
 				EADAFCC01ABA9519005CF333 /* exit-50.png in Resources */,
 				EADAFCB11ABA6AD2005CF333 /* MessageEntrySendButton.png in Resources */,
 				EADAFCB41ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x.png in Resources */,
+				EADAFCCA1ABAAC32005CF333 /* user_male_circle-50.png in Resources */,
 				EADAFCAF1ABA6AD2005CF333 /* MessageEntryInputField.png in Resources */,
 				EADAFCBC1ABA9458005CF333 /* menu-50.png in Resources */,
 				EADAFCB21ABA6AD2005CF333 /* MessageEntrySendButton@2x.png in Resources */,

@@ -19,6 +19,7 @@
     NSArray *menuItems;
     UIView *headview;
     UIImageView *image;
+    UILabel *quote;
 }
 
 - (void)viewDidLoad {
@@ -36,7 +37,7 @@
     image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/2)];
     image.image = [UIImage imageNamed:@"blurrybackground.jpg"];
     [headview addSubview:image];
-    UILabel *quote = [[UILabel alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height/5 , self.view.frame.size.width - 20, 30)];
+    quote = [[UILabel alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height/5 , self.view.frame.size.width - 20, 30)];
     quote.text = @"\"It's not what you know, but who you know that makes the difference.\"";
     quote.font = [UIFont fontWithName:@"BodoniSvtyTwoITCTT-BookIta" size:25];
     quote.textColor = [UIColor whiteColor];
@@ -114,11 +115,12 @@
 //    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
 //}
 
+//This part makes HeadView of TableView has parallex effect. Simple than I thought
 -(void)scrollViewDidScroll:(UIScrollView*)scrollView {
 
+    float y = quote.frame.size.height;
     CGRect initialFrame = headview.frame;
     image.frame = headview.frame;
-//    float kImageOriginHight = initialFrame.size.height;
     CGFloat yOffset  = scrollView.contentOffset.y;
     if (yOffset < 0) {
         CGRect f = image.frame;
@@ -126,6 +128,13 @@
         f.size.height =  -yOffset + initialFrame.size.height;
         image.frame = f;
     }
+    if (yOffset > 0) {
+        CGRect f = image.frame;
+        f.origin.y = yOffset;
+        f.size.height =  -yOffset + initialFrame.size.height;
+        image.frame = f;
+    }
+    quote.frame = CGRectMake(10, image.frame.size.height/2 - y/2, self.view.frame.size.width - 20, y);
 
 }
 

@@ -332,32 +332,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Developer" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uZP-KC-6h0">
-                                <rect key="frame" x="10" y="105" width="580" height="30"/>
+                                <rect key="frame" x="117" y="105" width="480" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Evernote" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sht-zI-zwS">
-                                <rect key="frame" x="9" y="139" width="580" height="30"/>
+                                <rect key="frame" x="116" y="139" width="480" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John Doe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jqg-TY-Btp">
-                                <rect key="frame" x="9" y="72" width="580" height="30"/>
+                                <rect key="frame" x="116" y="72" width="480" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(801) 358 2197" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nRV-1O-wK7">
-                                <rect key="frame" x="10" y="172" width="580" height="30"/>
+                                <rect key="frame" x="1" y="172" width="595" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="johndoe@gmail.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eC5-c4-QFv">
-                                <rect key="frame" x="10" y="205" width="580" height="30"/>
+                                <rect key="frame" x="0.0" y="205" width="596" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioz-QA-OmQ">
-                                <rect key="frame" x="9" y="243" width="580" height="90"/>
+                                <rect key="frame" x="-1" y="243" width="597" height="90"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="JBY-8T-0in"/>
@@ -383,28 +383,40 @@
                                     <action selector="cameraButtonPressed:" destination="0vA-LX-dhU" eventType="touchUpInside" id="7wH-xO-gbC"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_male_circle-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ac8-Gq-ZKm">
+                                <rect key="frame" x="16" y="72" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="UPV-MP-aJF"/>
+                                    <constraint firstAttribute="height" constant="90" id="yIx-ua-I19"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="sht-zI-zwS" firstAttribute="width" secondItem="uZP-KC-6h0" secondAttribute="width" id="0yC-2S-iru"/>
-                            <constraint firstItem="Jqg-TY-Btp" firstAttribute="width" secondItem="r8T-es-lVV" secondAttribute="width" constant="-20" id="2pr-MO-LxN"/>
+                            <constraint firstItem="Jqg-TY-Btp" firstAttribute="width" secondItem="r8T-es-lVV" secondAttribute="width" constant="-120" id="2pr-MO-LxN"/>
                             <constraint firstItem="nRV-1O-wK7" firstAttribute="height" secondItem="sht-zI-zwS" secondAttribute="height" id="4zg-ix-fnf"/>
                             <constraint firstItem="Jqg-TY-Btp" firstAttribute="leading" secondItem="uZP-KC-6h0" secondAttribute="leading" constant="-1" id="5pC-T9-PGY"/>
+                            <constraint firstItem="nRV-1O-wK7" firstAttribute="width" secondItem="r8T-es-lVV" secondAttribute="width" constant="-5" id="6bE-1P-vS6"/>
                             <constraint firstItem="eC5-c4-QFv" firstAttribute="height" secondItem="nRV-1O-wK7" secondAttribute="height" id="8Db-EX-QSd"/>
                             <constraint firstItem="nRV-1O-wK7" firstAttribute="width" secondItem="sht-zI-zwS" secondAttribute="width" id="8ja-Ri-JTV"/>
-                            <constraint firstItem="eC5-c4-QFv" firstAttribute="width" secondItem="ioz-QA-OmQ" secondAttribute="width" id="AAm-cr-WYh"/>
-                            <constraint firstItem="Jqg-TY-Btp" firstAttribute="leading" secondItem="r8T-es-lVV" secondAttribute="leadingMargin" constant="-7" id="Chh-fp-AmC"/>
+                            <constraint firstItem="eC5-c4-QFv" firstAttribute="width" secondItem="ioz-QA-OmQ" secondAttribute="width" constant="-1" id="AAm-cr-WYh"/>
+                            <constraint firstItem="Jqg-TY-Btp" firstAttribute="leading" secondItem="r8T-es-lVV" secondAttribute="leadingMargin" constant="100" id="Chh-fp-AmC"/>
                             <constraint firstItem="sht-zI-zwS" firstAttribute="leading" secondItem="uZP-KC-6h0" secondAttribute="leading" constant="-1" id="DNI-1b-MJa"/>
                             <constraint firstItem="eC5-c4-QFv" firstAttribute="leading" secondItem="ioz-QA-OmQ" secondAttribute="leading" constant="1" id="Dh4-Ds-Nzc"/>
+                            <constraint firstItem="Ac8-Gq-ZKm" firstAttribute="top" secondItem="epy-EX-O9Q" secondAttribute="bottom" constant="8" id="Ekm-e0-Oxg"/>
                             <constraint firstItem="sht-zI-zwS" firstAttribute="top" secondItem="uZP-KC-6h0" secondAttribute="bottom" constant="4" id="FQe-bf-p0I"/>
-                            <constraint firstItem="eC5-c4-QFv" firstAttribute="width" secondItem="nRV-1O-wK7" secondAttribute="width" id="Gdw-AT-hKs"/>
+                            <constraint firstItem="eC5-c4-QFv" firstAttribute="width" secondItem="nRV-1O-wK7" secondAttribute="width" constant="1" id="Gdw-AT-hKs"/>
+                            <constraint firstItem="nRV-1O-wK7" firstAttribute="leading" secondItem="r8T-es-lVV" secondAttribute="leadingMargin" constant="-15" id="JVU-sW-X9I"/>
+                            <constraint firstItem="Ac8-Gq-ZKm" firstAttribute="leading" secondItem="r8T-es-lVV" secondAttribute="leadingMargin" id="Lfa-j5-fMO"/>
                             <constraint firstAttribute="centerX" secondItem="o9a-qI-0mq" secondAttribute="centerX" constant="0.5" id="LmC-mx-0xG"/>
                             <constraint firstItem="nRV-1O-wK7" firstAttribute="top" secondItem="sht-zI-zwS" secondAttribute="bottom" constant="3" id="McI-7Q-dSx"/>
                             <constraint firstItem="o9a-qI-0mq" firstAttribute="top" secondItem="ioz-QA-OmQ" secondAttribute="bottom" constant="8" id="OYb-MI-ycG"/>
                             <constraint firstItem="ioz-QA-OmQ" firstAttribute="top" secondItem="eC5-c4-QFv" secondAttribute="bottom" constant="8" id="PPw-G2-SW0"/>
-                            <constraint firstItem="eC5-c4-QFv" firstAttribute="leading" secondItem="nRV-1O-wK7" secondAttribute="leading" id="SUb-kb-FLn"/>
+                            <constraint firstItem="eC5-c4-QFv" firstAttribute="leading" secondItem="nRV-1O-wK7" secondAttribute="leading" constant="-1" id="SUb-kb-FLn"/>
                             <constraint firstItem="Jqg-TY-Btp" firstAttribute="top" secondItem="epy-EX-O9Q" secondAttribute="bottom" constant="8" id="Sox-iQ-K2r"/>
                             <constraint firstItem="Jqg-TY-Btp" firstAttribute="height" secondItem="uZP-KC-6h0" secondAttribute="height" id="TEa-Sl-ThK"/>
+                            <constraint firstItem="nRV-1O-wK7" firstAttribute="top" secondItem="epy-EX-O9Q" secondAttribute="bottom" constant="108" id="TMk-Jq-C8O"/>
                             <constraint firstItem="Jqg-TY-Btp" firstAttribute="width" secondItem="uZP-KC-6h0" secondAttribute="width" id="YEZ-8f-2wS"/>
                             <constraint firstItem="sht-zI-zwS" firstAttribute="height" secondItem="uZP-KC-6h0" secondAttribute="height" id="dgi-7L-jug"/>
                             <constraint firstItem="nRV-1O-wK7" firstAttribute="leading" secondItem="sht-zI-zwS" secondAttribute="leading" constant="1" id="dwv-60-L9N"/>
@@ -412,6 +424,12 @@
                             <constraint firstItem="eC5-c4-QFv" firstAttribute="top" secondItem="nRV-1O-wK7" secondAttribute="bottom" constant="3" id="obl-av-k2C"/>
                             <constraint firstAttribute="centerY" secondItem="o9a-qI-0mq" secondAttribute="centerY" constant="-66" id="xTu-Go-35z"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8ja-Ri-JTV"/>
+                                <exclude reference="dwv-60-L9N"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="umc-9r-xu3">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="kpF-I6-3Ll">
@@ -445,5 +463,6 @@
         <image name="price_tag-50.png" width="50" height="50"/>
         <image name="settings3-50.png" width="50" height="50"/>
         <image name="stack_of_photos-50.png" width="50" height="50"/>
+        <image name="user_male_circle-50.png" width="50" height="50"/>
     </resources>
 </document>

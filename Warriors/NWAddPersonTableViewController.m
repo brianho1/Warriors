@@ -124,7 +124,6 @@
 
 #pragma mark - growing TextView
 
-#pragma mark - growing tv
 -(void)resignTextView
 {
     [textView resignFirstResponder];
