@@ -7,40 +7,196 @@
 //
 
 #import "NWTimelineTableViewController.h"
+#import "Event.h"
+#import "BBTimelineTableViewCell.h"
+//#import "BBPersonViewController.h"
+//#import "BBModalSearchViewController.h"
+//#import "UIImage+ImageEffects.h"
+//#import "UIView+UIViewExtension.h"
+//#import "BBEventInputViewController.h"
+
 
 @interface NWTimelineTableViewController ()
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) NSMutableArray *events;
+@property (nonatomic) NSMutableArray *people;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
 @implementation NWTimelineTableViewController
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    [self fetchAllEvent];
+    [self.tableView reloadData];
+    //    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    self.tableView.frame = self.view.bounds;
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
+//    SWRevealViewController *revealViewController = self.revealViewController;
+//    if ( revealViewController )
+//    {
+//        [self.sidebarButton setTarget: self.revealViewController];
+//        [self.sidebarButton setAction: @selector( revealToggle: )];
+//        //        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+//    }
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    self.title = @"Timeline";
 }
+
+- (void)fetchAllEvent {
+    // Determine if sort key is
+    NSString *sortKey = @"time";
+    BOOL ascending = [sortKey isEqualToString:@"time"] ? NO : YES;
+    // Fetch entities with MagicalRecord
+    self.events = [[Event findAllSortedBy:sortKey ascending:ascending] mutableCopy];
+    
+    for (Event *event in self.events) {
+        [self.people addObject:event.person];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+- (void)saveContext {
+    // Save ManagedObjectContext using MagicalRecord
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.events.count;
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BBTimelineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"
+                                                                    forIndexPath:indexPath];
+    cell.dayLabel.layer.frame = CGRectMake(cell.frame.size.width - 40 , 70, 30, 30);
+    cell.timeLabel.layer.frame = CGRectMake(cell.frame.size.width - 90 , 50, 80, 30);
+    cell.weekdayLabel.layer.frame = CGRectMake(cell.frame.size.width - 40 , 90, 30, 30);
+    cell.nameLabel.layer.frame = CGRectMake(0, 10, cell.frame.size.width - 10, 30);
+    cell.nameLabel.layer.cornerRadius = 5;
+    cell.nameLabel.layer.masksToBounds = YES;
+    cell.noteLabel.layer.frame = CGRectMake(100, 40, cell.frame.size.width - 130 - 40, 60);
+    cell.noteLabel.numberOfLines = 2;
+    //    [cell.noteLabel sizeToFit];
+    
+    
+    [self configureCell:cell atIndex:indexPath];
+    return cell;
+}
+
+- (void)configureCell:(BBTimelineTableViewCell *)cell atIndex:(NSIndexPath*)indexPath {
+    
+    Event *event = [self.events objectAtIndex:indexPath.row];
+    Person *person = event.person;
+    
+    
+    cell.nameLabel.text = [NSString stringWithFormat:@"%@ %@",person.firstName,person.lastName];
+    cell.noteLabel.text = event.note;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterNoStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    NSString *formattedDateString = [dateFormatter stringFromDate:event.time];
+    cell.timeLabel.text = formattedDateString;
+    [dateFormatter setDateFormat:@"EEE"];
+    cell.weekdayLabel.text = [dateFormatter stringFromDate:event.time];
+    [dateFormatter setDateFormat:@"dd"];
+    cell.dayLabel.text = [dateFormatter stringFromDate:event.time];
+    NSString *stringPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0]stringByAppendingPathComponent:@"Images"];
+    // New Folder is your folder name
+    NSError *error = nil;
+    if (![[NSFileManager defaultManager] fileExistsAtPath:stringPath])
+        [[NSFileManager defaultManager] createDirectoryAtPath:stringPath withIntermediateDirectories:NO attributes:nil error:&error];
+    UIImage *image = [UIImage imageNamed:@"card.jpg"];
+    cell.eventPicture.image = image;
+    if (event.picture != nil)
+    {
+        NSString *fileName = [stringPath stringByAppendingFormat:@"%@.jpg",event.picture];
+        image = [UIImage imageWithData:[[NSFileManager defaultManager] contentsAtPath:fileName]];
+        cell.eventPicture.image = image;
+    }
+    cell.eventPicture.layer.cornerRadius = cell.eventPicture.frame.size.width/2;
+    cell.eventPicture.layer.masksToBounds = YES;
+    //    CGRect frame = cell.bannerImage.frame;
+    //    frame.size.height = cell.contentView.frame.size.height/2;
+    //    cell.bannerImage.frame = frame;
+    cell.eventPicture.layer.borderWidth = 2;
+    cell.eventPicture.layer.borderColor = [[UIColor whiteColor] CGColor];
+    
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Event *eventToRemove = self.events[indexPath.row];
+        // Remove Image from local documents
+        // Deleting an Entity with MagicalRecord
+        [eventToRemove deleteEntity];
+        [self saveContext];
+        [self.events removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
+#pragma mark - Search Bar Delegate
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if ([self.searchBar.text length] > 0) {
+        [self doSearch];
+    } else {
+        [self fetchAllEvent];
+        [self.tableView reloadData];
+    }
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [self.searchBar resignFirstResponder];
+    // Clear search bar text
+    self.searchBar.text = @"";
+    // Hide the cancel button
+    self.searchBar.showsCancelButton = NO;
+    // Do a default fetch of the beers
+    [self fetchAllEvent];
+    [self.tableView reloadData];
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    self.searchBar.showsCancelButton = YES;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self.searchBar resignFirstResponder];
+    [self doSearch];
+}
+
+- (void)doSearch {
+    // 1. Get the text from the search bar.
+    NSString *searchText = self.searchBar.text;
+    // 2. Do a fetch on the beers that match Predicate criteria.
+    // In this case, if the name contains the string
+    self.events = [[Event findAllSortedBy:@"person.lastName"
+                                ascending:YES
+                            withPredicate:[NSPredicate predicateWithFormat:@"(person.lastName contains[c] %@) OR (person.firstName contains[c] %@)", searchText, searchText]
+                                inContext:[NSManagedObjectContext defaultContext]] mutableCopy];
+    // 3. Reload the table to show the query results.
+    [self.tableView reloadData];
+}
+
+#pragma mark - back
 - (IBAction)backButtonClicked:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }

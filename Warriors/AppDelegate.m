@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "Person.h"
+#import "Event.h"
+#import "MagicalRecord.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,74 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"People"];
+    
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"MR_AvailablePeople"]) {
+        // Create Blond Ale
+        Person *johndoe = [Person createEntity];
+        johndoe.lastName  = @"Doe";
+        johndoe.firstName = @"John";
+        johndoe.notes = @"okay guy";
+        johndoe.userId = @10001;
+        Event * meetJohn = [Event createEntity];
+        meetJohn.person = johndoe;
+        meetJohn.score = @3;
+        meetJohn.note = @"first time met John Doe";
+        
+        NSString *str =@"3/15/2012 9:15 PM";
+        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+        [formatter setDateFormat:@"MM/dd/yyyy HH:mm a"];
+        NSDate *date = [formatter dateFromString:str];
+        meetJohn.time = date;
+        
+        johndoe.overallSocre = @4;
+        
+        Event * meetJohnagain = [Event createEntity];
+        meetJohnagain.person = johndoe;
+        meetJohnagain.score = @3;
+        meetJohnagain.note = @"Second time met John Doe";
+        NSDate *now = [NSDate date];
+        int daysToAdd = -1;
+        meetJohnagain.time = [now dateByAddingTimeInterval:60*60*24*daysToAdd];;
+        
+        Event * meetJohnagain2 = [Event createEntity];
+        meetJohnagain2.person = johndoe;
+        meetJohnagain2.score = @3;
+        meetJohnagain2.note = @"Third time met John Doe";
+        meetJohnagain2.time = [now dateByAddingTimeInterval:60*60*24*(-2)];;
+        
+        Person *johndoe2 = [Person createEntity];
+        johndoe2.lastName  = @"Guy";
+        johndoe2.firstName = @"Random";
+        johndoe2.notes = @"bad guy";
+        johndoe2.userId = @10002;
+        Event * meetJohn2 = [Event createEntity];
+        meetJohn2.person = johndoe2;
+        meetJohn2.score = @1;
+        meetJohn2.note = @"nothing new";
+        johndoe2.overallSocre = @2;
+        meetJohn2.time = [now dateByAddingTimeInterval:60*60*24*(-2)];
+        
+        Person *johndoe3 = [Person createEntity];
+        johndoe3.lastName  = @"Ho";
+        johndoe3.firstName = @"Brian";
+        johndoe3.notes = @"nice guy this is a longer note about this guy named Brian Ho to see if the text is overflowed from the cell";
+        johndoe3.userId = @10003;
+        Event * meetJohn3 = [Event createEntity];
+        meetJohn3.person = johndoe3;
+        meetJohn3.score = @1;
+        meetJohn3.note = @"EVENTNOTE nice guy this is a longer note about this guy named Brian Ho to see if the text is overflowed from the cell";
+        johndoe3.overallSocre = @2;
+        meetJohn3.time = [now dateByAddingTimeInterval:60*60*24*(-3)];
+        
+        // Save Managed Object Context
+        [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:nil];
+        
+        // Set User Default to prevent another preload of data on startup.
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"MR_AvailablePeople"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+
     return YES;
 }
 

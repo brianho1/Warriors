@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Person.h"
 
 @interface NWTimelineTableViewController : UITableViewController
+
+@property (strong, nonatomic) Person *personToPass;
 
 @end
