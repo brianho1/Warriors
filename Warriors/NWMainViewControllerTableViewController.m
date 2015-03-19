@@ -17,6 +17,8 @@
 
 @implementation NWMainViewControllerTableViewController {
     NSArray *menuItems;
+    UIView *headview;
+    UIImageView *image;
 }
 
 - (void)viewDidLoad {
@@ -29,9 +31,9 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.view.backgroundColor = [UIColor grayColor];
 //    self.view.backgroundColor = [UIColor whiteColor];
-    UIView *headview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/2)];
+    headview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/2)];
     headview.backgroundColor = [UIColor grayColor];
-    UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/2)];
+    image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/2)];
     image.image = [UIImage imageNamed:@"blurrybackground.jpg"];
     [headview addSubview:image];
     UILabel *quote = [[UILabel alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height/5 , self.view.frame.size.width - 20, 30)];
@@ -43,14 +45,53 @@
     quote.textAlignment = NSTextAlignmentCenter;
     [headview addSubview:quote];
     self.tableView.tableHeaderView = headview;
-    UILabel * numberofPerson = [[UILabel alloc] initWithFrame:CGRectMake(20, headview.layer.frame.size.height - 50, 20, 20)];
+    
+    //Headview Stats
+    float width = self.view.frame.size.width;
+    float boxwidth = (width - 40)/3;
+    UILabel * numberofPerson = [[UILabel alloc] initWithFrame:CGRectMake(10, headview.layer.frame.size.height - 50, boxwidth, 20)];
     numberofPerson.text = @"52";
-    UILabel * peopleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, headview.layer.frame.size.height - 30, 90, 20)];
-    peopleLabel.text = @"Networks";
+    UILabel * peopleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, headview.layer.frame.size.height - 30, boxwidth, 20)];
+    peopleLabel.text = @"NETWORKS";
+    
+    UILabel * goal = [[UILabel alloc] initWithFrame:CGRectMake(20 + boxwidth, headview.layer.frame.size.height - 50, boxwidth, 20)];
+    goal.text = @"3";
+    UILabel * goalLabel = [[UILabel alloc] initWithFrame:CGRectMake(20 + boxwidth, headview.layer.frame.size.height - 30, boxwidth, 20)];
+    goalLabel.text = @"GOAL/WEEK";
+
+    UILabel * today = [[UILabel alloc] initWithFrame:CGRectMake(30 + 2*boxwidth, headview.layer.frame.size.height - 50, boxwidth, 20)];
+    today.text = @"1";
+    UILabel * todayLabel = [[UILabel alloc] initWithFrame:CGRectMake(30 + 2*boxwidth, headview.layer.frame.size.height - 30, boxwidth, 20)];
+    todayLabel.text = @"TODAY";
+    //white textcolor
     peopleLabel.textColor = [UIColor whiteColor];
     numberofPerson.textColor = [UIColor whiteColor];
+    goal.textColor = [UIColor whiteColor];
+    goalLabel.textColor = [UIColor whiteColor];
+    today.textColor = [UIColor whiteColor];
+    todayLabel.textColor = [UIColor whiteColor];
+    //change font size
+    numberofPerson.font = [UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:12];
+    peopleLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:12];
+    goal.font = [UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:12];
+    goalLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:12];
+    today.font = [UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:12];
+    todayLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:12];
+    //align number centered
+    numberofPerson.textAlignment = NSTextAlignmentCenter;
+    goal.textAlignment = NSTextAlignmentCenter;
+    today.textAlignment = NSTextAlignmentCenter;
+    peopleLabel.textAlignment = NSTextAlignmentCenter;
+    goalLabel.textAlignment = NSTextAlignmentCenter;
+    todayLabel.textAlignment = NSTextAlignmentCenter;
+    //add to subview
     [headview addSubview:numberofPerson];
     [headview addSubview:peopleLabel];
+    [headview addSubview:goal];
+    [headview addSubview:goalLabel];
+    [headview addSubview:today];
+    [headview addSubview:todayLabel];
+
     menuItems = @[@"Timeline", @"Photos",@"Goals",@"Tags",@"Analytics",@"Favorites",@"Settings",@"Logout"];
 
     UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 30, self.view.frame.size.width, 30)];
@@ -72,6 +113,22 @@
 //- (void)registerTableView:(UITableView *)tableView {
 //    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
 //}
+
+-(void)scrollViewDidScroll:(UIScrollView*)scrollView {
+
+    CGRect initialFrame = headview.frame;
+    image.frame = headview.frame;
+//    float kImageOriginHight = initialFrame.size.height;
+    CGFloat yOffset  = scrollView.contentOffset.y;
+    if (yOffset < 0) {
+        CGRect f = image.frame;
+        f.origin.y = yOffset;
+        f.size.height =  -yOffset + initialFrame.size.height;
+        image.frame = f;
+    }
+
+}
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
