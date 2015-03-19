@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Event.h"
 #import "HPGrowingTextView.h"
-
+#import "Person.h"
 
 @interface NWAddPersonTableViewController : UIViewController <HPGrowingTextViewDelegate>{
     HPGrowingTextView *textView;
@@ -19,5 +19,6 @@
 
 
 @property (strong, nonatomic) Event * event;
+@property (strong, nonatomic) Person *person;
 
 @end

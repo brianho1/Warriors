@@ -331,12 +331,12 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Developer" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uZP-KC-6h0">
                                 <rect key="frame" x="117" y="100" width="480" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Evernote" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sht-zI-zwS">
                                 <rect key="frame" x="116" y="129" width="480" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John Doe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jqg-TY-Btp">
                                 <rect key="frame" x="116" y="72" width="480" height="25"/>
@@ -344,7 +344,7 @@
                                     <constraint firstAttribute="height" constant="25" id="1Bk-fv-3zZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(801) 358 2197" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nRV-1O-wK7">
                                 <rect key="frame" x="1" y="171" width="595" height="25"/>

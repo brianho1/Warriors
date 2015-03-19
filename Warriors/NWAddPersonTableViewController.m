@@ -8,6 +8,7 @@
 
 #import "NWAddPersonTableViewController.h"
 
+
 @interface NWAddPersonTableViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *companyTextFiled;
@@ -177,7 +178,7 @@
     //    self.label.text = textView.text;
     NSDictionary * dict = [self textFieldDictionay:textView.text];
     
-    self.addressTextField.text = @"";
+    self.addressTextField.text = @""; // dirty trick to work around addresstexrfield didn't clear when delete text
     self.nameTextField.text = dict[@"name"];
     self.companyTextFiled.text = dict[@"company"];
     self.titleTextField.text = dict[@"title"];
@@ -186,7 +187,13 @@
     self.noteTextView.text = dict[@"note"];
     NSDictionary *addressDict = dict[@"address"];
     if (addressDict) {
-        self.addressTextField.text = [NSString stringWithFormat:@"%@, %@, %@",addressDict[NSTextCheckingStreetKey], addressDict[NSTextCheckingCityKey], addressDict[NSTextCheckingStateKey]];
+        NSString *street = addressDict[NSTextCheckingStreetKey];
+        NSString *city = addressDict[NSTextCheckingCityKey];
+        NSString *state = addressDict[NSTextCheckingStateKey];
+        if (street == NULL) street = @"_";
+        if (city == NULL) city = @"_";
+        if (state == NULL) state = @"_";
+        self.addressTextField.text = [NSString stringWithFormat:@"%@, %@, %@",[street capitalizedString], [city capitalizedString], [state uppercaseString]];
     };
 }
 
@@ -244,7 +251,7 @@
         arrayofString[i] = [arrayofString[i] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
              if (i==0) {
                  //            self.nameTextField.text = stringToAnalyze;
-                 [dict setObject:arrayofString[i] forKey:@"name"];
+                 [dict setObject:[arrayofString[i] capitalizedString] forKey:@"name"];
                  
              }
         // If it is date
@@ -305,8 +312,8 @@
             NSArray * titleAndCompany = [arrayofString[i] componentsSeparatedByString:@"at"];
             //            self.titleTextField.text = titleAndCompany[0];
             //            self.companyTextFiled.text = titleAndCompany[1];
-            [dict setObject:titleAndCompany[0] forKey:@"title"];
-            [dict setObject:titleAndCompany[1] forKey:@"company"];
+            [dict setObject:[titleAndCompany[0] capitalizedString] forKey:@"title"];
+            [dict setObject:[titleAndCompany[1] capitalizedString] forKey:@"company"];
         }
         else if ([arrayofString[i] rangeOfString:@".com"].location != NSNotFound) {
          if ([arrayofString[i] rangeOfString:@"@"].location != NSNotFound) {
@@ -344,6 +351,59 @@
     return NO;
 }
 
+#pragma mark - doneAdding
+
+-(IBAction)doneAdding:(id)sender {
+    if ([self.nameTextField hasText]) {
+        //adding to core data here
+        // data {name, company, title, time, email, note}
+        NSMutableArray *data = [NSMutableArray array];
+        data[0] = self.nameTextField.text;
+        data[1] = ([self.companyTextFiled hasText]) ? self.companyTextFiled.text : @"" ;
+        data[2] = ([self.titleTextField hasText]) ? self.titleTextField.text : @"" ;
+        data[3] = ([self.phoneNumber hasText]) ? self.phoneNumber.text : @"" ;
+        data[4] = ([self.emailTextField hasText]) ? self.emailTextField.text : @"" ;
+        data[5] =([self.addressTextField hasText]) ? self.addressTextField.text : @"" ;
+        data[6] = ([self.noteTextView hasText]) ? self.noteTextView.text : @"" ;
+        //            NSLog(@"%@",data);
+        [self syncToCoreData:data];
+    }
+    else {
+        NSLog(@"data has to have at least a name, did not save");
+    }
+    
+    [self saveContext];
+
+}
+
+#pragma mark - sync to core data
+- (void)syncToCoreData:(NSArray *)data {
+        Person *person = [Person createEntity];
+        NSArray *name = [data[0] componentsSeparatedByString:@" "];
+        person.firstName = name[0];
+        person.lastName = name[1];
+        person.notes = data[6];
+        person.company = data[1];
+        person.title = data[2];
+
+        //convert time string to nsdate
+        NSString *str =data[3];
+        NSDateFormatter *sdateFormatter = [[NSDateFormatter alloc] init];
+        //        sdateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+        [sdateFormatter setDateFormat:@"MMM d, yyyy, hh:mm a"];
+//        event.time = [sdateFormatter dateFromString:str];
+//        event.person.userId = [NSNumber numberWithInt:(arc4random() % 10000) + 99999];
+}
+
+- (void)saveContext {
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+        if (success) {
+            NSLog(@"You successfully saved your context.");
+        } else if (error) {
+            NSLog(@"Error saving context: %@", error.description);
+        }
+    }];
+}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
