@@ -445,7 +445,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="umc-9r-xu3">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="kpF-I6-3Ll">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="kpF-I6-3Ll">
                             <connections>
                                 <action selector="doneAdding:" destination="0vA-LX-dhU" id="eL0-bm-44r"/>
                             </connections>
@@ -460,11 +460,148 @@
                         <outlet property="noteTextView" destination="ioz-QA-OmQ" id="yjP-Q2-sFf"/>
                         <outlet property="phoneNumber" destination="nRV-1O-wK7" id="QhM-Pm-6GF"/>
                         <outlet property="titleTextField" destination="uZP-KC-6h0" id="bo4-nu-1AO"/>
+                        <segue destination="ftm-Ux-QU1" kind="show" id="x97-VT-wp4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iha-eS-9BU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3326" y="1023"/>
+        </scene>
+        <!--Event Input View Controller-->
+        <scene sceneID="keJ-B3-i1F">
+            <objects>
+                <viewController id="ftm-Ux-QU1" customClass="BBEventInputViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VfW-p4-Buh"/>
+                        <viewControllerLayoutGuide type="bottom" id="HEl-iS-H0w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZHa-pA-uva">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Developer" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3GY-nC-u6m">
+                                <rect key="frame" x="117" y="100" width="480" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Evernote" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="udP-NH-dnd">
+                                <rect key="frame" x="116" y="129" width="480" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Title - Meet John Doe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JNp-UD-56T">
+                                <rect key="frame" x="1" y="171" width="595" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rate the Quality of the Meeting" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8d2-t6-luk">
+                                <rect key="frame" x="0.0" y="199" width="596" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOD-hl-AtS">
+                                <rect key="frame" x="0.0" y="258" width="597" height="90"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="HJY-IM-Wjk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcF-Nh-LLf">
+                                <rect key="frame" x="247" y="366" width="105" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Q9J-z0-Gd5"/>
+                                    <constraint firstAttribute="width" constant="105" id="i7Y-CB-FzF"/>
+                                </constraints>
+                                <state key="normal" image="camera-50.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_male_circle-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="zwg-WN-6jp">
+                                <rect key="frame" x="16" y="72" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="Mms-r9-kud"/>
+                                    <constraint firstAttribute="height" constant="90" id="dQn-8c-WM3"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time of the meeting" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pvV-b3-WX8">
+                                <rect key="frame" x="1" y="228" width="596" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John Doe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p6h-1c-cqa">
+                                <rect key="frame" x="116" y="72" width="480" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="4VW-JH-mwf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="p6h-1c-cqa" firstAttribute="top" secondItem="VfW-p4-Buh" secondAttribute="bottom" constant="8" id="0mK-kz-igu"/>
+                            <constraint firstItem="p6h-1c-cqa" firstAttribute="height" secondItem="3GY-nC-u6m" secondAttribute="height" id="1Pb-qz-qPM"/>
+                            <constraint firstItem="JNp-UD-56T" firstAttribute="height" secondItem="udP-NH-dnd" secondAttribute="height" constant="-2" id="2Pu-Bq-Hbi"/>
+                            <constraint firstItem="pvV-b3-WX8" firstAttribute="top" secondItem="8d2-t6-luk" secondAttribute="bottom" constant="3" id="53r-j6-4Qd"/>
+                            <constraint firstItem="vOD-hl-AtS" firstAttribute="top" secondItem="pvV-b3-WX8" secondAttribute="bottom" constant="5" id="6xg-8f-58E"/>
+                            <constraint firstItem="pvV-b3-WX8" firstAttribute="height" secondItem="8d2-t6-luk" secondAttribute="height" constant="-1" id="BYZ-rr-508"/>
+                            <constraint firstItem="3GY-nC-u6m" firstAttribute="top" secondItem="p6h-1c-cqa" secondAttribute="bottom" constant="3" id="Bw3-yB-7ot"/>
+                            <constraint firstAttribute="centerY" secondItem="pcF-Nh-LLf" secondAttribute="centerY" constant="-91" id="C5b-8g-Myi"/>
+                            <constraint firstItem="pcF-Nh-LLf" firstAttribute="top" secondItem="vOD-hl-AtS" secondAttribute="bottom" constant="18" id="Dhv-wx-JJe"/>
+                            <constraint firstAttribute="centerX" secondItem="p6h-1c-cqa" secondAttribute="centerX" constant="-56" id="Dxz-KZ-vtN"/>
+                            <constraint firstItem="zwg-WN-6jp" firstAttribute="leading" secondItem="ZHa-pA-uva" secondAttribute="leadingMargin" id="Ff5-Dy-jug"/>
+                            <constraint firstItem="JNp-UD-56T" firstAttribute="leading" secondItem="udP-NH-dnd" secondAttribute="leading" constant="1" id="GlK-60-9HY"/>
+                            <constraint firstItem="udP-NH-dnd" firstAttribute="leading" secondItem="3GY-nC-u6m" secondAttribute="leading" constant="-1" id="IJp-mL-Wg7"/>
+                            <constraint firstItem="8d2-t6-luk" firstAttribute="width" secondItem="vOD-hl-AtS" secondAttribute="width" constant="-1" id="KQF-Io-jdP"/>
+                            <constraint firstItem="p6h-1c-cqa" firstAttribute="leading" secondItem="ZHa-pA-uva" secondAttribute="leadingMargin" constant="100" id="L5l-nr-tVk"/>
+                            <constraint firstAttribute="centerX" secondItem="pcF-Nh-LLf" secondAttribute="centerX" constant="0.5" id="MsR-ng-47C"/>
+                            <constraint firstItem="JNp-UD-56T" firstAttribute="width" secondItem="ZHa-pA-uva" secondAttribute="width" constant="-5" id="O1n-FO-XIR"/>
+                            <constraint firstItem="vOD-hl-AtS" firstAttribute="top" secondItem="8d2-t6-luk" secondAttribute="bottom" constant="8" id="PBO-Yl-7rK"/>
+                            <constraint firstItem="p6h-1c-cqa" firstAttribute="leading" secondItem="3GY-nC-u6m" secondAttribute="leading" constant="-1" id="PWu-Q3-q6M"/>
+                            <constraint firstItem="p6h-1c-cqa" firstAttribute="top" secondItem="VfW-p4-Buh" secondAttribute="bottom" constant="8" id="Q5P-Q8-aXn"/>
+                            <constraint firstItem="JNp-UD-56T" firstAttribute="top" secondItem="udP-NH-dnd" secondAttribute="bottom" constant="3" id="Q8K-ho-eRo"/>
+                            <constraint firstItem="8d2-t6-luk" firstAttribute="top" secondItem="JNp-UD-56T" secondAttribute="bottom" constant="3" id="Sh3-xc-Aa0"/>
+                            <constraint firstItem="JNp-UD-56T" firstAttribute="leading" secondItem="ZHa-pA-uva" secondAttribute="leadingMargin" constant="-15" id="Wr6-BO-INv"/>
+                            <constraint firstItem="JNp-UD-56T" firstAttribute="top" secondItem="udP-NH-dnd" secondAttribute="bottom" constant="16" id="ZCj-5W-JL5"/>
+                            <constraint firstItem="8d2-t6-luk" firstAttribute="leading" secondItem="JNp-UD-56T" secondAttribute="leading" constant="-1" id="iVE-Ob-8bb"/>
+                            <constraint firstItem="udP-NH-dnd" firstAttribute="width" secondItem="3GY-nC-u6m" secondAttribute="width" id="nld-Ze-tZL"/>
+                            <constraint firstItem="8d2-t6-luk" firstAttribute="height" secondItem="JNp-UD-56T" secondAttribute="height" constant="2" id="nqM-Cl-e9x"/>
+                            <constraint firstItem="pvV-b3-WX8" firstAttribute="width" secondItem="8d2-t6-luk" secondAttribute="width" id="o3K-UK-arc"/>
+                            <constraint firstItem="8d2-t6-luk" firstAttribute="width" secondItem="JNp-UD-56T" secondAttribute="width" constant="1" id="puQ-QK-2xW"/>
+                            <constraint firstItem="8d2-t6-luk" firstAttribute="leading" secondItem="vOD-hl-AtS" secondAttribute="leading" id="q1D-a4-SfK"/>
+                            <constraint firstItem="p6h-1c-cqa" firstAttribute="width" secondItem="3GY-nC-u6m" secondAttribute="width" id="qwZ-dy-Asy"/>
+                            <constraint firstItem="udP-NH-dnd" firstAttribute="height" secondItem="3GY-nC-u6m" secondAttribute="height" constant="1" id="rox-Zi-J88"/>
+                            <constraint firstItem="JNp-UD-56T" firstAttribute="width" secondItem="udP-NH-dnd" secondAttribute="width" id="wy0-dS-4Re"/>
+                            <constraint firstItem="zwg-WN-6jp" firstAttribute="top" secondItem="VfW-p4-Buh" secondAttribute="bottom" constant="8" id="wzT-Kd-oHY"/>
+                            <constraint firstItem="p6h-1c-cqa" firstAttribute="width" secondItem="ZHa-pA-uva" secondAttribute="width" constant="-120" id="xXj-w9-d5D"/>
+                            <constraint firstItem="pvV-b3-WX8" firstAttribute="leading" secondItem="ZHa-pA-uva" secondAttribute="leadingMargin" constant="-15" id="zaC-SZ-aBx"/>
+                            <constraint firstItem="udP-NH-dnd" firstAttribute="top" secondItem="3GY-nC-u6m" secondAttribute="bottom" constant="4" id="zt1-bV-uQL"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1Pb-qz-qPM"/>
+                                <exclude reference="Q5P-Q8-aXn"/>
+                                <exclude reference="GlK-60-9HY"/>
+                                <exclude reference="Q8K-ho-eRo"/>
+                                <exclude reference="wy0-dS-4Re"/>
+                                <exclude reference="PBO-Yl-7rK"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="i4w-4j-MCY">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="sOa-ab-MJh"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JQE-v7-yEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4155" y="1015"/>
         </scene>
     </scenes>
     <resources>

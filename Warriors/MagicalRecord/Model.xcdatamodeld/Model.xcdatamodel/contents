@@ -7,9 +7,11 @@
         <attribute name="score" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="events" inverseEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="businessCardPic" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cellPhone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
@@ -27,7 +29,7 @@
         <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="person" inverseEntity="Event" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-54" positionY="99" width="128" height="148"/>
-        <element name="Person" positionX="-297" positionY="-27" width="128" height="268"/>
+        <element name="Event" positionX="-54" positionY="99" width="128" height="163"/>
+        <element name="Person" positionX="-297" positionY="-27" width="128" height="283"/>
     </elements>
 </model>

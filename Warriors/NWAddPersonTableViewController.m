@@ -385,14 +385,17 @@
         person.notes = data[6];
         person.company = data[1];
         person.title = data[2];
-
+        person.address = data[5];
+        person.email = data[4];
+        person.userId = [NSNumber numberWithInt:(arc4random() % 10000) + 99999];
         //convert time string to nsdate
-        NSString *str =data[3];
-        NSDateFormatter *sdateFormatter = [[NSDateFormatter alloc] init];
-        //        sdateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-        [sdateFormatter setDateFormat:@"MMM d, yyyy, hh:mm a"];
+//        NSString *str =data[3];
+//        NSDateFormatter *sdateFormatter = [[NSDateFormatter alloc] init];
+//        //        sdateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+//        [sdateFormatter setDateFormat:@"MMM d, yyyy, hh:mm a"];
 //        event.time = [sdateFormatter dateFromString:str];
 //        event.person.userId = [NSNumber numberWithInt:(arc4random() % 10000) + 99999];
+    
 }
 
 - (void)saveContext {

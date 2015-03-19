@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA1547651ABB6CE60094AC4C /* BBEventInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1547641ABB6CE60094AC4C /* BBEventInputViewController.m */; };
+		EA1547681ABB6D860094AC4C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1547671ABB6D860094AC4C /* Person.m */; };
+		EA15476B1ABB6D990094AC4C /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15476A1ABB6D990094AC4C /* Event.m */; };
 		EADAFBA31AB9FCD1005CF333 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA21AB9FCD1005CF333 /* main.m */; };
 		EADAFBA61AB9FCD1005CF333 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA51AB9FCD1005CF333 /* AppDelegate.m */; };
 		EADAFBA91AB9FCD1005CF333 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA81AB9FCD1005CF333 /* ViewController.m */; };
@@ -18,8 +21,6 @@
 		EADAFBCD1ABA1801005CF333 /* NWTimelineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBCC1ABA1801005CF333 /* NWTimelineTableViewController.m */; };
 		EADAFBD01ABA20E9005CF333 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EADAFBCE1ABA20E9005CF333 /* Main.storyboard */; };
 		EADAFC291ABA5010005CF333 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC271ABA5010005CF333 /* Model.xcdatamodeld */; };
-		EADAFC2C1ABA5071005CF333 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC2B1ABA5071005CF333 /* Person.m */; };
-		EADAFC2F1ABA507D005CF333 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC2E1ABA507D005CF333 /* Event.m */; };
 		EADAFC321ABA52CA005CF333 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADAFC311ABA52CA005CF333 /* CoreData.framework */; };
 		EADAFC6F1ABA5380005CF333 /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC371ABA5380005CF333 /* MagicalImportFunctions.m */; };
 		EADAFC701ABA5380005CF333 /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC391ABA5380005CF333 /* NSAttributeDescription+MagicalDataImport.m */; };
@@ -93,6 +94,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA1547631ABB6CE60094AC4C /* BBEventInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBEventInputViewController.h; sourceTree = "<group>"; };
+		EA1547641ABB6CE60094AC4C /* BBEventInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBEventInputViewController.m; sourceTree = "<group>"; };
+		EA1547661ABB6D860094AC4C /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		EA1547671ABB6D860094AC4C /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		EA1547691ABB6D990094AC4C /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		EA15476A1ABB6D990094AC4C /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		EADAFB9D1AB9FCD1005CF333 /* Warriors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Warriors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EADAFBA11AB9FCD1005CF333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EADAFBA21AB9FCD1005CF333 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,10 +119,6 @@
 		EADAFBCC1ABA1801005CF333 /* NWTimelineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWTimelineTableViewController.m; sourceTree = "<group>"; };
 		EADAFBCF1ABA20E9005CF333 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Warriors/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EADAFC281ABA5010005CF333 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		EADAFC2A1ABA5071005CF333 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		EADAFC2B1ABA5071005CF333 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		EADAFC2D1ABA507D005CF333 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = ../Event.h; sourceTree = "<group>"; };
-		EADAFC2E1ABA507D005CF333 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = ../Event.m; sourceTree = "<group>"; };
 		EADAFC311ABA52CA005CF333 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		EADAFC361ABA5380005CF333 /* MagicalImportFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalImportFunctions.h; sourceTree = "<group>"; };
 		EADAFC371ABA5380005CF333 /* MagicalImportFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalImportFunctions.m; sourceTree = "<group>"; };
@@ -233,6 +236,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA15475F1ABB69AB0094AC4C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EADAFCBB1ABA9458005CF333 /* menu-50.png */,
+				EADAFCC71ABA9618005CF333 /* mark_as_favourite-50.png */,
+				EADAFCC51ABA95F2005CF333 /* collect-50.png */,
+				EADAFCC31ABA95AA005CF333 /* price_tag-50.png */,
+				EADAFCB91ABA9329005CF333 /* stack_of_photos-50.png */,
+				EADAFCBD1ABA9498005CF333 /* bullish-50.png */,
+				EADAFCCF1ABABB53005CF333 /* card.jpg */,
+				EADAFCB51ABA9102005CF333 /* camera-50.png */,
+				EADAFCB71ABA9251005CF333 /* camera_filled-50.png */,
+				EADAFCBF1ABA9519005CF333 /* exit-50.png */,
+				EADAFCC11ABA9531005CF333 /* settings3-50.png */,
+				EADAFCC91ABAAC32005CF333 /* user_male_circle-50.png */,
+				EADAFCD11ABABC03005CF333 /* plus-50.png */,
+				EADAFBC91ABA0CA5005CF333 /* blurrybackground.jpg */,
+				EADAFCD51ABABD3C005CF333 /* undo-32.png */,
+				EADAFCD71ABABD8A005CF333 /* plus-32.png */,
+				EADAFCD31ABABCD1005CF333 /* undo-50.png */,
+				EADAFCA51ABA6AD2005CF333 /* MessageEntryBackground.png */,
+				EADAFCA61ABA6AD2005CF333 /* MessageEntryBackground@2x.png */,
+				EADAFCA71ABA6AD2005CF333 /* MessageEntryInputField.png */,
+				EADAFCA81ABA6AD2005CF333 /* MessageEntryInputField@2x.png */,
+				EADAFCA91ABA6AD2005CF333 /* MessageEntrySendButton.png */,
+				EADAFCAA1ABA6AD2005CF333 /* MessageEntrySendButton@2x.png */,
+				EADAFCAB1ABA6AD2005CF333 /* MessageEntrySendButtonPressed.png */,
+				EADAFCAC1ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		EA1547601ABB69CA0094AC4C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EA1547691ABB6D990094AC4C /* Event.h */,
+				EA15476A1ABB6D990094AC4C /* Event.m */,
+				EADAFC271ABA5010005CF333 /* Model.xcdatamodeld */,
+				EA1547661ABB6D860094AC4C /* Person.h */,
+				EA1547671ABB6D860094AC4C /* Person.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EA1547611ABB69DD0094AC4C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EADAFC951ABA61FF005CF333 /* UIImage+ImageEffects.h */,
+				EADAFC961ABA61FF005CF333 /* UIImage+ImageEffects.m */,
+				EADAFC971ABA61FF005CF333 /* UIView+UIViewExtension.h */,
+				EADAFC981ABA61FF005CF333 /* UIView+UIViewExtension.m */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		EA1547621ABB69EC0094AC4C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EADAFC8B1ABA580A005CF333 /* BBTimelineTableViewCell.h */,
+				EADAFC8C1ABA580A005CF333 /* BBTimelineTableViewCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		EADAFB941AB9FCD1005CF333 = {
 			isa = PBXGroup;
 			children = (
@@ -254,59 +321,29 @@
 		EADAFB9F1AB9FCD1005CF333 /* Warriors */ = {
 			isa = PBXGroup;
 			children = (
-				EADAFCA51ABA6AD2005CF333 /* MessageEntryBackground.png */,
-				EADAFCA61ABA6AD2005CF333 /* MessageEntryBackground@2x.png */,
-				EADAFCA71ABA6AD2005CF333 /* MessageEntryInputField.png */,
-				EADAFCA81ABA6AD2005CF333 /* MessageEntryInputField@2x.png */,
-				EADAFCA91ABA6AD2005CF333 /* MessageEntrySendButton.png */,
-				EADAFCAA1ABA6AD2005CF333 /* MessageEntrySendButton@2x.png */,
-				EADAFCAB1ABA6AD2005CF333 /* MessageEntrySendButtonPressed.png */,
-				EADAFCAC1ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x.png */,
+				EA1547621ABB69EC0094AC4C /* Cell */,
+				EA1547611ABB69DD0094AC4C /* Extension */,
+				EADAFC331ABA5380005CF333 /* MagicalRecord */,
+				EA1547601ABB69CA0094AC4C /* Model */,
+				EA15475F1ABB69AB0094AC4C /* Resources */,
 				EADAFC9E1ABA69E6005CF333 /* TextViewGrowing */,
-				EADAFC8B1ABA580A005CF333 /* BBTimelineTableViewCell.h */,
-				EADAFC8C1ABA580A005CF333 /* BBTimelineTableViewCell.m */,
 				EADAFC8A1ABA56C4005CF333 /* NWPrefixHeader.pch */,
+				EADAFBCE1ABA20E9005CF333 /* Main.storyboard */,
+				EADAFC921ABA5FF3005CF333 /* BBModalSearchViewController.xib */,
 				EADAFC311ABA52CA005CF333 /* CoreData.framework */,
-				EADAFC271ABA5010005CF333 /* Model.xcdatamodeld */,
-				EADAFC2D1ABA507D005CF333 /* Event.h */,
-				EADAFC2E1ABA507D005CF333 /* Event.m */,
-				EADAFC2A1ABA5071005CF333 /* Person.h */,
-				EADAFC2B1ABA5071005CF333 /* Person.m */,
 				EADAFBA41AB9FCD1005CF333 /* AppDelegate.h */,
 				EADAFBA51AB9FCD1005CF333 /* AppDelegate.m */,
 				EADAFBA71AB9FCD1005CF333 /* ViewController.h */,
+				EA1547631ABB6CE60094AC4C /* BBEventInputViewController.h */,
+				EA1547641ABB6CE60094AC4C /* BBEventInputViewController.m */,
 				EADAFBA81AB9FCD1005CF333 /* ViewController.m */,
 				EADAFBCB1ABA1801005CF333 /* NWTimelineTableViewController.h */,
 				EADAFBCC1ABA1801005CF333 /* NWTimelineTableViewController.m */,
 				EADAFC901ABA5FF3005CF333 /* BBModalSearchViewController.h */,
 				EADAFC911ABA5FF3005CF333 /* BBModalSearchViewController.m */,
-				EADAFC921ABA5FF3005CF333 /* BBModalSearchViewController.xib */,
-				EADAFC951ABA61FF005CF333 /* UIImage+ImageEffects.h */,
-				EADAFC961ABA61FF005CF333 /* UIImage+ImageEffects.m */,
-				EADAFC971ABA61FF005CF333 /* UIView+UIViewExtension.h */,
-				EADAFC981ABA61FF005CF333 /* UIView+UIViewExtension.m */,
 				EADAFBC61AB9FD05005CF333 /* NWMainViewControllerTableViewController.h */,
 				EADAFBC71AB9FD05005CF333 /* NWMainViewControllerTableViewController.m */,
-				EADAFCBB1ABA9458005CF333 /* menu-50.png */,
-				EADAFCC71ABA9618005CF333 /* mark_as_favourite-50.png */,
-				EADAFCC51ABA95F2005CF333 /* collect-50.png */,
-				EADAFCC31ABA95AA005CF333 /* price_tag-50.png */,
-				EADAFCB91ABA9329005CF333 /* stack_of_photos-50.png */,
-				EADAFCBD1ABA9498005CF333 /* bullish-50.png */,
-				EADAFCCF1ABABB53005CF333 /* card.jpg */,
-				EADAFCB51ABA9102005CF333 /* camera-50.png */,
-				EADAFCB71ABA9251005CF333 /* camera_filled-50.png */,
-				EADAFCBF1ABA9519005CF333 /* exit-50.png */,
-				EADAFCC11ABA9531005CF333 /* settings3-50.png */,
-				EADAFCC91ABAAC32005CF333 /* user_male_circle-50.png */,
-				EADAFCD11ABABC03005CF333 /* plus-50.png */,
-				EADAFBC91ABA0CA5005CF333 /* blurrybackground.jpg */,
-				EADAFCD51ABABD3C005CF333 /* undo-32.png */,
-				EADAFCD71ABABD8A005CF333 /* plus-32.png */,
-				EADAFCD31ABABCD1005CF333 /* undo-50.png */,
-				EADAFC331ABA5380005CF333 /* MagicalRecord */,
 				EADAFBAD1AB9FCD1005CF333 /* Images.xcassets */,
-				EADAFBCE1ABA20E9005CF333 /* Main.storyboard */,
 				EADAFC9B1ABA6711005CF333 /* NWAddPersonTableViewController.h */,
 				EADAFC9C1ABA6711005CF333 /* NWAddPersonTableViewController.m */,
 				EADAFC8E1ABA592B005CF333 /* businesscard.jpg */,
@@ -583,11 +620,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1547681ABB6D860094AC4C /* Person.m in Sources */,
 				EADAFC771ABA5380005CF333 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				EADAFC841ABA5380005CF333 /* MagicalRecord+iCloud.m in Sources */,
 				EADAFBC81AB9FD05005CF333 /* NWMainViewControllerTableViewController.m in Sources */,
 				EADAFC791ABA5380005CF333 /* NSManagedObject+MagicalRecord.m in Sources */,
 				EADAFC821ABA5380005CF333 /* MagicalRecord+Actions.m in Sources */,
+				EA15476B1ABB6D990094AC4C /* Event.m in Sources */,
 				EADAFC7D1ABA5380005CF333 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				EADAFC811ABA5380005CF333 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				EADAFBA91AB9FCD1005CF333 /* ViewController.m in Sources */,
@@ -601,7 +640,6 @@
 				EADAFC831ABA5380005CF333 /* MagicalRecord+ErrorHandling.m in Sources */,
 				EADAFC881ABA5380005CF333 /* MagicalRecord.m in Sources */,
 				EADAFC851ABA5380005CF333 /* MagicalRecord+Options.m in Sources */,
-				EADAFC2F1ABA507D005CF333 /* Event.m in Sources */,
 				EADAFC761ABA5380005CF333 /* NSManagedObject+MagicalAggregation.m in Sources */,
 				EADAFC751ABA5380005CF333 /* NSString+MagicalDataImport.m in Sources */,
 				EADAFC741ABA5380005CF333 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
@@ -613,8 +651,8 @@
 				EADAFBA31AB9FCD1005CF333 /* main.m in Sources */,
 				EADAFC7C1ABA5380005CF333 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				EADAFC931ABA5FF3005CF333 /* BBModalSearchViewController.m in Sources */,
-				EADAFC2C1ABA5071005CF333 /* Person.m in Sources */,
 				EADAFC8D1ABA580A005CF333 /* BBTimelineTableViewCell.m in Sources */,
+				EA1547651ABB6CE60094AC4C /* BBEventInputViewController.m in Sources */,
 				EADAFC861ABA5380005CF333 /* MagicalRecord+Setup.m in Sources */,
 				EADAFC711ABA5380005CF333 /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				EADAFC9D1ABA6711005CF333 /* NWAddPersonTableViewController.m in Sources */,

@@ -2,7 +2,7 @@
 //  Event.h
 //  Warriors
 //
-//  Created by Duc Ho on 3/18/15.
+//  Created by Duc Ho on 3/19/15.
 //  Copyright (c) 2015 brianhollc. All rights reserved.
 //
 
@@ -17,8 +17,9 @@
 @property (nonatomic, retain) NSString * note;
 @property (nonatomic, retain) NSString * picture;
 @property (nonatomic, retain) NSNumber * score;
-@property (nonatomic, retain) NSDate * time;
 @property (nonatomic, retain) NSString * tag;
+@property (nonatomic, retain) NSDate * time;
+@property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) Person *person;
 
 @end

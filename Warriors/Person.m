@@ -2,7 +2,7 @@
 //  Person.m
 //  Warriors
 //
-//  Created by Duc Ho on 3/18/15.
+//  Created by Duc Ho on 3/19/15.
 //  Copyright (c) 2015 brianhollc. All rights reserved.
 //
 
@@ -26,6 +26,7 @@
 @dynamic title;
 @dynamic userId;
 @dynamic website;
+@dynamic address;
 @dynamic events;
 
 @end

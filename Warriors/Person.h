@@ -2,7 +2,7 @@
 //  Person.h
 //  Warriors
 //
-//  Created by Duc Ho on 3/18/15.
+//  Created by Duc Ho on 3/19/15.
 //  Copyright (c) 2015 brianhollc. All rights reserved.
 //
 
@@ -27,6 +27,7 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSNumber * userId;
 @property (nonatomic, retain) NSString * website;
+@property (nonatomic, retain) NSString * address;
 @property (nonatomic, retain) NSSet *events;
 @end
 
