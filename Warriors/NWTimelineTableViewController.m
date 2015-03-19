@@ -45,7 +45,7 @@
 //        [self.sidebarButton setAction: @selector( revealToggle: )];
 //        //        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 //    }
-    
+    self.title = @"Timeline";
 }
 
 - (void)fetchAllEvent {

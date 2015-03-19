@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextView *noteTextView;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
+@property (weak, nonatomic) IBOutlet UIButton *cameraButton;
 
 @property (strong, nonatomic) UIView *containerView;
 @end
@@ -24,7 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    [self.cameraButton setImage:[UIImage imageNamed:@"camera_filled-50.png"] forState:UIControlStateHighlighted];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -194,23 +196,13 @@
     self.containerView.frame = r;
 }
 
-//-(void)keyPressed: (NSNotification*) notification{
-//    // get the size of the text block so we can work our magic
-//    //    self.label.text = textView.text;
-//    NSDictionary * dict = [self textFieldDictionay:textView.text];
-//    
-//    self.nameTextField.text = dict[@"name"];
-//    self.timeTextField.text = dict[@"time"];
-//    self.titleTextField.text = dict[@"title"];
-//    self.companyTextFiled.text = dict[@"company"];
-//    self.emailTextField.text = dict[@"email"];
-//    self.noteTextView.text = dict[@"note"];
-//    
-//}
 
 -(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
     return YES;
+}
+- (IBAction)cameraButtonPressed:(id)sender {
+    NSLog(@"Camera Pressed");
 }
 
 /*

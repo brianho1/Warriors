@@ -64,6 +64,16 @@
 		EADAFCB21ABA6AD2005CF333 /* MessageEntrySendButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCAA1ABA6AD2005CF333 /* MessageEntrySendButton@2x.png */; };
 		EADAFCB31ABA6AD2005CF333 /* MessageEntrySendButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCAB1ABA6AD2005CF333 /* MessageEntrySendButtonPressed.png */; };
 		EADAFCB41ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCAC1ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x.png */; };
+		EADAFCB61ABA9102005CF333 /* camera-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCB51ABA9102005CF333 /* camera-50.png */; };
+		EADAFCB81ABA9251005CF333 /* camera_filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCB71ABA9251005CF333 /* camera_filled-50.png */; };
+		EADAFCBA1ABA9329005CF333 /* stack_of_photos-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCB91ABA9329005CF333 /* stack_of_photos-50.png */; };
+		EADAFCBC1ABA9458005CF333 /* menu-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCBB1ABA9458005CF333 /* menu-50.png */; };
+		EADAFCBE1ABA9498005CF333 /* bullish-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCBD1ABA9498005CF333 /* bullish-50.png */; };
+		EADAFCC01ABA9519005CF333 /* exit-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCBF1ABA9519005CF333 /* exit-50.png */; };
+		EADAFCC21ABA9531005CF333 /* settings3-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCC11ABA9531005CF333 /* settings3-50.png */; };
+		EADAFCC41ABA95AA005CF333 /* price_tag-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCC31ABA95AA005CF333 /* price_tag-50.png */; };
+		EADAFCC61ABA95F2005CF333 /* collect-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCC51ABA95F2005CF333 /* collect-50.png */; };
+		EADAFCC81ABA9618005CF333 /* mark_as_favourite-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCC71ABA9618005CF333 /* mark_as_favourite-50.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +190,16 @@
 		EADAFCAA1ABA6AD2005CF333 /* MessageEntrySendButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntrySendButton@2x.png"; sourceTree = "<group>"; };
 		EADAFCAB1ABA6AD2005CF333 /* MessageEntrySendButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessageEntrySendButtonPressed.png; sourceTree = "<group>"; };
 		EADAFCAC1ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntrySendButtonPressed@2x.png"; sourceTree = "<group>"; };
+		EADAFCB51ABA9102005CF333 /* camera-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-50.png"; sourceTree = "<group>"; };
+		EADAFCB71ABA9251005CF333 /* camera_filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera_filled-50.png"; sourceTree = "<group>"; };
+		EADAFCB91ABA9329005CF333 /* stack_of_photos-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stack_of_photos-50.png"; sourceTree = "<group>"; };
+		EADAFCBB1ABA9458005CF333 /* menu-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-50.png"; sourceTree = "<group>"; };
+		EADAFCBD1ABA9498005CF333 /* bullish-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bullish-50.png"; sourceTree = "<group>"; };
+		EADAFCBF1ABA9519005CF333 /* exit-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exit-50.png"; sourceTree = "<group>"; };
+		EADAFCC11ABA9531005CF333 /* settings3-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings3-50.png"; sourceTree = "<group>"; };
+		EADAFCC31ABA95AA005CF333 /* price_tag-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "price_tag-50.png"; sourceTree = "<group>"; };
+		EADAFCC51ABA95F2005CF333 /* collect-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "collect-50.png"; sourceTree = "<group>"; };
+		EADAFCC71ABA9618005CF333 /* mark_as_favourite-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mark_as_favourite-50.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +275,16 @@
 				EADAFC981ABA61FF005CF333 /* UIView+UIViewExtension.m */,
 				EADAFBC61AB9FD05005CF333 /* NWMainViewControllerTableViewController.h */,
 				EADAFBC71AB9FD05005CF333 /* NWMainViewControllerTableViewController.m */,
+				EADAFCBB1ABA9458005CF333 /* menu-50.png */,
+				EADAFCC71ABA9618005CF333 /* mark_as_favourite-50.png */,
+				EADAFCC51ABA95F2005CF333 /* collect-50.png */,
+				EADAFCC31ABA95AA005CF333 /* price_tag-50.png */,
+				EADAFCB91ABA9329005CF333 /* stack_of_photos-50.png */,
+				EADAFCBD1ABA9498005CF333 /* bullish-50.png */,
+				EADAFCB51ABA9102005CF333 /* camera-50.png */,
+				EADAFCB71ABA9251005CF333 /* camera_filled-50.png */,
+				EADAFCBF1ABA9519005CF333 /* exit-50.png */,
+				EADAFCC11ABA9531005CF333 /* settings3-50.png */,
 				EADAFBC91ABA0CA5005CF333 /* blurrybackground.jpg */,
 				EADAFC331ABA5380005CF333 /* MagicalRecord */,
 				EADAFBAD1AB9FCD1005CF333 /* Images.xcassets */,
@@ -488,16 +518,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EADAFCC21ABA9531005CF333 /* settings3-50.png in Resources */,
+				EADAFCC61ABA95F2005CF333 /* collect-50.png in Resources */,
+				EADAFCC41ABA95AA005CF333 /* price_tag-50.png in Resources */,
 				EADAFC8F1ABA592B005CF333 /* card.jpg in Resources */,
+				EADAFCB81ABA9251005CF333 /* camera_filled-50.png in Resources */,
+				EADAFCC01ABA9519005CF333 /* exit-50.png in Resources */,
 				EADAFCB11ABA6AD2005CF333 /* MessageEntrySendButton.png in Resources */,
 				EADAFCB41ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x.png in Resources */,
 				EADAFCAF1ABA6AD2005CF333 /* MessageEntryInputField.png in Resources */,
+				EADAFCBC1ABA9458005CF333 /* menu-50.png in Resources */,
 				EADAFCB21ABA6AD2005CF333 /* MessageEntrySendButton@2x.png in Resources */,
+				EADAFCB61ABA9102005CF333 /* camera-50.png in Resources */,
 				EADAFCAE1ABA6AD2005CF333 /* MessageEntryBackground@2x.png in Resources */,
 				EADAFCB01ABA6AD2005CF333 /* MessageEntryInputField@2x.png in Resources */,
 				EADAFCB31ABA6AD2005CF333 /* MessageEntrySendButtonPressed.png in Resources */,
+				EADAFCC81ABA9618005CF333 /* mark_as_favourite-50.png in Resources */,
 				EADAFCAD1ABA6AD2005CF333 /* MessageEntryBackground.png in Resources */,
 				EADAFBB11AB9FCD1005CF333 /* LaunchScreen.xib in Resources */,
+				EADAFCBA1ABA9329005CF333 /* stack_of_photos-50.png in Resources */,
+				EADAFCBE1ABA9498005CF333 /* bullish-50.png in Resources */,
 				EADAFC941ABA5FF3005CF333 /* BBModalSearchViewController.xib in Resources */,
 				EADAFBAE1AB9FCD1005CF333 /* Images.xcassets in Resources */,
 				EADAFBCA1ABA0CA5005CF333 /* blurrybackground.jpg in Resources */,

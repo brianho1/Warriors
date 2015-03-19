@@ -25,6 +25,9 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menu-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fat-EG-lZL">
+                                            <rect key="frame" x="19" y="7" width="30" height="30"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -40,6 +43,9 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stack_of_photos-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="ed2-Bd-efW">
+                                            <rect key="frame" x="23" y="7" width="30" height="30"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -55,6 +61,9 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="collect-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="drK-Jq-tkQ">
+                                            <rect key="frame" x="21" y="7" width="30" height="30"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -70,6 +79,9 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="price_tag-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gsv-rD-fO2">
+                                            <rect key="frame" x="21" y="5" width="30" height="30"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -85,6 +97,9 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bullish-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zyw-Wx-bDb">
+                                            <rect key="frame" x="20" y="7" width="30" height="30"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -100,6 +115,9 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mark_as_favourite-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="k1y-ZV-gpU">
+                                            <rect key="frame" x="21" y="7" width="30" height="30"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -115,6 +133,9 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settings3-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="wn7-iT-63f">
+                                            <rect key="frame" x="21" y="5" width="30" height="30"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -130,6 +151,9 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="exit-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="lsz-PJ-1xl">
+                                            <rect key="frame" x="21" y="5" width="30" height="30"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -148,7 +172,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Km-ST-VtD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1090" y="359"/>
+            <point key="canvasLocation" x="1090" y="357"/>
         </scene>
         <!--Timeline Table View Controller-->
         <scene sceneID="7qD-nk-vWk">
@@ -341,14 +365,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9a-qI-0mq">
+                                <rect key="frame" x="247" y="341" width="105" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="p16-LF-csx"/>
+                                    <constraint firstAttribute="height" constant="50" id="q0s-sy-w8f"/>
+                                </constraints>
+                                <state key="normal" image="camera-50.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cameraButtonPressed:" destination="0vA-LX-dhU" eventType="touchUpInside" id="7wH-xO-gbC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -364,7 +398,9 @@
                             <constraint firstItem="eC5-c4-QFv" firstAttribute="leading" secondItem="ioz-QA-OmQ" secondAttribute="leading" constant="1" id="Dh4-Ds-Nzc"/>
                             <constraint firstItem="sht-zI-zwS" firstAttribute="top" secondItem="uZP-KC-6h0" secondAttribute="bottom" constant="4" id="FQe-bf-p0I"/>
                             <constraint firstItem="eC5-c4-QFv" firstAttribute="width" secondItem="nRV-1O-wK7" secondAttribute="width" id="Gdw-AT-hKs"/>
+                            <constraint firstAttribute="centerX" secondItem="o9a-qI-0mq" secondAttribute="centerX" constant="0.5" id="LmC-mx-0xG"/>
                             <constraint firstItem="nRV-1O-wK7" firstAttribute="top" secondItem="sht-zI-zwS" secondAttribute="bottom" constant="3" id="McI-7Q-dSx"/>
+                            <constraint firstItem="o9a-qI-0mq" firstAttribute="top" secondItem="ioz-QA-OmQ" secondAttribute="bottom" constant="8" id="OYb-MI-ycG"/>
                             <constraint firstItem="ioz-QA-OmQ" firstAttribute="top" secondItem="eC5-c4-QFv" secondAttribute="bottom" constant="8" id="PPw-G2-SW0"/>
                             <constraint firstItem="eC5-c4-QFv" firstAttribute="leading" secondItem="nRV-1O-wK7" secondAttribute="leading" id="SUb-kb-FLn"/>
                             <constraint firstItem="Jqg-TY-Btp" firstAttribute="top" secondItem="epy-EX-O9Q" secondAttribute="bottom" constant="8" id="Sox-iQ-K2r"/>
@@ -374,6 +410,7 @@
                             <constraint firstItem="nRV-1O-wK7" firstAttribute="leading" secondItem="sht-zI-zwS" secondAttribute="leading" constant="1" id="dwv-60-L9N"/>
                             <constraint firstItem="uZP-KC-6h0" firstAttribute="top" secondItem="Jqg-TY-Btp" secondAttribute="bottom" constant="3" id="jlr-zD-2vA"/>
                             <constraint firstItem="eC5-c4-QFv" firstAttribute="top" secondItem="nRV-1O-wK7" secondAttribute="bottom" constant="3" id="obl-av-k2C"/>
+                            <constraint firstAttribute="centerY" secondItem="o9a-qI-0mq" secondAttribute="centerY" constant="-66" id="xTu-Go-35z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="umc-9r-xu3">
@@ -384,6 +421,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cameraButton" destination="o9a-qI-0mq" id="I6s-id-PdA"/>
                         <outlet property="companyTextFiled" destination="sht-zI-zwS" id="Wr9-0f-lr9"/>
                         <outlet property="emailTextField" destination="eC5-c4-QFv" id="WF9-f0-9q0"/>
                         <outlet property="nameTextField" destination="Jqg-TY-Btp" id="hSM-xd-tbe"/>
@@ -397,6 +435,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bullish-50.png" width="50" height="50"/>
+        <image name="camera-50.png" width="50" height="50"/>
         <image name="card.jpg" width="300" height="171"/>
+        <image name="collect-50.png" width="50" height="50"/>
+        <image name="exit-50.png" width="50" height="50"/>
+        <image name="mark_as_favourite-50.png" width="50" height="50"/>
+        <image name="menu-50.png" width="50" height="50"/>
+        <image name="price_tag-50.png" width="50" height="50"/>
+        <image name="settings3-50.png" width="50" height="50"/>
+        <image name="stack_of_photos-50.png" width="50" height="50"/>
     </resources>
 </document>
