@@ -49,6 +49,10 @@
 		EADAFC881ABA5380005CF333 /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC6C1ABA5380005CF333 /* MagicalRecord.m */; };
 		EADAFC8D1ABA580A005CF333 /* BBTimelineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC8C1ABA580A005CF333 /* BBTimelineTableViewCell.m */; };
 		EADAFC8F1ABA592B005CF333 /* card.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EADAFC8E1ABA592B005CF333 /* card.jpg */; };
+		EADAFC931ABA5FF3005CF333 /* BBModalSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC911ABA5FF3005CF333 /* BBModalSearchViewController.m */; };
+		EADAFC941ABA5FF3005CF333 /* BBModalSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EADAFC921ABA5FF3005CF333 /* BBModalSearchViewController.xib */; };
+		EADAFC991ABA61FF005CF333 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC961ABA61FF005CF333 /* UIImage+ImageEffects.m */; };
+		EADAFC9A1ABA61FF005CF333 /* UIView+UIViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC981ABA61FF005CF333 /* UIView+UIViewExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +148,13 @@
 		EADAFC8B1ABA580A005CF333 /* BBTimelineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTimelineTableViewCell.h; sourceTree = "<group>"; };
 		EADAFC8C1ABA580A005CF333 /* BBTimelineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTimelineTableViewCell.m; sourceTree = "<group>"; };
 		EADAFC8E1ABA592B005CF333 /* card.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card.jpg; sourceTree = "<group>"; };
+		EADAFC901ABA5FF3005CF333 /* BBModalSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBModalSearchViewController.h; sourceTree = "<group>"; };
+		EADAFC911ABA5FF3005CF333 /* BBModalSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBModalSearchViewController.m; sourceTree = "<group>"; };
+		EADAFC921ABA5FF3005CF333 /* BBModalSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBModalSearchViewController.xib; sourceTree = "<group>"; };
+		EADAFC951ABA61FF005CF333 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		EADAFC961ABA61FF005CF333 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		EADAFC971ABA61FF005CF333 /* UIView+UIViewExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIViewExtension.h"; sourceTree = "<group>"; };
+		EADAFC981ABA61FF005CF333 /* UIView+UIViewExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +212,13 @@
 				EADAFBA81AB9FCD1005CF333 /* ViewController.m */,
 				EADAFBCB1ABA1801005CF333 /* NWTimelineTableViewController.h */,
 				EADAFBCC1ABA1801005CF333 /* NWTimelineTableViewController.m */,
+				EADAFC901ABA5FF3005CF333 /* BBModalSearchViewController.h */,
+				EADAFC911ABA5FF3005CF333 /* BBModalSearchViewController.m */,
+				EADAFC921ABA5FF3005CF333 /* BBModalSearchViewController.xib */,
+				EADAFC951ABA61FF005CF333 /* UIImage+ImageEffects.h */,
+				EADAFC961ABA61FF005CF333 /* UIImage+ImageEffects.m */,
+				EADAFC971ABA61FF005CF333 /* UIView+UIViewExtension.h */,
+				EADAFC981ABA61FF005CF333 /* UIView+UIViewExtension.m */,
 				EADAFBC61AB9FD05005CF333 /* NWMainViewControllerTableViewController.h */,
 				EADAFBC71AB9FD05005CF333 /* NWMainViewControllerTableViewController.m */,
 				EADAFBC91ABA0CA5005CF333 /* blurrybackground.jpg */,
@@ -424,6 +442,7 @@
 			files = (
 				EADAFC8F1ABA592B005CF333 /* card.jpg in Resources */,
 				EADAFBB11AB9FCD1005CF333 /* LaunchScreen.xib in Resources */,
+				EADAFC941ABA5FF3005CF333 /* BBModalSearchViewController.xib in Resources */,
 				EADAFBAE1AB9FCD1005CF333 /* Images.xcassets in Resources */,
 				EADAFBCA1ABA0CA5005CF333 /* blurrybackground.jpg in Resources */,
 				EADAFBD01ABA20E9005CF333 /* Main.storyboard in Resources */,
@@ -466,10 +485,13 @@
 				EADAFC751ABA5380005CF333 /* NSString+MagicalDataImport.m in Sources */,
 				EADAFC741ABA5380005CF333 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				EADAFBCD1ABA1801005CF333 /* NWTimelineTableViewController.m in Sources */,
+				EADAFC991ABA61FF005CF333 /* UIImage+ImageEffects.m in Sources */,
+				EADAFC9A1ABA61FF005CF333 /* UIView+UIViewExtension.m in Sources */,
 				EADAFC7F1ABA5380005CF333 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				EADAFBA61AB9FCD1005CF333 /* AppDelegate.m in Sources */,
 				EADAFBA31AB9FCD1005CF333 /* main.m in Sources */,
 				EADAFC7C1ABA5380005CF333 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
+				EADAFC931ABA5FF3005CF333 /* BBModalSearchViewController.m in Sources */,
 				EADAFC2C1ABA5071005CF333 /* Person.m in Sources */,
 				EADAFC8D1ABA580A005CF333 /* BBTimelineTableViewCell.m in Sources */,
 				EADAFC861ABA5380005CF333 /* MagicalRecord+Setup.m in Sources */,

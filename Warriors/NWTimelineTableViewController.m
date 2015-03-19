@@ -10,17 +10,18 @@
 #import "Event.h"
 #import "BBTimelineTableViewCell.h"
 //#import "BBPersonViewController.h"
-//#import "BBModalSearchViewController.h"
-//#import "UIImage+ImageEffects.h"
-//#import "UIView+UIViewExtension.h"
+#import "BBModalSearchViewController.h"
+#import "UIImage+ImageEffects.h"
+#import "UIView+UIViewExtension.h"
 //#import "BBEventInputViewController.h"
 
 
-@interface NWTimelineTableViewController ()
+@interface NWTimelineTableViewController () <BBModalSearchViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSMutableArray *events;
 @property (nonatomic) NSMutableArray *people;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) BBModalSearchViewController *modal;
 
 @end
 
@@ -199,6 +200,76 @@
 #pragma mark - back
 - (IBAction)backButtonClicked:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - add
+- (IBAction)buttonClick:(id)sender {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Please select an option"
+                                                                   message:@"Adding a new event for new user or for existing user?"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Add New" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              [self performSegueWithIdentifier:@"addEventForNewUser" sender:self];
+                                                          }];
+    UIAlertAction* existingUser = [UIAlertAction actionWithTitle:@"Existing Network" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        //        [self performSegueWithIdentifier:@"addEventForExistingUser" sender:self];
+        [self presentModalVC];
+    }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    
+    [alert addAction:defaultAction];
+    [alert addAction:existingUser];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)presentModalVC {
+    self.modal = [[BBModalSearchViewController alloc] init];
+    self.modal.view.frame = self.view.frame;
+    self.modal.delegate = self;
+    [self presentViewController:self.modal animated:YES completion:nil];
+    UIImage* imageOfUnderlyingView = [self.view convertViewToImage];
+    imageOfUnderlyingView = [imageOfUnderlyingView applyBlurWithRadius:20
+                                                             tintColor:[UIColor colorWithWhite:0.5 alpha:0.1]
+                                                 saturationDeltaFactor:1.3
+                                                             maskImage:nil];
+    
+    self.modal.view.backgroundColor = [UIColor clearColor];
+    UIImageView* backView = [[UIImageView alloc] initWithFrame:self.view.frame];
+    backView.image = imageOfUnderlyingView;
+    backView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
+    [self.modal.view insertSubview:backView atIndex:0];
+    
+}
+- (void)doneWithSearch:(Person *)person {
+    self.personToPass = person;
+    [self performSegueWithIdentifier:@"addEventForExistingUser" sender:self];
+}
+
+
+- (void)showMainMenu:(NSNotification *)note {
+    [self performSegueWithIdentifier:@"addEventForExistingUser" sender:self];
+}
+
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    BBPersonViewController *upcoming = segue.destinationViewController;
+//    if ([[segue identifier] isEqualToString:@"editPerson"]) {
+//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//        Event *event			   = self.events[indexPath.row];
+//        upcoming.event		   = event;
+//    } else if ([segue.identifier isEqualToString:@"addPerson"]) {
+//        //        upcoming.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonSystemItemCancel target:upcoming action:@selector(cancelAdd)];
+//        //        upcoming.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonSystemItemAdd target:upcoming action:@selector(addNewPerson)];
+//    }
+//    else if ([segue.identifier isEqualToString:@"addEventForExistingUser"]) {
+//        //        UINavigationController *vc = segue.destinationViewController;
+//        //        NSArray *viewControllers = vc.viewControllers;
+//        BBEventInputViewController *eventInput = segue.destinationViewController;
+//        eventInput.person = self.personToPass;
+//    }
 }
 
 /*

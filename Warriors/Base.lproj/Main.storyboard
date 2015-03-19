@@ -261,6 +261,11 @@
                                 <action selector="backButtonClicked:" destination="Whh-4U-2uh" id="e2D-ed-Pvs"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="kxW-QL-VFf">
+                            <connections>
+                                <action selector="buttonClick:" destination="Whh-4U-2uh" id="i99-Fn-419"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="UDE-qM-xQ7" id="L1y-J9-XVC"/>
