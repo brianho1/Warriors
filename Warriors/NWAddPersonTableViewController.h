@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "Event.h"
+#import "HPGrowingTextView.h"
 
-@interface NWAddPersonTableViewController : UITableViewController
+
+@interface NWAddPersonTableViewController : UIViewController <HPGrowingTextViewDelegate>{
+    HPGrowingTextView *textView;
+}
+
+-(void)resignTextView;
+
 
 @property (strong, nonatomic) Event * event;
 

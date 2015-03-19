@@ -54,6 +54,16 @@
 		EADAFC991ABA61FF005CF333 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC961ABA61FF005CF333 /* UIImage+ImageEffects.m */; };
 		EADAFC9A1ABA61FF005CF333 /* UIView+UIViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC981ABA61FF005CF333 /* UIView+UIViewExtension.m */; };
 		EADAFC9D1ABA6711005CF333 /* NWAddPersonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC9C1ABA6711005CF333 /* NWAddPersonTableViewController.m */; };
+		EADAFCA31ABA69E6005CF333 /* HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFCA01ABA69E6005CF333 /* HPGrowingTextView.m */; };
+		EADAFCA41ABA69E6005CF333 /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFCA21ABA69E6005CF333 /* HPTextViewInternal.m */; };
+		EADAFCAD1ABA6AD2005CF333 /* MessageEntryBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCA51ABA6AD2005CF333 /* MessageEntryBackground.png */; };
+		EADAFCAE1ABA6AD2005CF333 /* MessageEntryBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCA61ABA6AD2005CF333 /* MessageEntryBackground@2x.png */; };
+		EADAFCAF1ABA6AD2005CF333 /* MessageEntryInputField.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCA71ABA6AD2005CF333 /* MessageEntryInputField.png */; };
+		EADAFCB01ABA6AD2005CF333 /* MessageEntryInputField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCA81ABA6AD2005CF333 /* MessageEntryInputField@2x.png */; };
+		EADAFCB11ABA6AD2005CF333 /* MessageEntrySendButton.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCA91ABA6AD2005CF333 /* MessageEntrySendButton.png */; };
+		EADAFCB21ABA6AD2005CF333 /* MessageEntrySendButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCAA1ABA6AD2005CF333 /* MessageEntrySendButton@2x.png */; };
+		EADAFCB31ABA6AD2005CF333 /* MessageEntrySendButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCAB1ABA6AD2005CF333 /* MessageEntrySendButtonPressed.png */; };
+		EADAFCB41ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCAC1ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +168,18 @@
 		EADAFC981ABA61FF005CF333 /* UIView+UIViewExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewExtension.m"; sourceTree = "<group>"; };
 		EADAFC9B1ABA6711005CF333 /* NWAddPersonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWAddPersonTableViewController.h; sourceTree = "<group>"; };
 		EADAFC9C1ABA6711005CF333 /* NWAddPersonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWAddPersonTableViewController.m; sourceTree = "<group>"; };
+		EADAFC9F1ABA69E6005CF333 /* HPGrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPGrowingTextView.h; sourceTree = "<group>"; };
+		EADAFCA01ABA69E6005CF333 /* HPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGrowingTextView.m; sourceTree = "<group>"; };
+		EADAFCA11ABA69E6005CF333 /* HPTextViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTextViewInternal.h; sourceTree = "<group>"; };
+		EADAFCA21ABA69E6005CF333 /* HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTextViewInternal.m; sourceTree = "<group>"; };
+		EADAFCA51ABA6AD2005CF333 /* MessageEntryBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessageEntryBackground.png; sourceTree = "<group>"; };
+		EADAFCA61ABA6AD2005CF333 /* MessageEntryBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntryBackground@2x.png"; sourceTree = "<group>"; };
+		EADAFCA71ABA6AD2005CF333 /* MessageEntryInputField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessageEntryInputField.png; sourceTree = "<group>"; };
+		EADAFCA81ABA6AD2005CF333 /* MessageEntryInputField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntryInputField@2x.png"; sourceTree = "<group>"; };
+		EADAFCA91ABA6AD2005CF333 /* MessageEntrySendButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessageEntrySendButton.png; sourceTree = "<group>"; };
+		EADAFCAA1ABA6AD2005CF333 /* MessageEntrySendButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntrySendButton@2x.png"; sourceTree = "<group>"; };
+		EADAFCAB1ABA6AD2005CF333 /* MessageEntrySendButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessageEntrySendButtonPressed.png; sourceTree = "<group>"; };
+		EADAFCAC1ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntrySendButtonPressed@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +222,15 @@
 		EADAFB9F1AB9FCD1005CF333 /* Warriors */ = {
 			isa = PBXGroup;
 			children = (
+				EADAFCA51ABA6AD2005CF333 /* MessageEntryBackground.png */,
+				EADAFCA61ABA6AD2005CF333 /* MessageEntryBackground@2x.png */,
+				EADAFCA71ABA6AD2005CF333 /* MessageEntryInputField.png */,
+				EADAFCA81ABA6AD2005CF333 /* MessageEntryInputField@2x.png */,
+				EADAFCA91ABA6AD2005CF333 /* MessageEntrySendButton.png */,
+				EADAFCAA1ABA6AD2005CF333 /* MessageEntrySendButton@2x.png */,
+				EADAFCAB1ABA6AD2005CF333 /* MessageEntrySendButtonPressed.png */,
+				EADAFCAC1ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x.png */,
+				EADAFC9E1ABA69E6005CF333 /* TextViewGrowing */,
 				EADAFC8B1ABA580A005CF333 /* BBTimelineTableViewCell.h */,
 				EADAFC8C1ABA580A005CF333 /* BBTimelineTableViewCell.m */,
 				EADAFC8A1ABA56C4005CF333 /* NWPrefixHeader.pch */,
@@ -365,6 +396,18 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		EADAFC9E1ABA69E6005CF333 /* TextViewGrowing */ = {
+			isa = PBXGroup;
+			children = (
+				EADAFC9F1ABA69E6005CF333 /* HPGrowingTextView.h */,
+				EADAFCA01ABA69E6005CF333 /* HPGrowingTextView.m */,
+				EADAFCA11ABA69E6005CF333 /* HPTextViewInternal.h */,
+				EADAFCA21ABA69E6005CF333 /* HPTextViewInternal.m */,
+			);
+			name = TextViewGrowing;
+			path = class;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -446,6 +489,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EADAFC8F1ABA592B005CF333 /* card.jpg in Resources */,
+				EADAFCB11ABA6AD2005CF333 /* MessageEntrySendButton.png in Resources */,
+				EADAFCB41ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x.png in Resources */,
+				EADAFCAF1ABA6AD2005CF333 /* MessageEntryInputField.png in Resources */,
+				EADAFCB21ABA6AD2005CF333 /* MessageEntrySendButton@2x.png in Resources */,
+				EADAFCAE1ABA6AD2005CF333 /* MessageEntryBackground@2x.png in Resources */,
+				EADAFCB01ABA6AD2005CF333 /* MessageEntryInputField@2x.png in Resources */,
+				EADAFCB31ABA6AD2005CF333 /* MessageEntrySendButtonPressed.png in Resources */,
+				EADAFCAD1ABA6AD2005CF333 /* MessageEntryBackground.png in Resources */,
 				EADAFBB11AB9FCD1005CF333 /* LaunchScreen.xib in Resources */,
 				EADAFC941ABA5FF3005CF333 /* BBModalSearchViewController.xib in Resources */,
 				EADAFBAE1AB9FCD1005CF333 /* Images.xcassets in Resources */,
@@ -479,6 +530,7 @@
 				EADAFC7E1ABA5380005CF333 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				EADAFC731ABA5380005CF333 /* NSObject+MagicalDataImport.m in Sources */,
 				EADAFC7B1ABA5380005CF333 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
+				EADAFCA31ABA69E6005CF333 /* HPGrowingTextView.m in Sources */,
 				EADAFC871ABA5380005CF333 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				EADAFC701ABA5380005CF333 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				EADAFC7A1ABA5380005CF333 /* NSManagedObject+MagicalRequests.m in Sources */,
@@ -505,6 +557,7 @@
 				EADAFC291ABA5010005CF333 /* Model.xcdatamodeld in Sources */,
 				EADAFC6F1ABA5380005CF333 /* MagicalImportFunctions.m in Sources */,
 				EADAFC781ABA5380005CF333 /* NSManagedObject+MagicalFinders.m in Sources */,
+				EADAFCA41ABA69E6005CF333 /* HPTextViewInternal.m in Sources */,
 				EADAFC721ABA5380005CF333 /* NSNumber+MagicalDataImport.m in Sources */,
 				EADAFC801ABA5380005CF333 /* NSPersistentStore+MagicalRecord.m in Sources */,
 			);
