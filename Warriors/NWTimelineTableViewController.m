@@ -97,11 +97,28 @@
     return cell;
 }
 
+//custom animation
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    // setup initial state (e.g. before animation)
+    cell.layer.shadowColor = [[UIColor blackColor] CGColor];
+    cell.layer.shadowOffset = CGSizeMake(10, 10);
+    cell.alpha = 0;
+    cell.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5);
+    cell.layer.anchorPoint = CGPointMake(0, 0.5);
+    
+    // define final state (e.g. after animation) & commit animation
+    [UIView beginAnimations:@"scaleTableViewCellAnimationID" context:NULL];
+    [UIView setAnimationDuration:0.7];
+    cell.layer.shadowOffset = CGSizeMake(0, 0);
+    cell.alpha = 1;
+    cell.layer.transform = CATransform3DIdentity;
+    [UIView commitAnimations];
+}
+
 - (void)configureCell:(BBTimelineTableViewCell *)cell atIndex:(NSIndexPath*)indexPath {
     
     Event *event = [self.events objectAtIndex:indexPath.row];
     Person *person = event.person;
-    
     
     cell.nameLabel.text = [NSString stringWithFormat:@"%@ %@",person.firstName,person.lastName];
     cell.noteLabel.text = event.note;

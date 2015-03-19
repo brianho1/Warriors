@@ -48,7 +48,7 @@
 		EADAFC871ABA5380005CF333 /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC6A1ABA5380005CF333 /* MagicalRecord+ShorthandSupport.m */; };
 		EADAFC881ABA5380005CF333 /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC6C1ABA5380005CF333 /* MagicalRecord.m */; };
 		EADAFC8D1ABA580A005CF333 /* BBTimelineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC8C1ABA580A005CF333 /* BBTimelineTableViewCell.m */; };
-		EADAFC8F1ABA592B005CF333 /* card.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EADAFC8E1ABA592B005CF333 /* card.jpg */; };
+		EADAFC8F1ABA592B005CF333 /* businesscard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EADAFC8E1ABA592B005CF333 /* businesscard.jpg */; };
 		EADAFC931ABA5FF3005CF333 /* BBModalSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC911ABA5FF3005CF333 /* BBModalSearchViewController.m */; };
 		EADAFC941ABA5FF3005CF333 /* BBModalSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EADAFC921ABA5FF3005CF333 /* BBModalSearchViewController.xib */; };
 		EADAFC991ABA61FF005CF333 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC961ABA61FF005CF333 /* UIImage+ImageEffects.m */; };
@@ -75,6 +75,11 @@
 		EADAFCC61ABA95F2005CF333 /* collect-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCC51ABA95F2005CF333 /* collect-50.png */; };
 		EADAFCC81ABA9618005CF333 /* mark_as_favourite-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCC71ABA9618005CF333 /* mark_as_favourite-50.png */; };
 		EADAFCCA1ABAAC32005CF333 /* user_male_circle-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCC91ABAAC32005CF333 /* user_male_circle-50.png */; };
+		EADAFCD01ABABB53005CF333 /* card.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCCF1ABABB53005CF333 /* card.jpg */; };
+		EADAFCD21ABABC03005CF333 /* plus-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCD11ABABC03005CF333 /* plus-50.png */; };
+		EADAFCD41ABABCD1005CF333 /* undo-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCD31ABABCD1005CF333 /* undo-50.png */; };
+		EADAFCD61ABABD3C005CF333 /* undo-32.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCD51ABABD3C005CF333 /* undo-32.png */; };
+		EADAFCD81ABABD8A005CF333 /* plus-32.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCD71ABABD8A005CF333 /* plus-32.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,7 +174,7 @@
 		EADAFC8A1ABA56C4005CF333 /* NWPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWPrefixHeader.pch; sourceTree = "<group>"; };
 		EADAFC8B1ABA580A005CF333 /* BBTimelineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTimelineTableViewCell.h; sourceTree = "<group>"; };
 		EADAFC8C1ABA580A005CF333 /* BBTimelineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTimelineTableViewCell.m; sourceTree = "<group>"; };
-		EADAFC8E1ABA592B005CF333 /* card.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card.jpg; sourceTree = "<group>"; };
+		EADAFC8E1ABA592B005CF333 /* businesscard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = businesscard.jpg; sourceTree = "<group>"; };
 		EADAFC901ABA5FF3005CF333 /* BBModalSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBModalSearchViewController.h; sourceTree = "<group>"; };
 		EADAFC911ABA5FF3005CF333 /* BBModalSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBModalSearchViewController.m; sourceTree = "<group>"; };
 		EADAFC921ABA5FF3005CF333 /* BBModalSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBModalSearchViewController.xib; sourceTree = "<group>"; };
@@ -202,6 +207,11 @@
 		EADAFCC51ABA95F2005CF333 /* collect-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "collect-50.png"; sourceTree = "<group>"; };
 		EADAFCC71ABA9618005CF333 /* mark_as_favourite-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mark_as_favourite-50.png"; sourceTree = "<group>"; };
 		EADAFCC91ABAAC32005CF333 /* user_male_circle-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_male_circle-50.png"; sourceTree = "<group>"; };
+		EADAFCCF1ABABB53005CF333 /* card.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card.jpg; sourceTree = "<group>"; };
+		EADAFCD11ABABC03005CF333 /* plus-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-50.png"; sourceTree = "<group>"; };
+		EADAFCD31ABABCD1005CF333 /* undo-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undo-50.png"; sourceTree = "<group>"; };
+		EADAFCD51ABABD3C005CF333 /* undo-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undo-32.png"; sourceTree = "<group>"; };
+		EADAFCD71ABABD8A005CF333 /* plus-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-32.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,18 +293,23 @@
 				EADAFCC31ABA95AA005CF333 /* price_tag-50.png */,
 				EADAFCB91ABA9329005CF333 /* stack_of_photos-50.png */,
 				EADAFCBD1ABA9498005CF333 /* bullish-50.png */,
+				EADAFCCF1ABABB53005CF333 /* card.jpg */,
 				EADAFCB51ABA9102005CF333 /* camera-50.png */,
 				EADAFCB71ABA9251005CF333 /* camera_filled-50.png */,
 				EADAFCBF1ABA9519005CF333 /* exit-50.png */,
 				EADAFCC11ABA9531005CF333 /* settings3-50.png */,
 				EADAFCC91ABAAC32005CF333 /* user_male_circle-50.png */,
+				EADAFCD11ABABC03005CF333 /* plus-50.png */,
 				EADAFBC91ABA0CA5005CF333 /* blurrybackground.jpg */,
+				EADAFCD51ABABD3C005CF333 /* undo-32.png */,
+				EADAFCD71ABABD8A005CF333 /* plus-32.png */,
+				EADAFCD31ABABCD1005CF333 /* undo-50.png */,
 				EADAFC331ABA5380005CF333 /* MagicalRecord */,
 				EADAFBAD1AB9FCD1005CF333 /* Images.xcassets */,
 				EADAFBCE1ABA20E9005CF333 /* Main.storyboard */,
 				EADAFC9B1ABA6711005CF333 /* NWAddPersonTableViewController.h */,
 				EADAFC9C1ABA6711005CF333 /* NWAddPersonTableViewController.m */,
-				EADAFC8E1ABA592B005CF333 /* card.jpg */,
+				EADAFC8E1ABA592B005CF333 /* businesscard.jpg */,
 				EADAFBAF1AB9FCD1005CF333 /* LaunchScreen.xib */,
 				EADAFBA01AB9FCD1005CF333 /* Supporting Files */,
 			);
@@ -524,14 +539,18 @@
 				EADAFCC21ABA9531005CF333 /* settings3-50.png in Resources */,
 				EADAFCC61ABA95F2005CF333 /* collect-50.png in Resources */,
 				EADAFCC41ABA95AA005CF333 /* price_tag-50.png in Resources */,
-				EADAFC8F1ABA592B005CF333 /* card.jpg in Resources */,
+				EADAFC8F1ABA592B005CF333 /* businesscard.jpg in Resources */,
 				EADAFCB81ABA9251005CF333 /* camera_filled-50.png in Resources */,
 				EADAFCC01ABA9519005CF333 /* exit-50.png in Resources */,
+				EADAFCD81ABABD8A005CF333 /* plus-32.png in Resources */,
 				EADAFCB11ABA6AD2005CF333 /* MessageEntrySendButton.png in Resources */,
 				EADAFCB41ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x.png in Resources */,
+				EADAFCD01ABABB53005CF333 /* card.jpg in Resources */,
 				EADAFCCA1ABAAC32005CF333 /* user_male_circle-50.png in Resources */,
+				EADAFCD41ABABCD1005CF333 /* undo-50.png in Resources */,
 				EADAFCAF1ABA6AD2005CF333 /* MessageEntryInputField.png in Resources */,
 				EADAFCBC1ABA9458005CF333 /* menu-50.png in Resources */,
+				EADAFCD61ABABD3C005CF333 /* undo-32.png in Resources */,
 				EADAFCB21ABA6AD2005CF333 /* MessageEntrySendButton@2x.png in Resources */,
 				EADAFCB61ABA9102005CF333 /* camera-50.png in Resources */,
 				EADAFCAE1ABA6AD2005CF333 /* MessageEntryBackground@2x.png in Resources */,
@@ -544,6 +563,7 @@
 				EADAFCBE1ABA9498005CF333 /* bullish-50.png in Resources */,
 				EADAFC941ABA5FF3005CF333 /* BBModalSearchViewController.xib in Resources */,
 				EADAFBAE1AB9FCD1005CF333 /* Images.xcassets in Resources */,
+				EADAFCD21ABABC03005CF333 /* plus-50.png in Resources */,
 				EADAFBCA1ABA0CA5005CF333 /* blurrybackground.jpg in Resources */,
 				EADAFBD01ABA20E9005CF333 /* Main.storyboard in Resources */,
 			);
