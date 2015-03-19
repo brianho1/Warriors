@@ -53,6 +53,7 @@
 		EADAFC941ABA5FF3005CF333 /* BBModalSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EADAFC921ABA5FF3005CF333 /* BBModalSearchViewController.xib */; };
 		EADAFC991ABA61FF005CF333 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC961ABA61FF005CF333 /* UIImage+ImageEffects.m */; };
 		EADAFC9A1ABA61FF005CF333 /* UIView+UIViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC981ABA61FF005CF333 /* UIView+UIViewExtension.m */; };
+		EADAFC9D1ABA6711005CF333 /* NWAddPersonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFC9C1ABA6711005CF333 /* NWAddPersonTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,8 @@
 		EADAFC961ABA61FF005CF333 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		EADAFC971ABA61FF005CF333 /* UIView+UIViewExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIViewExtension.h"; sourceTree = "<group>"; };
 		EADAFC981ABA61FF005CF333 /* UIView+UIViewExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewExtension.m"; sourceTree = "<group>"; };
+		EADAFC9B1ABA6711005CF333 /* NWAddPersonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWAddPersonTableViewController.h; sourceTree = "<group>"; };
+		EADAFC9C1ABA6711005CF333 /* NWAddPersonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWAddPersonTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +228,8 @@
 				EADAFC331ABA5380005CF333 /* MagicalRecord */,
 				EADAFBAD1AB9FCD1005CF333 /* Images.xcassets */,
 				EADAFBCE1ABA20E9005CF333 /* Main.storyboard */,
+				EADAFC9B1ABA6711005CF333 /* NWAddPersonTableViewController.h */,
+				EADAFC9C1ABA6711005CF333 /* NWAddPersonTableViewController.m */,
 				EADAFC8E1ABA592B005CF333 /* card.jpg */,
 				EADAFBAF1AB9FCD1005CF333 /* LaunchScreen.xib */,
 				EADAFBA01AB9FCD1005CF333 /* Supporting Files */,
@@ -496,6 +501,7 @@
 				EADAFC8D1ABA580A005CF333 /* BBTimelineTableViewCell.m in Sources */,
 				EADAFC861ABA5380005CF333 /* MagicalRecord+Setup.m in Sources */,
 				EADAFC711ABA5380005CF333 /* NSEntityDescription+MagicalDataImport.m in Sources */,
+				EADAFC9D1ABA6711005CF333 /* NWAddPersonTableViewController.m in Sources */,
 				EADAFC291ABA5010005CF333 /* Model.xcdatamodeld in Sources */,
 				EADAFC6F1ABA5380005CF333 /* MagicalImportFunctions.m in Sources */,
 				EADAFC781ABA5380005CF333 /* NSManagedObject+MagicalFinders.m in Sources */,
