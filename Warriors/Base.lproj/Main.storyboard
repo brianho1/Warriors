@@ -292,6 +292,7 @@
                         <outlet property="searchBar" destination="UDE-qM-xQ7" id="L1y-J9-XVC"/>
                         <outlet property="tableView" destination="L4c-CL-std" id="g0d-o1-Bmd"/>
                         <segue destination="0vA-LX-dhU" kind="show" identifier="addEventForNewUser" id="EDy-SP-yeV"/>
+                        <segue destination="ftm-Ux-QU1" kind="show" identifier="didSelectExistingUser" id="kA4-Yv-rL1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57U-40-int" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -460,7 +461,7 @@
                         <outlet property="noteTextView" destination="ioz-QA-OmQ" id="yjP-Q2-sFf"/>
                         <outlet property="phoneNumber" destination="nRV-1O-wK7" id="QhM-Pm-6GF"/>
                         <outlet property="titleTextField" destination="uZP-KC-6h0" id="bo4-nu-1AO"/>
-                        <segue destination="ftm-Ux-QU1" kind="show" id="x97-VT-wp4"/>
+                        <segue destination="ftm-Ux-QU1" kind="show" identifier="addEventForExistingUser" id="x97-VT-wp4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iha-eS-9BU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -522,6 +523,9 @@
                                 <state key="normal" image="camera-50.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addAPhoto:" destination="ftm-Ux-QU1" eventType="touchUpInside" id="twW-1Y-9i5"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_male_circle-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="zwg-WN-6jp">
                                 <rect key="frame" x="16" y="72" width="90" height="90"/>
@@ -535,6 +539,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hng-Td-Vg4">
+                                <rect key="frame" x="180" y="419" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="2o5-Zc-R6a"/>
+                                </constraints>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John Doe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p6h-1c-cqa">
                                 <rect key="frame" x="116" y="72" width="480" height="25"/>
                                 <constraints>
@@ -570,7 +580,10 @@
                             <constraint firstItem="8d2-t6-luk" firstAttribute="top" secondItem="JNp-UD-56T" secondAttribute="bottom" constant="3" id="Sh3-xc-Aa0"/>
                             <constraint firstItem="JNp-UD-56T" firstAttribute="leading" secondItem="ZHa-pA-uva" secondAttribute="leadingMargin" constant="-15" id="Wr6-BO-INv"/>
                             <constraint firstItem="JNp-UD-56T" firstAttribute="top" secondItem="udP-NH-dnd" secondAttribute="bottom" constant="16" id="ZCj-5W-JL5"/>
+                            <constraint firstItem="HEl-iS-H0w" firstAttribute="top" secondItem="Hng-Td-Vg4" secondAttribute="bottom" constant="53" id="ZwO-x1-ILx"/>
+                            <constraint firstItem="Hng-Td-Vg4" firstAttribute="top" secondItem="pcF-Nh-LLf" secondAttribute="bottom" constant="3" id="eyA-vC-NhE"/>
                             <constraint firstItem="8d2-t6-luk" firstAttribute="leading" secondItem="JNp-UD-56T" secondAttribute="leading" constant="-1" id="iVE-Ob-8bb"/>
+                            <constraint firstItem="Hng-Td-Vg4" firstAttribute="leading" secondItem="pcF-Nh-LLf" secondAttribute="trailing" constant="-172" id="mb9-SP-NqR"/>
                             <constraint firstItem="udP-NH-dnd" firstAttribute="width" secondItem="3GY-nC-u6m" secondAttribute="width" id="nld-Ze-tZL"/>
                             <constraint firstItem="8d2-t6-luk" firstAttribute="height" secondItem="JNp-UD-56T" secondAttribute="height" constant="2" id="nqM-Cl-e9x"/>
                             <constraint firstItem="pvV-b3-WX8" firstAttribute="width" secondItem="8d2-t6-luk" secondAttribute="width" id="o3K-UK-arc"/>
@@ -596,8 +609,24 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="i4w-4j-MCY">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="sOa-ab-MJh"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="sOa-ab-MJh">
+                            <connections>
+                                <action selector="addNewEvent:" destination="ftm-Ux-QU1" id="m8C-em-kv8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="companyTextField" destination="udP-NH-dnd" id="tZX-1d-nRx"/>
+                        <outlet property="eventImage" destination="Hng-Td-Vg4" id="Ap8-2z-n0G"/>
+                        <outlet property="eventTitleTextField" destination="JNp-UD-56T" id="s1g-cS-RTl"/>
+                        <outlet property="faceImage" destination="zwg-WN-6jp" id="hu8-uy-BB6"/>
+                        <outlet property="nameTextField" destination="p6h-1c-cqa" id="8oq-Qf-JoE"/>
+                        <outlet property="noteTextView" destination="vOD-hl-AtS" id="oDD-gg-BcU"/>
+                        <outlet property="ratingScoreTextField" destination="8d2-t6-luk" id="D8Y-Wu-n48"/>
+                        <outlet property="timeTextField" destination="pvV-b3-WX8" id="h3R-e6-nAE"/>
+                        <outlet property="titleTextField" destination="3GY-nC-u6m" id="bxI-Ai-4Vp"/>
+                        <segue destination="Whh-4U-2uh" kind="show" identifier="backToTimeline" id="4ZS-g8-9hC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JQE-v7-yEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -619,4 +648,8 @@
         <image name="undo-32.png" width="32" height="32"/>
         <image name="user_male_circle-50.png" width="50" height="50"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="iWq-hD-gjD"/>
+        <segue reference="kA4-Yv-rL1"/>
+    </inferredMetricsTieBreakers>
 </document>

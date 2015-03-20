@@ -7,6 +7,7 @@
 //
 
 #import "NWAddPersonTableViewController.h"
+#import "BBEventInputViewController.h"
 
 
 @interface NWAddPersonTableViewController ()
@@ -27,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     [self.cameraButton setImage:[UIImage imageNamed:@"camera_filled-50.png"] forState:UIControlStateHighlighted];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -373,6 +374,9 @@
     }
     
     [self saveContext];
+    BBEventInputViewController *eventInputVC = [BBEventInputViewController new];
+    eventInputVC.person = self.person;
+    [self performSegueWithIdentifier:@"addEventForExistingUser" sender:self];
 
 }
 
@@ -388,6 +392,7 @@
         person.address = data[5];
         person.email = data[4];
         person.userId = [NSNumber numberWithInt:(arc4random() % 10000) + 99999];
+        self.person = person;
         //convert time string to nsdate
 //        NSString *str =data[3];
 //        NSDateFormatter *sdateFormatter = [[NSDateFormatter alloc] init];
@@ -406,6 +411,15 @@
             NSLog(@"Error saving context: %@", error.description);
         }
     }];
+}
+
+#pragma mark - prepare for segue 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"addEventForExistingUser"]) {
+        BBEventInputViewController *eventInputVC = segue.destinationViewController;
+        eventInputVC.person = self.person;
+    }
 }
 
 /*

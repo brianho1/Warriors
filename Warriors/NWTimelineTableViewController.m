@@ -13,7 +13,7 @@
 #import "BBModalSearchViewController.h"
 #import "UIImage+ImageEffects.h"
 #import "UIView+UIViewExtension.h"
-//#import "BBEventInputViewController.h"
+#import "BBEventInputViewController.h"
 
 
 @interface NWTimelineTableViewController () <BBModalSearchViewControllerDelegate>
@@ -97,23 +97,23 @@
     return cell;
 }
 
-//custom animation
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    // setup initial state (e.g. before animation)
-    cell.layer.shadowColor = [[UIColor blackColor] CGColor];
-    cell.layer.shadowOffset = CGSizeMake(10, 10);
-    cell.alpha = 0;
-    cell.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5);
-    cell.layer.anchorPoint = CGPointMake(0, 0.5);
-    
-    // define final state (e.g. after animation) & commit animation
-    [UIView beginAnimations:@"scaleTableViewCellAnimationID" context:NULL];
-    [UIView setAnimationDuration:0.7];
-    cell.layer.shadowOffset = CGSizeMake(0, 0);
-    cell.alpha = 1;
-    cell.layer.transform = CATransform3DIdentity;
-    [UIView commitAnimations];
-}
+////custom animation
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    // setup initial state (e.g. before animation)
+//    cell.layer.shadowColor = [[UIColor blackColor] CGColor];
+//    cell.layer.shadowOffset = CGSizeMake(10, 10);
+//    cell.alpha = 0;
+//    cell.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5);
+//    cell.layer.anchorPoint = CGPointMake(0, 0.5);
+//    
+//    // define final state (e.g. after animation) & commit animation
+//    [UIView beginAnimations:@"scaleTableViewCellAnimationID" context:NULL];
+//    [UIView setAnimationDuration:0.7];
+//    cell.layer.shadowOffset = CGSizeMake(0, 0);
+//    cell.alpha = 1;
+//    cell.layer.transform = CATransform3DIdentity;
+//    [UIView commitAnimations];
+//}
 
 - (void)configureCell:(BBTimelineTableViewCell *)cell atIndex:(NSIndexPath*)indexPath {
     
@@ -255,13 +255,13 @@
     self.modal.view.backgroundColor = [UIColor clearColor];
     UIImageView* backView = [[UIImageView alloc] initWithFrame:self.view.frame];
     backView.image = imageOfUnderlyingView;
-    backView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
+    backView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.6];
     [self.modal.view insertSubview:backView atIndex:0];
     
 }
 - (void)doneWithSearch:(Person *)person {
     self.personToPass = person;
-    [self performSegueWithIdentifier:@"addEventForExistingUser" sender:self];
+    [self performSegueWithIdentifier:@"didSelectExistingUser" sender:self];
 }
 
 
@@ -281,12 +281,12 @@
 //        //        upcoming.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonSystemItemCancel target:upcoming action:@selector(cancelAdd)];
 //        //        upcoming.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonSystemItemAdd target:upcoming action:@selector(addNewPerson)];
 //    }
-//    else if ([segue.identifier isEqualToString:@"addEventForExistingUser"]) {
-//        //        UINavigationController *vc = segue.destinationViewController;
-//        //        NSArray *viewControllers = vc.viewControllers;
-//        BBEventInputViewController *eventInput = segue.destinationViewController;
-//        eventInput.person = self.personToPass;
-//    }
+    if ([segue.identifier isEqualToString:@"didSelectExistingUser"]) {
+        //        UINavigationController *vc = segue.destinationViewController;
+        //        NSArray *viewControllers = vc.viewControllers;
+        BBEventInputViewController *eventInput = segue.destinationViewController;
+        eventInput.person = self.personToPass;
+    }
 }
 
 /*

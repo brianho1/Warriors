@@ -96,7 +96,7 @@
 -(void)doneSelecting:(Person *)person {
     //    NSLog(@"%@",self.parentViewController);
     [self dismissViewControllerAnimated:YES completion:^{
-//        [self.delegate doneWithSearch:person];
+        [self.delegate doneWithSearch:person];
         //        [[NSNotificationCenter defaultCenter] postNotificationName:@"doneSelecting" object:nil];
     }];
 }

@@ -10,13 +10,21 @@
 #import "Event.h"
 
 @interface BBEventInputViewController () <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *quickAddTextField;
-@property (weak, nonatomic) IBOutlet UITextField *locationTextField;
+//@property (weak, nonatomic) IBOutlet UITextField *quickAddTextField;
+//@property (weak, nonatomic) IBOutlet UITextField *locationTextField;
 @property (weak, nonatomic) IBOutlet UITextField *timeTextField;
-@property (weak, nonatomic) IBOutlet UITextField *scoreTextField;
+//@property (weak, nonatomic) IBOutlet UITextField *scoreTextField;
+//@property (weak, nonatomic) IBOutlet UILabel *personNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *eventImage;
+
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UITextField *companyTextField;
+@property (weak, nonatomic) IBOutlet UITextField *eventTitleTextField;
+@property (weak, nonatomic) IBOutlet UITextField *ratingScoreTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *faceImage;
 @property (weak, nonatomic) IBOutlet UITextView *noteTextView;
-@property (weak, nonatomic) IBOutlet UILabel *personNameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+
 @end
 
 @implementation BBEventInputViewController
@@ -24,23 +32,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.personNameLabel.text = self.person.lastName;
+    self.nameTextField.text = [NSString stringWithFormat:@"%@ %@", self.person.firstName,self.person.lastName];
+    self.titleTextField.text = self.person.title;
+    self.companyTextField.text = self.person.company;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)textDidChange:(id)sender {
-        //    self.trackingLocation = self.valueHolder.count - 1;
-        
-        NSDictionary * dict = [self textFieldDictionay:self.quickAddTextField.text];
-        
-        self.locationTextField.text = dict[@"location"];
-        self.timeTextField.text = dict[@"time"];
-        self.scoreTextField.text = dict[@"score"];
-        self.noteTextView.text = dict[@"note"];
-}
+//- (IBAction)textDidChange:(id)sender {
+//        //    self.trackingLocation = self.valueHolder.count - 1;
+//        
+//        NSDictionary * dict = [self textFieldDictionay:self.quickAddTextField.text];
+//        
+//        self.locationTextField.text = dict[@"location"];
+//        self.timeTextField.text = dict[@"time"];
+//        self.scoreTextField.text = dict[@"score"];
+//        self.noteTextView.text = dict[@"note"];
+//}
 
 
 
@@ -56,8 +66,11 @@
         arrayofString[i] = [arrayofString[i] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         NSCharacterSet *_NumericOnly = [NSCharacterSet decimalDigitCharacterSet];
         NSCharacterSet *myStringSet = [NSCharacterSet characterSetWithCharactersInString:arrayofString[i]];
-
-        if ([_NumericOnly isSupersetOfSet: myStringSet]) {
+        
+        if (i == 0) {
+            [dict setObject:arrayofString[i] forKey:@"title"];
+        }
+        else if ([_NumericOnly isSupersetOfSet: myStringSet]) {
             //            self.nameTextField.text = stringToAnalyze;
             [dict setObject:arrayofString[i] forKey:@"score"];
         }
@@ -161,7 +174,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-    self.profileImage.image = chosenImage;
+    self.eventImage.image = chosenImage;
 
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
@@ -184,10 +197,10 @@
 - (IBAction)addNewEvent:(id)sender {
     if ([self.noteTextView hasText]) {
         NSMutableArray *data = [NSMutableArray array];
-        data[0] = ([self.locationTextField hasText]) ? self.locationTextField.text : @"" ;
-        data[1] = ([self.scoreTextField hasText]) ? self.scoreTextField.text : @"" ;
+        data[0] = ([self.eventTitleTextField hasText]) ? self.eventTitleTextField.text : @"" ;
+        data[1] = ([self.ratingScoreTextField hasText]) ? self.ratingScoreTextField.text : @"" ;
         data[2] = ([self.timeTextField hasText]) ? self.timeTextField.text : @"" ;
-        data[3] = self.noteTextView.text;
+        data[3] = ([self.noteTextView hasText]) ? self.noteTextView.text : @"";
         NSLog(@"%@",data);
         [self syncToCoreData:data];
     }
@@ -196,6 +209,7 @@
     }
     
     [self saveContext];
+    [self performSegueWithIdentifier:@"backToTimeline" sender:self];
    
 }
 
@@ -204,7 +218,7 @@
     
         Event *event = [Event createEntity];
         event.person = self.person;
-        event.location = data[0];
+        event.title = data[0];
         NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
         f.numberStyle = NSNumberFormatterDecimalStyle;
         NSNumber *myNumber = [f numberFromString:data[1]];
@@ -215,6 +229,8 @@
         [sdateFormatter setDateFormat:@"MMM d, yyyy, hh:mm a"];
         event.time = [sdateFormatter dateFromString:str];
         //save image string to coredata
+    if (self.eventImage.image != nil) {
+
         NSString *stringPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0]stringByAppendingPathComponent:@"Images"];
         // New Folder is your folder name
         NSError *error = nil;
@@ -223,8 +239,9 @@
         NSNumber *randomfileName = [NSNumber numberWithInt:(arc4random() % 10000) + 99999];
         event.picture = [randomfileName stringValue];
         NSString *fileName = [stringPath stringByAppendingFormat:@"%@.jpg",event.picture];
-        NSData *imageData = UIImageJPEGRepresentation(self.profileImage.image, 1.0);
+        NSData *imageData = UIImageJPEGRepresentation(self.eventImage.image, 1.0);
         [imageData writeToFile:fileName atomically:YES];
+    }
 
 }
 
