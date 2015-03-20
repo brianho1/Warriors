@@ -18,17 +18,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojt-Z0-dAR">
-                    <rect key="frame" x="127" y="157" width="346" height="285"/>
+                    <rect key="frame" x="150" y="157" width="300" height="285"/>
                     <subviews>
                         <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="pum-u1-kgW">
-                            <rect key="frame" x="0.0" y="0.0" width="346" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="sw0-tD-BL2"/>
                             </constraints>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="diO-vz-Nmv">
-                            <rect key="frame" x="0.0" y="44" width="346" height="329"/>
+                            <rect key="frame" x="0.0" y="44" width="300" height="329"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="Ogg-Vu-Ldj"/>
@@ -45,10 +45,16 @@
                         <constraint firstItem="pum-u1-kgW" firstAttribute="top" secondItem="ojt-Z0-dAR" secondAttribute="top" id="GKo-ni-mCz"/>
                         <constraint firstItem="pum-u1-kgW" firstAttribute="leading" secondItem="ojt-Z0-dAR" secondAttribute="leading" id="NX1-7C-M3R"/>
                         <constraint firstAttribute="width" constant="346" id="SbV-r9-RVn"/>
+                        <constraint firstAttribute="width" constant="300" id="XI3-sL-JO5"/>
                         <constraint firstItem="pum-u1-kgW" firstAttribute="width" secondItem="ojt-Z0-dAR" secondAttribute="width" id="eos-4y-Pa4"/>
                         <constraint firstAttribute="trailing" secondItem="pum-u1-kgW" secondAttribute="trailing" id="f3t-dV-TIA"/>
                         <constraint firstItem="diO-vz-Nmv" firstAttribute="leading" secondItem="ojt-Z0-dAR" secondAttribute="leading" id="pAg-dd-BCc"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="SbV-r9-RVn"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <constraints>

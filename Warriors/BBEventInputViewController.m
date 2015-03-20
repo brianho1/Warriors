@@ -9,7 +9,7 @@
 #import "BBEventInputViewController.h"
 #import "Event.h"
 
-@interface BBEventInputViewController () <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface BBEventInputViewController () <UITextFieldDelegate,UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 //@property (weak, nonatomic) IBOutlet UITextField *quickAddTextField;
 //@property (weak, nonatomic) IBOutlet UITextField *locationTextField;
 @property (weak, nonatomic) IBOutlet UITextField *timeTextField;
@@ -35,6 +35,8 @@
     self.nameTextField.text = [NSString stringWithFormat:@"%@ %@", self.person.firstName,self.person.lastName];
     self.titleTextField.text = self.person.title;
     self.companyTextField.text = self.person.company;
+    self.eventTitleTextField.delegate = self;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -194,8 +196,9 @@
     [textField resignFirstResponder];
     return NO;
 }
+
 - (IBAction)addNewEvent:(id)sender {
-    if ([self.noteTextView hasText]) {
+    if ([self.eventTitleTextField hasText]) {
         NSMutableArray *data = [NSMutableArray array];
         data[0] = ([self.eventTitleTextField hasText]) ? self.eventTitleTextField.text : @"" ;
         data[1] = ([self.ratingScoreTextField hasText]) ? self.ratingScoreTextField.text : @"" ;

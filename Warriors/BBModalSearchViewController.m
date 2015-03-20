@@ -32,7 +32,7 @@
     
 }
 -(void)viewWillAppear:(BOOL)animated {
-    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width - 5, self.view.frame.size.width - 5);
+//    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width - 5, self.view.frame.size.width - 5);
     self.sqView.layer.cornerRadius = 10;
     self.sqView.layer.masksToBounds = YES;
     
