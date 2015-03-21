@@ -10,6 +10,15 @@
 		EA1547651ABB6CE60094AC4C /* BBEventInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1547641ABB6CE60094AC4C /* BBEventInputViewController.m */; };
 		EA1547681ABB6D860094AC4C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1547671ABB6D860094AC4C /* Person.m */; };
 		EA15476B1ABB6D990094AC4C /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15476A1ABB6D990094AC4C /* Event.m */; };
+		EA1547851ABCDD4D0094AC4C /* CHTCollectionViewWaterfallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1547801ABCDD4D0094AC4C /* CHTCollectionViewWaterfallCell.m */; };
+		EA1547861ABCDD4D0094AC4C /* CHTCollectionViewWaterfallFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1547821ABCDD4D0094AC4C /* CHTCollectionViewWaterfallFooter.m */; };
+		EA1547871ABCDD4D0094AC4C /* CHTCollectionViewWaterfallHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1547841ABCDD4D0094AC4C /* CHTCollectionViewWaterfallHeader.m */; };
+		EA15478A1ABCDD7D0094AC4C /* CHTCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1547891ABCDD7D0094AC4C /* CHTCollectionViewWaterfallLayout.m */; };
+		EA15479B1ABCE0D90094AC4C /* NWPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15479A1ABCE0D90094AC4C /* NWPhotosViewController.m */; };
+		EAA136FD1ABCE389006F8A2D /* cat1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAA136F91ABCE389006F8A2D /* cat1.jpg */; };
+		EAA136FE1ABCE389006F8A2D /* cat2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAA136FA1ABCE389006F8A2D /* cat2.jpg */; };
+		EAA136FF1ABCE389006F8A2D /* cat3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAA136FB1ABCE389006F8A2D /* cat3.jpg */; };
+		EAA137001ABCE389006F8A2D /* cat4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAA136FC1ABCE389006F8A2D /* cat4.jpg */; };
 		EADAFBA31AB9FCD1005CF333 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA21AB9FCD1005CF333 /* main.m */; };
 		EADAFBA61AB9FCD1005CF333 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA51AB9FCD1005CF333 /* AppDelegate.m */; };
 		EADAFBA91AB9FCD1005CF333 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA81AB9FCD1005CF333 /* ViewController.m */; };
@@ -100,6 +109,20 @@
 		EA1547671ABB6D860094AC4C /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		EA1547691ABB6D990094AC4C /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		EA15476A1ABB6D990094AC4C /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		EA15477F1ABCDD4D0094AC4C /* CHTCollectionViewWaterfallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHTCollectionViewWaterfallCell.h; path = ../CHTCollectionViewWaterfallCell.h; sourceTree = "<group>"; };
+		EA1547801ABCDD4D0094AC4C /* CHTCollectionViewWaterfallCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHTCollectionViewWaterfallCell.m; path = ../CHTCollectionViewWaterfallCell.m; sourceTree = "<group>"; };
+		EA1547811ABCDD4D0094AC4C /* CHTCollectionViewWaterfallFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHTCollectionViewWaterfallFooter.h; path = ../CHTCollectionViewWaterfallFooter.h; sourceTree = "<group>"; };
+		EA1547821ABCDD4D0094AC4C /* CHTCollectionViewWaterfallFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHTCollectionViewWaterfallFooter.m; path = ../CHTCollectionViewWaterfallFooter.m; sourceTree = "<group>"; };
+		EA1547831ABCDD4D0094AC4C /* CHTCollectionViewWaterfallHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHTCollectionViewWaterfallHeader.h; path = ../CHTCollectionViewWaterfallHeader.h; sourceTree = "<group>"; };
+		EA1547841ABCDD4D0094AC4C /* CHTCollectionViewWaterfallHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHTCollectionViewWaterfallHeader.m; path = ../CHTCollectionViewWaterfallHeader.m; sourceTree = "<group>"; };
+		EA1547881ABCDD7D0094AC4C /* CHTCollectionViewWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHTCollectionViewWaterfallLayout.h; path = ../CHTCollectionViewWaterfallLayout.h; sourceTree = "<group>"; };
+		EA1547891ABCDD7D0094AC4C /* CHTCollectionViewWaterfallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHTCollectionViewWaterfallLayout.m; path = ../CHTCollectionViewWaterfallLayout.m; sourceTree = "<group>"; };
+		EA1547991ABCE0D90094AC4C /* NWPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NWPhotosViewController.h; path = ../NWPhotosViewController.h; sourceTree = "<group>"; };
+		EA15479A1ABCE0D90094AC4C /* NWPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NWPhotosViewController.m; path = ../NWPhotosViewController.m; sourceTree = "<group>"; };
+		EAA136F91ABCE389006F8A2D /* cat1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cat1.jpg; path = ../cat1.jpg; sourceTree = "<group>"; };
+		EAA136FA1ABCE389006F8A2D /* cat2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cat2.jpg; path = ../cat2.jpg; sourceTree = "<group>"; };
+		EAA136FB1ABCE389006F8A2D /* cat3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cat3.jpg; path = ../cat3.jpg; sourceTree = "<group>"; };
+		EAA136FC1ABCE389006F8A2D /* cat4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cat4.jpg; path = ../cat4.jpg; sourceTree = "<group>"; };
 		EADAFB9D1AB9FCD1005CF333 /* Warriors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Warriors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EADAFBA11AB9FCD1005CF333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EADAFBA21AB9FCD1005CF333 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -300,6 +323,28 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		EA15478B1ABCDD880094AC4C /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				EA1547891ABCDD7D0094AC4C /* CHTCollectionViewWaterfallLayout.m */,
+				EA1547881ABCDD7D0094AC4C /* CHTCollectionViewWaterfallLayout.h */,
+			);
+			name = Vender;
+			sourceTree = "<group>";
+		};
+		EA15478C1ABCDD9C0094AC4C /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EA15477F1ABCDD4D0094AC4C /* CHTCollectionViewWaterfallCell.h */,
+				EA1547801ABCDD4D0094AC4C /* CHTCollectionViewWaterfallCell.m */,
+				EA1547811ABCDD4D0094AC4C /* CHTCollectionViewWaterfallFooter.h */,
+				EA1547821ABCDD4D0094AC4C /* CHTCollectionViewWaterfallFooter.m */,
+				EA1547831ABCDD4D0094AC4C /* CHTCollectionViewWaterfallHeader.h */,
+				EA1547841ABCDD4D0094AC4C /* CHTCollectionViewWaterfallHeader.m */,
+			);
+			name = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		EADAFB941AB9FCD1005CF333 = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +366,14 @@
 		EADAFB9F1AB9FCD1005CF333 /* Warriors */ = {
 			isa = PBXGroup;
 			children = (
+				EAA136F91ABCE389006F8A2D /* cat1.jpg */,
+				EAA136FA1ABCE389006F8A2D /* cat2.jpg */,
+				EAA136FB1ABCE389006F8A2D /* cat3.jpg */,
+				EAA136FC1ABCE389006F8A2D /* cat4.jpg */,
+				EA1547991ABCE0D90094AC4C /* NWPhotosViewController.h */,
+				EA15479A1ABCE0D90094AC4C /* NWPhotosViewController.m */,
+				EA15478C1ABCDD9C0094AC4C /* CollectionViewCell */,
+				EA15478B1ABCDD880094AC4C /* Vender */,
 				EA1547621ABB69EC0094AC4C /* Cell */,
 				EA1547611ABB69DD0094AC4C /* Extension */,
 				EADAFC331ABA5380005CF333 /* MagicalRecord */,
@@ -574,6 +627,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EADAFCC21ABA9531005CF333 /* settings3-50.png in Resources */,
+				EAA136FE1ABCE389006F8A2D /* cat2.jpg in Resources */,
 				EADAFCC61ABA95F2005CF333 /* collect-50.png in Resources */,
 				EADAFCC41ABA95AA005CF333 /* price_tag-50.png in Resources */,
 				EADAFC8F1ABA592B005CF333 /* businesscard.jpg in Resources */,
@@ -592,7 +646,9 @@
 				EADAFCB61ABA9102005CF333 /* camera-50.png in Resources */,
 				EADAFCAE1ABA6AD2005CF333 /* MessageEntryBackground@2x.png in Resources */,
 				EADAFCB01ABA6AD2005CF333 /* MessageEntryInputField@2x.png in Resources */,
+				EAA136FD1ABCE389006F8A2D /* cat1.jpg in Resources */,
 				EADAFCB31ABA6AD2005CF333 /* MessageEntrySendButtonPressed.png in Resources */,
+				EAA136FF1ABCE389006F8A2D /* cat3.jpg in Resources */,
 				EADAFCC81ABA9618005CF333 /* mark_as_favourite-50.png in Resources */,
 				EADAFCAD1ABA6AD2005CF333 /* MessageEntryBackground.png in Resources */,
 				EADAFBB11AB9FCD1005CF333 /* LaunchScreen.xib in Resources */,
@@ -601,6 +657,7 @@
 				EADAFC941ABA5FF3005CF333 /* BBModalSearchViewController.xib in Resources */,
 				EADAFBAE1AB9FCD1005CF333 /* Images.xcassets in Resources */,
 				EADAFCD21ABABC03005CF333 /* plus-50.png in Resources */,
+				EAA137001ABCE389006F8A2D /* cat4.jpg in Resources */,
 				EADAFBCA1ABA0CA5005CF333 /* blurrybackground.jpg in Resources */,
 				EADAFBD01ABA20E9005CF333 /* Main.storyboard in Resources */,
 			);
@@ -628,17 +685,22 @@
 				EADAFC821ABA5380005CF333 /* MagicalRecord+Actions.m in Sources */,
 				EA15476B1ABB6D990094AC4C /* Event.m in Sources */,
 				EADAFC7D1ABA5380005CF333 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
+				EA15479B1ABCE0D90094AC4C /* NWPhotosViewController.m in Sources */,
 				EADAFC811ABA5380005CF333 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				EADAFBA91AB9FCD1005CF333 /* ViewController.m in Sources */,
+				EA1547871ABCDD4D0094AC4C /* CHTCollectionViewWaterfallHeader.m in Sources */,
 				EADAFC7E1ABA5380005CF333 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				EADAFC731ABA5380005CF333 /* NSObject+MagicalDataImport.m in Sources */,
 				EADAFC7B1ABA5380005CF333 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				EADAFCA31ABA69E6005CF333 /* HPGrowingTextView.m in Sources */,
+				EA1547851ABCDD4D0094AC4C /* CHTCollectionViewWaterfallCell.m in Sources */,
 				EADAFC871ABA5380005CF333 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				EADAFC701ABA5380005CF333 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				EADAFC7A1ABA5380005CF333 /* NSManagedObject+MagicalRequests.m in Sources */,
 				EADAFC831ABA5380005CF333 /* MagicalRecord+ErrorHandling.m in Sources */,
 				EADAFC881ABA5380005CF333 /* MagicalRecord.m in Sources */,
+				EA15478A1ABCDD7D0094AC4C /* CHTCollectionViewWaterfallLayout.m in Sources */,
+				EA1547861ABCDD4D0094AC4C /* CHTCollectionViewWaterfallFooter.m in Sources */,
 				EADAFC851ABA5380005CF333 /* MagicalRecord+Options.m in Sources */,
 				EADAFC761ABA5380005CF333 /* NSManagedObject+MagicalAggregation.m in Sources */,
 				EADAFC751ABA5380005CF333 /* NSString+MagicalDataImport.m in Sources */,

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CHTCollectionViewWaterfallLayout.h"
 
-@interface NWPhotosViewController : UIViewController
+
+@interface NWPhotosViewController : UIViewController <UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout>
+@property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
+

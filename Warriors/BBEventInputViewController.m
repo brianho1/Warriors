@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *ratingScoreTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *faceImage;
 @property (weak, nonatomic) IBOutlet UITextView *noteTextView;
+@property (strong, nonatomic) UIView *containerView;
 
 @end
 
@@ -36,6 +37,89 @@
     self.titleTextField.text = self.person.title;
     self.companyTextField.text = self.person.company;
     self.eventTitleTextField.delegate = self;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+    //set notification for when a key is pressed.
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector: @selector(keyPressed:)
+                                                 name: UITextViewTextDidChangeNotification
+                                               object: nil];
+    
+    self.containerView = [[UIView alloc] init];
+    self.containerView.frame = CGRectMake(0, self.view.frame.size.width - 40, self.view.frame.size.width, 40);
+    [self.view addSubview:self.containerView];
+    CGRect containerFrame = self.containerView.frame;
+    containerFrame.origin.x = 0;
+    containerFrame.origin.y = self.view.frame.size.height - 40;
+    containerFrame.size.width = self.view.frame.size.width;
+    containerFrame.size.height = 40;
+    textView = [[HPGrowingTextView alloc] initWithFrame:CGRectMake(6, 3, self.view.frame.size.width - 70, 40)];
+    
+    textView.frame = CGRectMake(6, 3, self.view.frame.size.width - 70, 40);
+    textView.isScrollable = NO;
+    textView.contentInset = UIEdgeInsetsMake(0, 5, 0, 5);
+    
+    textView.minNumberOfLines = 1;
+    textView.maxNumberOfLines = 6;
+    // you can also set the maximum height in points with maxHeight
+    // textView.maxHeight = 200.0f;
+    textView.returnKeyType = UIReturnKeyGo; //just as an example
+    textView.font = [UIFont systemFontOfSize:15.0f];
+    textView.delegate = self;
+    textView.internalTextView.scrollIndicatorInsets = UIEdgeInsetsMake(5, 0, 5, 0);
+    textView.backgroundColor = [UIColor whiteColor];
+    textView.placeholder = @"Quick add your information!";
+    
+    // textView.text = @"test\n\ntest";
+    // textView.animateHeightChange = NO; //turns off animation
+    
+    UIImage *rawEntryBackground = [UIImage imageNamed:@"MessageEntryInputField.png"];
+    UIImage *entryBackground = [rawEntryBackground stretchableImageWithLeftCapWidth:13 topCapHeight:22];
+    UIImageView *entryImageView = [[UIImageView alloc] initWithImage:entryBackground];
+    entryImageView.frame = CGRectMake(5, 0, self.view.frame.size.width - 72, 40);
+    entryImageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    
+    UIImage *rawBackground = [UIImage imageNamed:@"MessageEntryBackground.png"];
+    UIImage *background = [rawBackground stretchableImageWithLeftCapWidth:13 topCapHeight:22];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:background];
+    imageView.frame = CGRectMake(0, 0, self.containerView.frame.size.width, self.containerView.frame.size.height);
+    imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    
+    textView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    
+    // view hierachy
+    [self.containerView addSubview:imageView];
+    [self.containerView addSubview:textView];
+    [self.containerView addSubview:entryImageView];
+    
+    UIImage *sendBtnBackground = [[UIImage imageNamed:@"MessageEntrySendButton.png"] stretchableImageWithLeftCapWidth:13 topCapHeight:0];
+    UIImage *selectedSendBtnBackground = [[UIImage imageNamed:@"MessageEntrySendButton.png"] stretchableImageWithLeftCapWidth:13 topCapHeight:0];
+    
+    UIButton *doneBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    doneBtn.frame = CGRectMake(self.containerView.frame.size.width - 69, 8, 63, 27);
+    doneBtn.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
+    [doneBtn setTitle:@"Done" forState:UIControlStateNormal];
+    
+    [doneBtn setTitleShadowColor:[UIColor colorWithWhite:0 alpha:0.4] forState:UIControlStateNormal];
+    doneBtn.titleLabel.shadowOffset = CGSizeMake (0.0, -1.0);
+    doneBtn.titleLabel.font = [UIFont boldSystemFontOfSize:18.0f];
+    
+    [doneBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [doneBtn addTarget:self action:@selector(resignTextView) forControlEvents:UIControlEventTouchUpInside];
+    [doneBtn setBackgroundImage:sendBtnBackground forState:UIControlStateNormal];
+    [doneBtn setBackgroundImage:selectedSendBtnBackground forState:UIControlStateSelected];
+    [self.containerView addSubview:doneBtn];
+    self.containerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+    //    self.containerView.autoresizingMask = UIViewAutoresizingNone;
+    self.containerView.frame = containerFrame;
+
 
 }
 
@@ -257,6 +341,94 @@
         }
     }];
 }
+
+#pragma mark - growing TextView
+
+-(void)resignTextView
+{
+    [textView resignFirstResponder];
+}
+
+//Code from Brett Schumann
+-(void) keyboardWillShow:(NSNotification *)note{
+    // get keyboard size and loctaion
+    CGRect keyboardBounds;
+    [[note.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue: &keyboardBounds];
+    NSNumber *duration = [note.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSNumber *curve = [note.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
+    // Need to translate the bounds to account for rotation.
+    keyboardBounds = [self.view convertRect:keyboardBounds toView:nil];
+    // get a rect for the textView frame
+    CGRect containerFrame = self.containerView.frame;
+    containerFrame.origin.y = self.view.bounds.size.height - (keyboardBounds.size.height + containerFrame.size.height);
+    // animations settings
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:[duration doubleValue]];
+    [UIView setAnimationCurve:[curve intValue]];
+    // set views with new info
+    self.containerView.frame = containerFrame;
+    //    self.containerView.frame = CGRectMake(0, 400, 375, 39);
+    // commit animations
+    [UIView commitAnimations];
+}
+
+-(void) keyboardWillHide:(NSNotification *)note{
+    NSNumber *duration = [note.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSNumber *curve = [note.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
+    // get a rect for the textView frame
+    CGRect containerFrame = self.containerView.frame;
+    containerFrame.origin.y = self.view.bounds.size.height - containerFrame.size.height;
+    // animations settings
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:[duration doubleValue]];
+    [UIView setAnimationCurve:[curve intValue]];
+    // set views with new info
+    self.containerView.frame = containerFrame;
+    
+    // commit animations
+    [UIView commitAnimations];
+}
+
+-(void)keyPressed: (NSNotification*) notification{
+    // get the size of the text block so we can work our magic
+    //    self.label.text = textView.text;
+    NSDictionary * dict = [self textFieldDictionay:textView.text];
+//    data[0] = ([self.eventTitleTextField hasText]) ? self.eventTitleTextField.text : @"" ;
+//    data[1] = ([self.ratingScoreTextField hasText]) ? self.ratingScoreTextField.text : @"" ;
+//    data[2] = ([self.timeTextField hasText]) ? self.timeTextField.text : @"" ;
+//    data[3] = ([self.noteTextView hasText]) ? self.noteTextView.text : @"";
+    self.eventTitleTextField.text = dict[@"title"];
+    self.ratingScoreTextField.text = dict[@"score"];
+    self.noteTextView.text = dict[@"note"];
+    self.timeTextField.text = dict[@"time"];
+
+    
+//    eventTitleTextField;
+//    ratingScoreTextField;
+//    faceImage;
+//    noteTextView;
+
+}
+
+
+- (void)growingTextView:(HPGrowingTextView *)growingTextView willChangeHeight:(float)height
+{
+    float diff = (growingTextView.frame.size.height - height);
+    
+    CGRect r = self.containerView.frame;
+    r.size.height -= diff;
+    r.origin.y += diff;
+    self.containerView.frame = r;
+}
+
+
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return YES;
+}
+
 
 
 /*

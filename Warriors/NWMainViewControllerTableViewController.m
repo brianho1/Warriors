@@ -163,6 +163,9 @@
     if ([cell.reuseIdentifier isEqualToString:@"Timeline"]) {
         [self performSegueWithIdentifier:@"timeline" sender:self];
     }
+    else if ([cell.reuseIdentifier isEqualToString:@"Photos"]) {
+        [self performSegueWithIdentifier:@"photos" sender:self];
+    }
 }
 
 #pragma mark - prepared for segue
@@ -170,6 +173,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"timeline"]) {
     }
+    else if ([segue.identifier isEqualToString:@"photos"]) {
+    }
+
 }
 
 /*

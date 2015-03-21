@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Person.h"
+#import "HPGrowingTextView.h"
 
-@interface BBEventInputViewController : UIViewController
+@interface BBEventInputViewController : UIViewController  <HPGrowingTextViewDelegate>{
+    HPGrowingTextView *textView;
+}
+
+-(void)resignTextView;
+
 @property (strong, nonatomic) Person * person;
 
 @end
