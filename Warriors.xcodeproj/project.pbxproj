@@ -25,6 +25,10 @@
 		EA20814B1ABD11560024246D /* UIImage+CL.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2081441ABD11560024246D /* UIImage+CL.m */; };
 		EA20814E1ABD11A30024246D /* NWCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA20814D1ABD11A30024246D /* NWCalendarViewController.m */; };
 		EA2081501ABD145A0024246D /* calendar-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EA20814F1ABD145A0024246D /* calendar-50.png */; };
+		EA2081FA1ABD3BD80024246D /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2081F91ABD3BD80024246D /* DropboxSDK.framework */; };
+		EA2081FC1ABD3BEB0024246D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2081FB1ABD3BEB0024246D /* Security.framework */; };
+		EA2081FE1ABD3BF40024246D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2081FD1ABD3BF40024246D /* QuartzCore.framework */; };
+		EA2082011ABD3C350024246D /* NWDropboxSyncViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2082001ABD3C350024246D /* NWDropboxSyncViewController.m */; };
 		EAA136FD1ABCE389006F8A2D /* cat1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAA136F91ABCE389006F8A2D /* cat1.jpg */; };
 		EAA136FE1ABCE389006F8A2D /* cat2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAA136FA1ABCE389006F8A2D /* cat2.jpg */; };
 		EAA136FF1ABCE389006F8A2D /* cat3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAA136FB1ABCE389006F8A2D /* cat3.jpg */; };
@@ -147,6 +151,11 @@
 		EA20814C1ABD11A30024246D /* NWCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NWCalendarViewController.h; path = Warriors/NWCalendarViewController.h; sourceTree = SOURCE_ROOT; };
 		EA20814D1ABD11A30024246D /* NWCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NWCalendarViewController.m; path = Warriors/NWCalendarViewController.m; sourceTree = SOURCE_ROOT; };
 		EA20814F1ABD145A0024246D /* calendar-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-50.png"; sourceTree = "<group>"; };
+		EA2081F91ABD3BD80024246D /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
+		EA2081FB1ABD3BEB0024246D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		EA2081FD1ABD3BF40024246D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EA2081FF1ABD3C350024246D /* NWDropboxSyncViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWDropboxSyncViewController.h; sourceTree = "<group>"; };
+		EA2082001ABD3C350024246D /* NWDropboxSyncViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWDropboxSyncViewController.m; sourceTree = "<group>"; };
 		EAA136F91ABCE389006F8A2D /* cat1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cat1.jpg; path = ../cat1.jpg; sourceTree = "<group>"; };
 		EAA136FA1ABCE389006F8A2D /* cat2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cat2.jpg; path = ../cat2.jpg; sourceTree = "<group>"; };
 		EAA136FB1ABCE389006F8A2D /* cat3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cat3.jpg; path = ../cat3.jpg; sourceTree = "<group>"; };
@@ -273,6 +282,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA2081FE1ABD3BF40024246D /* QuartzCore.framework in Frameworks */,
+				EA2081FC1ABD3BEB0024246D /* Security.framework in Frameworks */,
+				EA2081FA1ABD3BD80024246D /* DropboxSDK.framework in Frameworks */,
 				EADAFC321ABA52CA005CF333 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,6 +420,8 @@
 		EADAFB941AB9FCD1005CF333 = {
 			isa = PBXGroup;
 			children = (
+				EA2081FD1ABD3BF40024246D /* QuartzCore.framework */,
+				EA2081FB1ABD3BEB0024246D /* Security.framework */,
 				EADAFB9F1AB9FCD1005CF333 /* Warriors */,
 				EADAFBB91AB9FCD1005CF333 /* WarriorsTests */,
 				EADAFB9E1AB9FCD1005CF333 /* Products */,
@@ -441,8 +455,11 @@
 				EA1547601ABB69CA0094AC4C /* Model */,
 				EA15475F1ABB69AB0094AC4C /* Resources */,
 				EADAFC9E1ABA69E6005CF333 /* TextViewGrowing */,
+				EA2081F91ABD3BD80024246D /* DropboxSDK.framework */,
 				EADAFC8A1ABA56C4005CF333 /* NWPrefixHeader.pch */,
 				EADAFBCE1ABA20E9005CF333 /* Main.storyboard */,
+				EA2081FF1ABD3C350024246D /* NWDropboxSyncViewController.h */,
+				EA2082001ABD3C350024246D /* NWDropboxSyncViewController.m */,
 				EA2081351ABD11560024246D /* CLWeeklyCalendarViewSourceCode */,
 				EADAFC921ABA5FF3005CF333 /* BBModalSearchViewController.xib */,
 				EADAFC311ABA52CA005CF333 /* CoreData.framework */,
@@ -764,6 +781,7 @@
 				EADAFC7A1ABA5380005CF333 /* NSManagedObject+MagicalRequests.m in Sources */,
 				EADAFC831ABA5380005CF333 /* MagicalRecord+ErrorHandling.m in Sources */,
 				EADAFC881ABA5380005CF333 /* MagicalRecord.m in Sources */,
+				EA2082011ABD3C350024246D /* NWDropboxSyncViewController.m in Sources */,
 				EA2081451ABD11560024246D /* CLWeeklyCalendarView.m in Sources */,
 				EA15478A1ABCDD7D0094AC4C /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				EA1547861ABCDD4D0094AC4C /* CHTCollectionViewWaterfallFooter.m in Sources */,
@@ -918,6 +936,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Warriors",
+				);
 				GCC_PREFIX_HEADER = Warriors/NWPrefixHeader.pch;
 				INFOPLIST_FILE = Warriors/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -929,6 +951,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Warriors",
+				);
 				GCC_PREFIX_HEADER = Warriors/NWPrefixHeader.pch;
 				INFOPLIST_FILE = Warriors/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
