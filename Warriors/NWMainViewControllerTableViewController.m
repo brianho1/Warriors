@@ -93,7 +93,7 @@
     [headview addSubview:today];
     [headview addSubview:todayLabel];
 
-    menuItems = @[@"Timeline", @"Photos",@"Goals",@"Tags",@"Analytics",@"Favorites",@"Settings",@"Logout"];
+    menuItems = @[@"Timeline", @"Photos",@"Calendar",@"Goals",@"Tags",@"Analytics",@"Favorites",@"Settings",@"Logout"];
 
     UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 30, self.view.frame.size.width, 30)];
     footView.backgroundColor = [UIColor colorWithWhite:7.0 alpha:0.7];
@@ -166,6 +166,10 @@
     else if ([cell.reuseIdentifier isEqualToString:@"Photos"]) {
         [self performSegueWithIdentifier:@"photos" sender:self];
     }
+    else if ([cell.reuseIdentifier isEqualToString:@"Calendar"]) {
+        [self performSegueWithIdentifier:@"calendar" sender:self];
+    }
+
 }
 
 #pragma mark - prepared for segue

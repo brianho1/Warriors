@@ -33,7 +33,10 @@
     [self.tableView reloadData];
     //    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     self.tableView.frame = self.view.bounds;
-    
+    UIImage *background = [UIImage imageNamed:@"13.jpg"];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.frame];
+    imageView.image = background;
+    [self.tableView setBackgroundView:imageView];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -90,6 +93,7 @@
     cell.nameLabel.layer.masksToBounds = YES;
     cell.noteLabel.layer.frame = CGRectMake(100, 40, cell.frame.size.width - 130 - 40, 60);
     cell.noteLabel.numberOfLines = 2;
+    cell.backgroundColor = [UIColor clearColor];
     //    [cell.noteLabel sizeToFit];
     
     
@@ -284,7 +288,9 @@
     if ([segue.identifier isEqualToString:@"didSelectExistingUser"]) {
         //        UINavigationController *vc = segue.destinationViewController;
         //        NSArray *viewControllers = vc.viewControllers;
-        BBEventInputViewController *eventInput = segue.destinationViewController;
+        UINavigationController *navController = segue.destinationViewController;
+        BBEventInputViewController *eventInput = navController.viewControllers[0];
+//        BBEventInputViewController *eventInput = segue.destinationViewController;
         eventInput.person = self.personToPass;
     }
 }
