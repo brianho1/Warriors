@@ -368,15 +368,16 @@
         data[6] = ([self.noteTextView hasText]) ? self.noteTextView.text : @"" ;
         //            NSLog(@"%@",data);
         [self syncToCoreData:data];
+        [self saveContext];
+        BBEventInputViewController *eventInputVC = [BBEventInputViewController new];
+        eventInputVC.person = self.person;
+        [self performSegueWithIdentifier:@"addEventForExistingUser" sender:self];
     }
     else {
+        
         NSLog(@"data has to have at least a name, did not save");
     }
     
-    [self saveContext];
-    BBEventInputViewController *eventInputVC = [BBEventInputViewController new];
-    eventInputVC.person = self.person;
-    [self performSegueWithIdentifier:@"addEventForExistingUser" sender:self];
 
 }
 

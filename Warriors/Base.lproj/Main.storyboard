@@ -61,7 +61,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="exit-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="OQa-xV-kpO">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="OQa-xV-kpO">
                                             <rect key="frame" x="21" y="5" width="30" height="30"/>
                                         </imageView>
                                     </subviews>
@@ -778,6 +778,7 @@
     </scenes>
     <resources>
         <image name="bullish-50.png" width="50" height="50"/>
+        <image name="calendar-50.png" width="50" height="50"/>
         <image name="camera-50.png" width="50" height="50"/>
         <image name="card.jpg" width="266" height="258"/>
         <image name="collect-50.png" width="50" height="50"/>

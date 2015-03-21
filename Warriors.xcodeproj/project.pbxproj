@@ -24,6 +24,7 @@
 		EA20814A1ABD11560024246D /* UIColor+CL.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2081421ABD11560024246D /* UIColor+CL.m */; };
 		EA20814B1ABD11560024246D /* UIImage+CL.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2081441ABD11560024246D /* UIImage+CL.m */; };
 		EA20814E1ABD11A30024246D /* NWCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA20814D1ABD11A30024246D /* NWCalendarViewController.m */; };
+		EA2081501ABD145A0024246D /* calendar-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EA20814F1ABD145A0024246D /* calendar-50.png */; };
 		EAA136FD1ABCE389006F8A2D /* cat1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAA136F91ABCE389006F8A2D /* cat1.jpg */; };
 		EAA136FE1ABCE389006F8A2D /* cat2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAA136FA1ABCE389006F8A2D /* cat2.jpg */; };
 		EAA136FF1ABCE389006F8A2D /* cat3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAA136FB1ABCE389006F8A2D /* cat3.jpg */; };
@@ -145,6 +146,7 @@
 		EA2081441ABD11560024246D /* UIImage+CL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CL.m"; sourceTree = "<group>"; };
 		EA20814C1ABD11A30024246D /* NWCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NWCalendarViewController.h; path = Warriors/NWCalendarViewController.h; sourceTree = SOURCE_ROOT; };
 		EA20814D1ABD11A30024246D /* NWCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NWCalendarViewController.m; path = Warriors/NWCalendarViewController.m; sourceTree = SOURCE_ROOT; };
+		EA20814F1ABD145A0024246D /* calendar-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-50.png"; sourceTree = "<group>"; };
 		EAA136F91ABCE389006F8A2D /* cat1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cat1.jpg; path = ../cat1.jpg; sourceTree = "<group>"; };
 		EAA136FA1ABCE389006F8A2D /* cat2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cat2.jpg; path = ../cat2.jpg; sourceTree = "<group>"; };
 		EAA136FB1ABCE389006F8A2D /* cat3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cat3.jpg; path = ../cat3.jpg; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 		EA15475F1ABB69AB0094AC4C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EA20814F1ABD145A0024246D /* calendar-50.png */,
 				EADAFCBB1ABA9458005CF333 /* menu-50.png */,
 				EADAFCC71ABA9618005CF333 /* mark_as_favourite-50.png */,
 				EADAFCC51ABA95F2005CF333 /* collect-50.png */,
@@ -699,6 +702,7 @@
 				EADAFCCA1ABAAC32005CF333 /* user_male_circle-50.png in Resources */,
 				EADAFCD41ABABCD1005CF333 /* undo-50.png in Resources */,
 				EADAFCAF1ABA6AD2005CF333 /* MessageEntryInputField.png in Resources */,
+				EA2081501ABD145A0024246D /* calendar-50.png in Resources */,
 				EADAFCBC1ABA9458005CF333 /* menu-50.png in Resources */,
 				EADAFCD61ABABD3C005CF333 /* undo-32.png in Resources */,
 				EADAFCB21ABA6AD2005CF333 /* MessageEntrySendButton@2x.png in Resources */,
