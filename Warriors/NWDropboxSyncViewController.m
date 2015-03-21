@@ -48,7 +48,6 @@
     [text writeToFile:localPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
     // Upload file to Dropbox
     NSString *destDir = @"/";
-//    [self.restClient uploadFile:filename toPath:destDir withParentRev:nil fromPath:localPath];
     NSString *parentRev= [[NSUserDefaults standardUserDefaults] objectForKey:@"DBParentRev"];
     if (!parentRev) {
         [self.restClient uploadFile:filename toPath:destDir withParentRev:nil fromPath:localPath];

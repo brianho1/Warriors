@@ -29,6 +29,7 @@
 		EA2081FC1ABD3BEB0024246D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2081FB1ABD3BEB0024246D /* Security.framework */; };
 		EA2081FE1ABD3BF40024246D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2081FD1ABD3BF40024246D /* QuartzCore.framework */; };
 		EA2082011ABD3C350024246D /* NWDropboxSyncViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2082001ABD3C350024246D /* NWDropboxSyncViewController.m */; };
+		EA2082031ABD52A10024246D /* dropbox_copyrighted-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2082021ABD52A10024246D /* dropbox_copyrighted-50.png */; };
 		EAA136FD1ABCE389006F8A2D /* cat1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAA136F91ABCE389006F8A2D /* cat1.jpg */; };
 		EAA136FE1ABCE389006F8A2D /* cat2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAA136FA1ABCE389006F8A2D /* cat2.jpg */; };
 		EAA136FF1ABCE389006F8A2D /* cat3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAA136FB1ABCE389006F8A2D /* cat3.jpg */; };
@@ -156,6 +157,7 @@
 		EA2081FD1ABD3BF40024246D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EA2081FF1ABD3C350024246D /* NWDropboxSyncViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWDropboxSyncViewController.h; sourceTree = "<group>"; };
 		EA2082001ABD3C350024246D /* NWDropboxSyncViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWDropboxSyncViewController.m; sourceTree = "<group>"; };
+		EA2082021ABD52A10024246D /* dropbox_copyrighted-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dropbox_copyrighted-50.png"; sourceTree = "<group>"; };
 		EAA136F91ABCE389006F8A2D /* cat1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cat1.jpg; path = ../cat1.jpg; sourceTree = "<group>"; };
 		EAA136FA1ABCE389006F8A2D /* cat2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cat2.jpg; path = ../cat2.jpg; sourceTree = "<group>"; };
 		EAA136FB1ABCE389006F8A2D /* cat3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cat3.jpg; path = ../cat3.jpg; sourceTree = "<group>"; };
@@ -479,6 +481,7 @@
 				EADAFBC71AB9FD05005CF333 /* NWMainViewControllerTableViewController.m */,
 				EADAFBAD1AB9FCD1005CF333 /* Images.xcassets */,
 				EADAFC8E1ABA592B005CF333 /* businesscard.jpg */,
+				EA2082021ABD52A10024246D /* dropbox_copyrighted-50.png */,
 				EADAFBAF1AB9FCD1005CF333 /* LaunchScreen.xib */,
 				EADAFBA01AB9FCD1005CF333 /* Supporting Files */,
 			);
@@ -722,6 +725,7 @@
 				EA2081501ABD145A0024246D /* calendar-50.png in Resources */,
 				EADAFCBC1ABA9458005CF333 /* menu-50.png in Resources */,
 				EADAFCD61ABABD3C005CF333 /* undo-32.png in Resources */,
+				EA2082031ABD52A10024246D /* dropbox_copyrighted-50.png in Resources */,
 				EADAFCB21ABA6AD2005CF333 /* MessageEntrySendButton@2x.png in Resources */,
 				EADAFCB61ABA9102005CF333 /* camera-50.png in Resources */,
 				EADAFCAE1ABA6AD2005CF333 /* MessageEntryBackground@2x.png in Resources */,

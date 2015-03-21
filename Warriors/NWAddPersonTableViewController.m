@@ -418,7 +418,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"addEventForExistingUser"]) {
-        BBEventInputViewController *eventInputVC = segue.destinationViewController;
+        UINavigationController *navController = segue.destinationViewController;
+        BBEventInputViewController *eventInputVC = navController.viewControllers[0];
         eventInputVC.person = self.person;
     }
 }
