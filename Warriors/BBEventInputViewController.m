@@ -38,9 +38,23 @@
     self.companyTextField.text = self.person.company;
     if (self.event != nil) {
         self.eventTitleTextField.text = self.event.title;
+        if (self.event.score != nil) {
         self.ratingScoreTextField.text = [NSString stringWithFormat:@"%@",self.event.score];
+        }
         self.noteTextView.text = self.event.note;
-        self.timeTextField.text = @"";
+        NSString *dateString = [NSDateFormatter localizedStringFromDate:self.event.time
+                                                              dateStyle:NSDateFormatterMediumStyle
+                                                              timeStyle:NSDateFormatterShortStyle];
+        self.timeTextField.text = dateString;
+        if (self.event.picture != nil) {
+            NSString *stringPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0]stringByAppendingPathComponent:@"Images"];
+            NSError *error = nil;
+            if (![[NSFileManager defaultManager] fileExistsAtPath:stringPath])
+                [[NSFileManager defaultManager] createDirectoryAtPath:stringPath withIntermediateDirectories:NO attributes:nil error:&error];
+                NSString *fileName = [stringPath stringByAppendingFormat:@"%@.jpg",self.event.picture];
+                UIImage * image = [UIImage imageWithData:[[NSFileManager defaultManager] contentsAtPath:fileName]];
+                self.eventImage.image = image;
+        }
 
     };
     self.eventTitleTextField.delegate = self;
@@ -580,8 +594,13 @@
 
 #pragma mark - sync to core data
 - (void)syncToCoreData:(NSArray *)data {
-    
-        Event *event = [Event createEntity];
+    Event *event;
+    if (self.editingMode == NO) {
+        event = [Event createEntity];
+    }
+    else {
+        event = self.event;
+    }
         event.person = self.person;
         event.title = data[0];
         NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
@@ -609,6 +628,7 @@
     }
 
 }
+
 
 - (void)saveContext {
     [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
