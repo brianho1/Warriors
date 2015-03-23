@@ -20,9 +20,12 @@
 #pragma mark - Accessors
 - (UILabel *)displayLabel {
   if (!_displayLabel) {
-    _displayLabel = [[UILabel alloc] initWithFrame:self.contentView.bounds];
+    CGRect f = self.contentView.bounds;
+      f.origin.y = f.size.height/2;
+      f.size.height = f.size.height/2;
+    _displayLabel = [[UILabel alloc] initWithFrame:f];
     _displayLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    _displayLabel.backgroundColor = [UIColor lightGrayColor];
+    _displayLabel.backgroundColor = [UIColor clearColor];
     _displayLabel.textColor = [UIColor whiteColor];
     _displayLabel.textAlignment = NSTextAlignmentCenter;
   }
@@ -61,9 +64,12 @@
     self.imageView.frame = imageViewFrame;
     self.imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.imageView.clipsToBounds = YES;
-      self.imageView.layer.cornerRadius = 5;
-      self.imageView.layer.masksToBounds = YES;
+      self.imageView.layer.borderWidth = 4;
+      self.imageView.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.imageView.layer.cornerRadius = 5;
+    self.imageView.layer.masksToBounds = YES;
     [self.contentView addSubview:self.imageView];
+    [self.contentView addSubview:self.displayLabel];
   }
   return self;
 }

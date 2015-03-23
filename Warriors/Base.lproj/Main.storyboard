@@ -394,6 +394,10 @@
                                         <exclude reference="5oD-dA-0ee"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="kmz-mq-rjE" id="6MB-4T-hhJ"/>
+                                    <outlet property="delegate" destination="kmz-mq-rjE" id="VLc-WA-gyK"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -411,6 +415,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Bnf-wS-R3f" id="RK0-pR-JHS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qit-sg-HTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

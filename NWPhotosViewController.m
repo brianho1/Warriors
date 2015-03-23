@@ -22,10 +22,7 @@
 @property (nonatomic, strong) NSMutableArray *cellSizes;
 @end
 
-@implementation NWPhotosViewController {
-    NSInteger count;
-}
-
+@implementation NWPhotosViewController
 #pragma mark - Accessors
 
 - (UICollectionView *)collectionView {
@@ -35,8 +32,8 @@
         layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
         layout.headerHeight = 15;
         layout.footerHeight = 10;
-        layout.minimumColumnSpacing = 20;
-        layout.minimumInteritemSpacing = 30;
+        layout.minimumColumnSpacing = 10;
+        layout.minimumInteritemSpacing = 10;
         
         _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
         _collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
@@ -58,7 +55,7 @@
 - (NSMutableArray *)cellSizes {
     if (!_cellSizes) {
         _cellSizes = [NSMutableArray array];
-        for (NSInteger i = 0; i < CELL_COUNT; i++) {
+        for (NSInteger i = 0; i < self.eventsWithPics.count; i++) {
             CGSize size = CGSizeMake(arc4random() % 50 + 50, arc4random() % 50 + 50);
             _cellSizes[i] = [NSValue valueWithCGSize:size];
         }
@@ -83,12 +80,15 @@
     events = [[Event findAllSortedBy:sortKey ascending:ascending] mutableCopy];
     
     self.eventsWithPics = [NSMutableArray new];
+    for (int i = 1; i< 5; i++) {
     for (Event *event in events) {
         if (event.picture != nil) {
             [self.eventsWithPics addObject:event.picture];
         }
     }
-    count = 0;
+    }
+    self.title = @"Photos";
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -121,19 +121,6 @@
     CHTCollectionViewWaterfallCell *cell =
     (CHTCollectionViewWaterfallCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CELL_IDENTIFIER
                                                                                 forIndexPath:indexPath];
-    NSMutableArray *events;
-    NSString *sortKey = @"time";
-    BOOL ascending = [sortKey isEqualToString:@"time"] ? NO : YES;
-    // Fetch entities with MagicalRecord
-    events = [[Event findAllSortedBy:sortKey ascending:ascending] mutableCopy];
-    
-    self.eventsWithPics = [NSMutableArray new];
-    for (Event *event in events) {
-        if (event.picture != nil) {
-            [self.eventsWithPics addObject:event.picture];
-        }
-    }
-    //      NSUInteger pickACat = arc4random_uniform((int)self.eventsWithPics.count -1 ) + 0;     // Vary from 1 to 4.
     NSString *randomfile = self.eventsWithPics[indexPath.row];
     NSString *stringPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0]stringByAppendingPathComponent:@"Images"];
     NSError *error = nil;

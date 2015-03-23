@@ -140,8 +140,8 @@
     self.containerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
     //    self.containerView.autoresizingMask = UIViewAutoresizingNone;
     self.containerView.frame = containerFrame;
-
-
+    
+    self.navigationController.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -721,11 +721,6 @@
     self.containerView.frame = r;
 }
 
-
--(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-{
-    return YES;
-}
 
 
 
