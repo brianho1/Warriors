@@ -36,6 +36,13 @@
     self.nameTextField.text = [NSString stringWithFormat:@"%@ %@", self.person.firstName,self.person.lastName];
     self.titleTextField.text = self.person.title;
     self.companyTextField.text = self.person.company;
+    if (self.event != nil) {
+        self.eventTitleTextField.text = self.event.title;
+        self.ratingScoreTextField.text = [NSString stringWithFormat:@"%@",self.event.score];
+        self.noteTextView.text = self.event.note;
+        self.timeTextField.text = @"";
+
+    };
     self.eventTitleTextField.delegate = self;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)

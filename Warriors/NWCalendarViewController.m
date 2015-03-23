@@ -22,6 +22,7 @@ static CGFloat CALENDER_VIEW_HEIGHT = 150.f;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.view addSubview:self.calendarView];
+    self.title = @"Calendar";
 
 }
 
@@ -33,7 +34,7 @@ static CGFloat CALENDER_VIEW_HEIGHT = 150.f;
 -(CLWeeklyCalendarView *)calendarView
 {
     if(!_calendarView){
-        _calendarView = [[CLWeeklyCalendarView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height, self.view.bounds.size.width, CALENDER_VIEW_HEIGHT)];
+        _calendarView = [[CLWeeklyCalendarView alloc] initWithFrame:CGRectMake(0, 22 + self.navigationController.navigationBar.frame.size.height, self.view.bounds.size.width, CALENDER_VIEW_HEIGHT)];
         _calendarView.delegate = self;
     }
     return _calendarView;

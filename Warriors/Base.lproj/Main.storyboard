@@ -373,7 +373,36 @@
                     <view key="view" contentMode="scaleToFill" id="rHM-sq-9z6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Bnf-wS-R3f">
+                                <rect key="frame" x="0.0" y="194" width="600" height="814"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="5oD-dA-0ee"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LuK-50-c7p">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LuK-50-c7p" id="xVt-eH-tUX">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5oD-dA-0ee"/>
+                                    </mask>
+                                </variation>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bnf-wS-R3f" firstAttribute="top" secondItem="iGy-o2-lH2" secondAttribute="bottom" constant="130" id="Fyc-61-uQL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Bnf-wS-R3f" secondAttribute="trailing" constant="-16" id="IE1-6g-sed"/>
+                            <constraint firstAttribute="width" secondItem="Bnf-wS-R3f" secondAttribute="width" id="QOV-Xz-m8o"/>
+                            <constraint firstAttribute="height" secondItem="Bnf-wS-R3f" secondAttribute="height" constant="-214" id="w0A-b0-vHm"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HXO-ey-i8d">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="N7I-tw-fhm">
@@ -385,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qit-sg-HTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1936" y="1056"/>
+            <point key="canvasLocation" x="1936" y="1210"/>
         </scene>
         <!--Timeline Table View Controller-->
         <scene sceneID="7qD-nk-vWk">
@@ -507,6 +536,7 @@
                         <outlet property="tableView" destination="L4c-CL-std" id="g0d-o1-Bmd"/>
                         <segue destination="WwD-fa-GJS" kind="show" identifier="addEventForNewUser" id="EDy-SP-yeV"/>
                         <segue destination="cBS-Dh-xB7" kind="show" identifier="didSelectExistingUser" id="kA4-Yv-rL1"/>
+                        <segue destination="cBS-Dh-xB7" kind="show" identifier="didSelectExistingEvent" id="vjO-c6-exp"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57U-40-int" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -981,6 +1011,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4ZS-g8-9hC"/>
-        <segue reference="kA4-Yv-rL1"/>
+        <segue reference="vjO-c6-exp"/>
     </inferredMetricsTieBreakers>
 </document>

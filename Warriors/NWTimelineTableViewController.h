@@ -12,5 +12,6 @@
 @interface NWTimelineTableViewController : UITableViewController
 
 @property (strong, nonatomic) Person *personToPass;
+@property (strong, nonatomic) Event *eventToPass;
 
 @end

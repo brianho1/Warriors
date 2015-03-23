@@ -58,9 +58,11 @@
     // Fetch entities with MagicalRecord
     self.events = [[Event findAllSortedBy:sortKey ascending:ascending] mutableCopy];
     
+    NSMutableArray *people = [NSMutableArray new];
     for (Event *event in self.events) {
-        [self.people addObject:event.person];
+        [people addObject:event.person];
     }
+    self.people = people;
 }
 
 
@@ -172,6 +174,12 @@
         [self.events removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.personToPass = self.people[indexPath.row];
+    self.eventToPass = self.events[indexPath.row];
+    [self performSegueWithIdentifier:@"didSelectExistingEvent" sender:self];
 }
 
 #pragma mark - Search Bar Delegate
@@ -292,7 +300,21 @@
         BBEventInputViewController *eventInput = navController.viewControllers[0];
 //        BBEventInputViewController *eventInput = segue.destinationViewController;
         eventInput.person = self.personToPass;
+        eventInput.event = nil;
+        eventInput.editingMode = NO;
     }
+    //didSelectExistingEvent
+    if ([segue.identifier isEqualToString:@"didSelectExistingEvent"]) {
+        //        UINavigationController *vc = segue.destinationViewController;
+        //        NSArray *viewControllers = vc.viewControllers;
+        UINavigationController *navController = segue.destinationViewController;
+        BBEventInputViewController *eventInput = navController.viewControllers[0];
+        //        BBEventInputViewController *eventInput = segue.destinationViewController;
+        eventInput.person = self.personToPass;
+        eventInput.event = self.eventToPass;
+        eventInput.editingMode = YES;
+    }
+
 }
 
 /*

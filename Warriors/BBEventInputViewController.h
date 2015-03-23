@@ -17,5 +17,7 @@
 -(void)resignTextView;
 
 @property (strong, nonatomic) Person * person;
+@property (strong, nonatomic) Event * event;
+@property (nonatomic) BOOL editingMode;
 
 @end
