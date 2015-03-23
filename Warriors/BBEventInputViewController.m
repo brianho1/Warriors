@@ -167,53 +167,60 @@
             //            self.nameTextField.text = stringToAnalyze;
             [dict setObject:arrayofString[i] forKey:@"score"];
         }
-        // If it is date
-        else if (([arrayofString[i] rangeOfString:@"pm"].location != NSNotFound ) || ([arrayofString[i] rangeOfString:@"am"].location != NSNotFound)) {
-            NSRange tempLoc = NSMakeRange(0, 0);
-            BOOL isItAfternoon;
-            if ([arrayofString[i] rangeOfString:@"pm"].location != NSNotFound) {
-                tempLoc = [arrayofString[i] rangeOfString:@"pm"];
-                isItAfternoon = YES;
-            }
-            else {
-                tempLoc = [arrayofString[i] rangeOfString:@"am"];
-                isItAfternoon = NO;
-            }
-            NSString *hour = [arrayofString[i] substringToIndex:tempLoc.location];
-            hour = [hour stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-            NSString *hourString;
-            NSString *minuteString;
-            NSScanner *scanner = [NSScanner scannerWithString:hour];
-            NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
-            // Throw away characters before the first number.
-            [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
-            // Collect numbers.
-            [scanner scanCharactersFromSet:numbers intoString:&hourString];
-            
-            [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
-            // Collect numbers.
-            [scanner scanCharactersFromSet:numbers intoString:&minuteString];
-            // Result.
-            NSInteger hourInt = [hourString integerValue];
-            if (isItAfternoon == YES) {
-                if (hourInt < 12) hourInt += 12;
-            }
-            else {
-                if (hourInt == 12) hourInt -= 12;
-            }
-            NSInteger minInt = [minuteString integerValue];
-            NSLog(@"%ld:%ld", (long)hourInt,(long)minInt);
-            NSDate* result = [NSDate date];
-            NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-            NSDateComponents *comps = [gregorian components: NSUIntegerMax fromDate: result];
-            [comps setMinute:minInt];
-            [comps setHour:hourInt];
-            result = [gregorian dateFromComponents:comps];
-            NSString *dateString = [NSDateFormatter localizedStringFromDate:result
+        else if ([self isDate:arrayofString[i]]) {
+            NSDate *eventDate = [self eventDate:arrayofString[i]];
+            NSString *dateString = [NSDateFormatter localizedStringFromDate:eventDate
                                                                   dateStyle:NSDateFormatterMediumStyle
                                                                   timeStyle:NSDateFormatterShortStyle];
             [dict setObject:dateString forKey:@"time"];
+
         }
+        // If it is date
+//        else if (([arrayofString[i] rangeOfString:@"pm"].location != NSNotFound ) || ([arrayofString[i] rangeOfString:@"am"].location != NSNotFound)) {
+//            NSRange tempLoc = NSMakeRange(0, 0);
+//            BOOL isItAfternoon;
+//            if ([arrayofString[i] rangeOfString:@"pm"].location != NSNotFound) {
+//                tempLoc = [arrayofString[i] rangeOfString:@"pm"];
+//                isItAfternoon = YES;
+//            }
+//            else {
+//                tempLoc = [arrayofString[i] rangeOfString:@"am"];
+//                isItAfternoon = NO;
+//            }
+//            NSString *hour = [arrayofString[i] substringToIndex:tempLoc.location];
+//            hour = [hour stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//            NSString *hourString;
+//            NSString *minuteString;
+//            NSScanner *scanner = [NSScanner scannerWithString:hour];
+//            NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+//            // Throw away characters before the first number.
+//            [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
+//            // Collect numbers.
+//            [scanner scanCharactersFromSet:numbers intoString:&hourString];
+//            [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
+//            // Collect numbers.
+//            [scanner scanCharactersFromSet:numbers intoString:&minuteString];
+//            // Result.
+//            NSInteger hourInt = [hourString integerValue];
+//            if (isItAfternoon == YES) {
+//                if (hourInt < 12) hourInt += 12;
+//            }
+//            else {
+//                if (hourInt == 12) hourInt -= 12;
+//            }
+//            NSInteger minInt = [minuteString integerValue];
+//            NSLog(@"%ld:%ld", (long)hourInt,(long)minInt);
+//            NSDate* result = [NSDate date];
+//            NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+//            NSDateComponents *comps = [gregorian components: NSUIntegerMax fromDate: result];
+//            [comps setMinute:minInt];
+//            [comps setHour:hourInt];
+//            result = [gregorian dateFromComponents:comps];
+//            NSString *dateString = [NSDateFormatter localizedStringFromDate:result
+//                                                                  dateStyle:NSDateFormatterMediumStyle
+//                                                                  timeStyle:NSDateFormatterShortStyle];
+//            [dict setObject:dateString forKey:@"time"];
+//        }
         else if ([arrayofString[i] rangeOfString:@"at"].location != NSNotFound) {
             NSArray * titleAndCompany = [arrayofString[i] componentsSeparatedByString:@"at"];
             [dict setObject:titleAndCompany[1] forKey:@"location"];
@@ -225,6 +232,270 @@
     
     return dict;
     
+}
+-(BOOL)isDate:(NSString *)string {
+    BOOL checking;
+    NSArray *dateSignal = @[@"ago",@"yesterday", @"PM",@"AM",@"now",@"today",@"this morning",@"this afternoon",@"this evening"];
+    checking = NO;
+    for (NSString *components in dateSignal) {
+    if ([string rangeOfString:components].location != NSNotFound) {
+        checking = YES;
+    }
+    }
+    return checking;
+}
+
+-(NSDate *)eventDate:(NSString *)fuzzyString {
+    NSDate *eventDate;
+    NSArray *separatedComps = [fuzzyString componentsSeparatedByString:@" "];
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"M, d, y 'at' hh:mm a"];
+    [formatter setLocale:[NSLocale currentLocale]];
+    [formatter setTimeZone:[NSTimeZone localTimeZone]];
+
+    if ([[fuzzyString lowercaseString] rangeOfString:@"now"].location != NSNotFound) {
+        eventDate = [NSDate date];
+        return eventDate;
+    }
+    else if ([[fuzzyString lowercaseString] rangeOfString:@"yesterday"].location != NSNotFound) {
+        eventDate = [[NSDate date] dateByAddingTimeInterval:(-24*60*60)];
+    }
+    else if ([[fuzzyString lowercaseString] rangeOfString:@"today"].location != NSNotFound) {
+        eventDate = [[NSDate date] dateByAddingTimeInterval:0];
+    }
+    else if ([[fuzzyString lowercaseString] rangeOfString:@"ago"].location != NSNotFound) {
+        for (int i = 0; i<separatedComps.count; i++) {
+            if ([[separatedComps[i] lowercaseString] isEqualToString:@"ago"]) {
+                NSInteger daysago = 0;
+                if ([[separatedComps[i-1] lowercaseString] isEqualToString:@"days"] || [[separatedComps[i-1] lowercaseString] isEqualToString:@"day"]) {
+                        NSString *stringValue = separatedComps[i-2];
+                        NSInteger howmanydays;
+                        if ([self isInteger:stringValue]) {
+                            howmanydays = [stringValue integerValue];
+                        }
+                        else {
+                            if ([[stringValue lowercaseString] isEqualToString:@"a"] || [[stringValue lowercaseString] isEqualToString:@"one"]) {
+                                howmanydays = 1;
+                            }
+                            else if ([[stringValue lowercaseString] isEqualToString:@"two"]) {
+                                howmanydays = 2;
+                            }
+                            else if ([[stringValue lowercaseString] isEqualToString:@"three"]) {
+                                howmanydays = 3;
+                            }
+                            else if ([[stringValue lowercaseString] isEqualToString:@"four"]) {
+                                howmanydays = 4;
+                            }
+                            else if ([[stringValue lowercaseString] isEqualToString:@"five"]) {
+                                howmanydays = 5;
+                            }
+                            else if ([[stringValue lowercaseString] isEqualToString:@"six"]) {
+                                howmanydays = 6;
+                            }
+                            else if ([[stringValue lowercaseString] isEqualToString:@"seven"]) {
+                                howmanydays = 7;
+                            }
+                            else if ([[stringValue lowercaseString] isEqualToString:@"eight"]) {
+                                howmanydays = 8;
+                            }
+                            else if ([[stringValue lowercaseString] isEqualToString:@"nine"]) {
+                                howmanydays = 9;
+                            }
+                            else if ([[stringValue lowercaseString] isEqualToString:@"ten"]) {
+                                howmanydays = 10;
+                            }
+
+                        }
+                        daysago = howmanydays*24*60*60;
+                    }
+            else if ([[separatedComps[i-1] lowercaseString] isEqualToString:@"weeks"] || [[separatedComps[i-1] lowercaseString] isEqualToString:@"week"]) {
+                NSString *stringValue = separatedComps[i-2];
+                NSInteger howmanydays;
+                if ([self isInteger:stringValue]) {
+                    howmanydays = [stringValue integerValue];
+                }
+                else {
+                    if ([[stringValue lowercaseString] isEqualToString:@"a"] || [[stringValue lowercaseString] isEqualToString:@"one"]) {
+                        howmanydays = 1;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"two"]) {
+                        howmanydays = 2;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"three"]) {
+                        howmanydays = 3;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"four"]) {
+                        howmanydays = 4;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"five"]) {
+                        howmanydays = 5;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"six"]) {
+                        howmanydays = 6;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"seven"]) {
+                        howmanydays = 7;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"eight"]) {
+                        howmanydays = 8;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"nine"]) {
+                        howmanydays = 9;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"ten"]) {
+                        howmanydays = 10;
+                    }
+                    
+                }
+                daysago = 7*howmanydays*24*60*60;
+
+                
+            }
+            else if ([[separatedComps[i-1] lowercaseString] isEqualToString:@"minutes"] || [[separatedComps[i-1] lowercaseString] isEqualToString:@"minute"]) {
+            // minute ago
+                NSString *stringValue = separatedComps[i-2];
+                NSInteger howmanydays;
+                if ([self isInteger:stringValue]) {
+                    howmanydays = [stringValue integerValue];
+                }
+                else {
+                    if ([[stringValue lowercaseString] isEqualToString:@"a"] || [[stringValue lowercaseString] isEqualToString:@"one"]) {
+                        howmanydays = 1;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"two"]) {
+                        howmanydays = 2;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"three"]) {
+                        howmanydays = 3;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"four"]) {
+                        howmanydays = 4;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"five"]) {
+                        howmanydays = 5;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"six"]) {
+                        howmanydays = 6;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"seven"]) {
+                        howmanydays = 7;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"eight"]) {
+                        howmanydays = 8;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"nine"]) {
+                        howmanydays = 9;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"ten"]) {
+                        howmanydays = 10;
+                    }
+                    
+                }
+                daysago = howmanydays*60;
+
+            }
+            else if ([[separatedComps[i-1] lowercaseString] isEqualToString:@"hours"] || [[separatedComps[i-1] lowercaseString] isEqualToString:@"hour"]) {
+                // minute ago
+                NSString *stringValue = separatedComps[i-2];
+                NSInteger howmanydays;
+                if ([self isInteger:stringValue]) {
+                    howmanydays = [stringValue integerValue];
+                }
+                else {
+                    if ([[stringValue lowercaseString] isEqualToString:@"an"] || [[stringValue lowercaseString] isEqualToString:@"one"]) {
+                        howmanydays = 1;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"two"]) {
+                        howmanydays = 2;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"three"]) {
+                        howmanydays = 3;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"four"]) {
+                        howmanydays = 4;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"five"]) {
+                        howmanydays = 5;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"six"]) {
+                        howmanydays = 6;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"seven"]) {
+                        howmanydays = 7;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"eight"]) {
+                        howmanydays = 8;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"nine"]) {
+                        howmanydays = 9;
+                    }
+                    else if ([[stringValue lowercaseString] isEqualToString:@"ten"]) {
+                        howmanydays = 10;
+                    }
+                    
+                }
+                daysago = howmanydays*60*60;
+
+            }
+
+                eventDate = [[NSDate date] dateByAddingTimeInterval:-daysago];
+                break;
+            }
+        }
+    }
+    
+    if ([fuzzyString rangeOfString:@"am"].location != NSNotFound || [fuzzyString rangeOfString:@"pm"].location != NSNotFound) {
+        BOOL isItAfternoon = NO;
+        NSInteger stringLoc;
+        if ([fuzzyString rangeOfString:@"am"].location != NSNotFound ) {
+            isItAfternoon = NO;
+            stringLoc = [fuzzyString rangeOfString:@"am"].location;
+        }
+        else {
+            isItAfternoon = YES;
+            stringLoc = [fuzzyString rangeOfString:@"pm"].location;
+
+        }
+        NSString *hour = fuzzyString;
+        NSString *hourString;
+        NSString *minuteString;
+        NSScanner *scanner = [NSScanner scannerWithString:hour];
+        NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+        // Throw away characters before the first number.
+        [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
+        // Collect numbers.
+        [scanner scanCharactersFromSet:numbers intoString:&hourString];
+        [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
+        // Collect numbers.
+        [scanner scanCharactersFromSet:numbers intoString:&minuteString];
+        // Result.
+        NSInteger hourInt = [hourString integerValue];
+        if (isItAfternoon == YES) {
+            if (hourInt < 12) hourInt += 12;
+        }
+        else {
+            if (hourInt == 12) hourInt -= 12;
+        }
+        NSInteger minInt = [minuteString integerValue];
+//        NSDate* result = [NSDate date];
+        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        NSDateComponents *comps = [gregorian components: NSUIntegerMax fromDate: eventDate];
+        [comps setMinute:minInt];
+        [comps setHour:hourInt];
+        eventDate = [gregorian dateFromComponents:comps];
+        
+        //modified hour & minute here
+    }
+
+    return eventDate;
+}
+
+
+- (BOOL)isInteger:(NSString *)toCheck {
+    NSScanner* scan = [NSScanner scannerWithString:toCheck];
+    int val;
+    return [scan scanInt:&val] && [scan isAtEnd];
+
 }
 
 
