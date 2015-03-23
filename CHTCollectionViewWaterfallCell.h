@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Event.h"
 
 @interface CHTCollectionViewWaterfallCell : UICollectionViewCell
 @property (nonatomic, copy) NSString *displayString;
+@property (strong, nonatomic) NSMutableArray *eventsWithPics;
 @property (nonatomic, strong) IBOutlet UILabel *displayLabel;
+@property (strong, nonatomic, readonly) UIImageView *imageView;
+@property (nonatomic) NSInteger item;
 @end

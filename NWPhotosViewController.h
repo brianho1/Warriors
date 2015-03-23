@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "CHTCollectionViewWaterfallLayout.h"
-
+#import "Event.h"
 
 @interface NWPhotosViewController : UIViewController <UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout>
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (strong, nonatomic) NSMutableArray *eventsWithPics;
 
 @end
 

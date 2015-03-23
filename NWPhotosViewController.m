@@ -22,7 +22,9 @@
 @property (nonatomic, strong) NSMutableArray *cellSizes;
 @end
 
-@implementation NWPhotosViewController
+@implementation NWPhotosViewController {
+    NSInteger count;
+}
 
 #pragma mark - Accessors
 
@@ -74,6 +76,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.collectionView];
+    NSMutableArray *events;
+    NSString *sortKey = @"time";
+    BOOL ascending = [sortKey isEqualToString:@"time"] ? NO : YES;
+    // Fetch entities with MagicalRecord
+    events = [[Event findAllSortedBy:sortKey ascending:ascending] mutableCopy];
+    
+    self.eventsWithPics = [NSMutableArray new];
+    for (Event *event in events) {
+        if (event.picture != nil) {
+            [self.eventsWithPics addObject:event.picture];
+        }
+    }
+    count = 0;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -95,7 +110,7 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return CELL_COUNT;
+    return self.eventsWithPics.count;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -106,7 +121,30 @@
     CHTCollectionViewWaterfallCell *cell =
     (CHTCollectionViewWaterfallCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CELL_IDENTIFIER
                                                                                 forIndexPath:indexPath];
+    NSMutableArray *events;
+    NSString *sortKey = @"time";
+    BOOL ascending = [sortKey isEqualToString:@"time"] ? NO : YES;
+    // Fetch entities with MagicalRecord
+    events = [[Event findAllSortedBy:sortKey ascending:ascending] mutableCopy];
+    
+    self.eventsWithPics = [NSMutableArray new];
+    for (Event *event in events) {
+        if (event.picture != nil) {
+            [self.eventsWithPics addObject:event.picture];
+        }
+    }
+    //      NSUInteger pickACat = arc4random_uniform((int)self.eventsWithPics.count -1 ) + 0;     // Vary from 1 to 4.
+    NSString *randomfile = self.eventsWithPics[indexPath.row];
+    NSString *stringPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0]stringByAppendingPathComponent:@"Images"];
+    NSError *error = nil;
+    if (![[NSFileManager defaultManager] fileExistsAtPath:stringPath])
+        [[NSFileManager defaultManager] createDirectoryAtPath:stringPath withIntermediateDirectories:NO attributes:nil error:&error];
+    NSString *fileName = [stringPath stringByAppendingFormat:@"%@.jpg",randomfile];
+    UIImage *image = [UIImage imageWithData:[[NSFileManager defaultManager] contentsAtPath:fileName]];
+
     cell.displayString = [NSString stringWithFormat:@"%ld", (long)indexPath.item];
+    cell.imageView.image = image;
+    
     return cell;
 }
 
