@@ -31,10 +31,18 @@
 		EA2082011ABD3C350024246D /* NWDropboxSyncViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2082001ABD3C350024246D /* NWDropboxSyncViewController.m */; };
 		EA2082031ABD52A10024246D /* dropbox_copyrighted-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2082021ABD52A10024246D /* dropbox_copyrighted-50.png */; };
 		EA2082061ABD574F0024246D /* NWSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2082051ABD574F0024246D /* NWSettingsTableViewController.m */; };
-		EAA136FD1ABCE389006F8A2D /* cat1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAA136F91ABCE389006F8A2D /* cat1.jpg */; };
-		EAA136FE1ABCE389006F8A2D /* cat2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAA136FA1ABCE389006F8A2D /* cat2.jpg */; };
-		EAA136FF1ABCE389006F8A2D /* cat3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAA136FB1ABCE389006F8A2D /* cat3.jpg */; };
-		EAA137001ABCE389006F8A2D /* cat4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAA136FC1ABCE389006F8A2D /* cat4.jpg */; };
+		EA20820B1AC12F760024246D /* JBBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA20820A1AC12F760024246D /* JBBarChartViewController.m */; };
+		EA20820E1AC12F8E0024246D /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA20820D1AC12F8E0024246D /* JBBarChartView.m */; };
+		EA2082111AC12F980024246D /* JBBarChartFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2082101AC12F980024246D /* JBBarChartFooterView.m */; };
+		EA2082141AC12FAA0024246D /* JBChartInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2082131AC12FAA0024246D /* JBChartInformationView.m */; };
+		EA2082171AC12FC00024246D /* JBChartHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2082161AC12FC00024246D /* JBChartHeaderView.m */; };
+		EA20821C1AC1307E0024246D /* JBChartTooltipTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2082191AC1307E0024246D /* JBChartTooltipTipView.m */; };
+		EA20821D1AC1307E0024246D /* JBChartTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA20821B1AC1307E0024246D /* JBChartTooltipView.m */; };
+		EA2082261AC130910024246D /* JBBaseChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA20821F1AC130910024246D /* JBBaseChartViewController.m */; };
+		EA2082271AC130910024246D /* JBBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2082211AC130910024246D /* JBBaseNavigationController.m */; };
+		EA2082281AC130910024246D /* JBBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2082231AC130910024246D /* JBBaseTableViewController.m */; };
+		EA2082291AC130910024246D /* JBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2082251AC130910024246D /* JBBaseViewController.m */; };
+		EA2082321AC131580024246D /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2082311AC131580024246D /* JBChartView.m */; };
 		EADAFBA31AB9FCD1005CF333 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA21AB9FCD1005CF333 /* main.m */; };
 		EADAFBA61AB9FCD1005CF333 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA51AB9FCD1005CF333 /* AppDelegate.m */; };
 		EADAFBA91AB9FCD1005CF333 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA81AB9FCD1005CF333 /* ViewController.m */; };
@@ -153,7 +161,7 @@
 		EA20814C1ABD11A30024246D /* NWCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NWCalendarViewController.h; path = Warriors/NWCalendarViewController.h; sourceTree = SOURCE_ROOT; };
 		EA20814D1ABD11A30024246D /* NWCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NWCalendarViewController.m; path = Warriors/NWCalendarViewController.m; sourceTree = SOURCE_ROOT; };
 		EA20814F1ABD145A0024246D /* calendar-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-50.png"; sourceTree = "<group>"; };
-		EA2081F91ABD3BD80024246D /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
+		EA2081F91ABD3BD80024246D /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropboxSDK.framework; path = Warriors/DropboxSDK.framework; sourceTree = "<group>"; };
 		EA2081FB1ABD3BEB0024246D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		EA2081FD1ABD3BF40024246D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EA2081FF1ABD3C350024246D /* NWDropboxSyncViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWDropboxSyncViewController.h; sourceTree = "<group>"; };
@@ -161,10 +169,35 @@
 		EA2082021ABD52A10024246D /* dropbox_copyrighted-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dropbox_copyrighted-50.png"; sourceTree = "<group>"; };
 		EA2082041ABD574F0024246D /* NWSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWSettingsTableViewController.h; sourceTree = "<group>"; };
 		EA2082051ABD574F0024246D /* NWSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWSettingsTableViewController.m; sourceTree = "<group>"; };
-		EAA136F91ABCE389006F8A2D /* cat1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cat1.jpg; path = ../cat1.jpg; sourceTree = "<group>"; };
-		EAA136FA1ABCE389006F8A2D /* cat2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cat2.jpg; path = ../cat2.jpg; sourceTree = "<group>"; };
-		EAA136FB1ABCE389006F8A2D /* cat3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cat3.jpg; path = ../cat3.jpg; sourceTree = "<group>"; };
-		EAA136FC1ABCE389006F8A2D /* cat4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cat4.jpg; path = ../cat4.jpg; sourceTree = "<group>"; };
+		EA2082091AC12F760024246D /* JBBarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBarChartViewController.h; sourceTree = "<group>"; };
+		EA20820A1AC12F760024246D /* JBBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBarChartViewController.m; sourceTree = "<group>"; };
+		EA20820C1AC12F8E0024246D /* JBBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBarChartView.h; sourceTree = "<group>"; };
+		EA20820D1AC12F8E0024246D /* JBBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBarChartView.m; sourceTree = "<group>"; };
+		EA20820F1AC12F980024246D /* JBBarChartFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBarChartFooterView.h; sourceTree = "<group>"; };
+		EA2082101AC12F980024246D /* JBBarChartFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBarChartFooterView.m; sourceTree = "<group>"; };
+		EA2082121AC12FAA0024246D /* JBChartInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartInformationView.h; sourceTree = "<group>"; };
+		EA2082131AC12FAA0024246D /* JBChartInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartInformationView.m; sourceTree = "<group>"; };
+		EA2082151AC12FC00024246D /* JBChartHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartHeaderView.h; sourceTree = "<group>"; };
+		EA2082161AC12FC00024246D /* JBChartHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartHeaderView.m; sourceTree = "<group>"; };
+		EA2082181AC1307E0024246D /* JBChartTooltipTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartTooltipTipView.h; sourceTree = "<group>"; };
+		EA2082191AC1307E0024246D /* JBChartTooltipTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartTooltipTipView.m; sourceTree = "<group>"; };
+		EA20821A1AC1307E0024246D /* JBChartTooltipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartTooltipView.h; sourceTree = "<group>"; };
+		EA20821B1AC1307E0024246D /* JBChartTooltipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartTooltipView.m; sourceTree = "<group>"; };
+		EA20821E1AC130910024246D /* JBBaseChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBaseChartViewController.h; sourceTree = "<group>"; };
+		EA20821F1AC130910024246D /* JBBaseChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBaseChartViewController.m; sourceTree = "<group>"; };
+		EA2082201AC130910024246D /* JBBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBaseNavigationController.h; sourceTree = "<group>"; };
+		EA2082211AC130910024246D /* JBBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBaseNavigationController.m; sourceTree = "<group>"; };
+		EA2082221AC130910024246D /* JBBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBaseTableViewController.h; sourceTree = "<group>"; };
+		EA2082231AC130910024246D /* JBBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBaseTableViewController.m; sourceTree = "<group>"; };
+		EA2082241AC130910024246D /* JBBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBaseViewController.h; sourceTree = "<group>"; };
+		EA2082251AC130910024246D /* JBBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBaseViewController.m; sourceTree = "<group>"; };
+		EA20822A1AC130E60024246D /* JBColorConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBColorConstants.h; sourceTree = "<group>"; };
+		EA20822B1AC130E60024246D /* JBConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBConstants.h; sourceTree = "<group>"; };
+		EA20822C1AC130E60024246D /* JBFontConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBFontConstants.h; sourceTree = "<group>"; };
+		EA20822D1AC130E60024246D /* JBStringConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBStringConstants.h; sourceTree = "<group>"; };
+		EA20822E1AC130E60024246D /* JBUIConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBUIConstants.h; sourceTree = "<group>"; };
+		EA2082301AC131580024246D /* JBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartView.h; sourceTree = "<group>"; };
+		EA2082311AC131580024246D /* JBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartView.m; sourceTree = "<group>"; };
 		EADAFB9D1AB9FCD1005CF333 /* Warriors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Warriors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EADAFBA11AB9FCD1005CF333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EADAFBA21AB9FCD1005CF333 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -422,11 +455,73 @@
 			path = Misc;
 			sourceTree = "<group>";
 		};
+		EA2082071AC12F030024246D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA2081F91ABD3BD80024246D /* DropboxSDK.framework */,
+				EADAFC311ABA52CA005CF333 /* CoreData.framework */,
+				EA2081FD1ABD3BF40024246D /* QuartzCore.framework */,
+				EA2081FB1ABD3BEB0024246D /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA2082081AC12F450024246D /* BarChart */ = {
+			isa = PBXGroup;
+			children = (
+				EA20822F1AC131180024246D /* Constants */,
+				EA2082331AC131CF0024246D /* Base */,
+				EA2082091AC12F760024246D /* JBBarChartViewController.h */,
+				EA20820A1AC12F760024246D /* JBBarChartViewController.m */,
+				EA2082121AC12FAA0024246D /* JBChartInformationView.h */,
+				EA2082131AC12FAA0024246D /* JBChartInformationView.m */,
+				EA20820F1AC12F980024246D /* JBBarChartFooterView.h */,
+				EA2082101AC12F980024246D /* JBBarChartFooterView.m */,
+				EA20820C1AC12F8E0024246D /* JBBarChartView.h */,
+				EA20820D1AC12F8E0024246D /* JBBarChartView.m */,
+				EA2082151AC12FC00024246D /* JBChartHeaderView.h */,
+				EA2082161AC12FC00024246D /* JBChartHeaderView.m */,
+				EA2082181AC1307E0024246D /* JBChartTooltipTipView.h */,
+				EA2082191AC1307E0024246D /* JBChartTooltipTipView.m */,
+				EA20821A1AC1307E0024246D /* JBChartTooltipView.h */,
+				EA20821B1AC1307E0024246D /* JBChartTooltipView.m */,
+				EA2082301AC131580024246D /* JBChartView.h */,
+				EA2082311AC131580024246D /* JBChartView.m */,
+			);
+			name = BarChart;
+			sourceTree = "<group>";
+		};
+		EA20822F1AC131180024246D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				EA20822A1AC130E60024246D /* JBColorConstants.h */,
+				EA20822B1AC130E60024246D /* JBConstants.h */,
+				EA20822C1AC130E60024246D /* JBFontConstants.h */,
+				EA20822D1AC130E60024246D /* JBStringConstants.h */,
+				EA20822E1AC130E60024246D /* JBUIConstants.h */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		EA2082331AC131CF0024246D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				EA20821E1AC130910024246D /* JBBaseChartViewController.h */,
+				EA20821F1AC130910024246D /* JBBaseChartViewController.m */,
+				EA2082201AC130910024246D /* JBBaseNavigationController.h */,
+				EA2082211AC130910024246D /* JBBaseNavigationController.m */,
+				EA2082221AC130910024246D /* JBBaseTableViewController.h */,
+				EA2082231AC130910024246D /* JBBaseTableViewController.m */,
+				EA2082241AC130910024246D /* JBBaseViewController.h */,
+				EA2082251AC130910024246D /* JBBaseViewController.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
 		EADAFB941AB9FCD1005CF333 = {
 			isa = PBXGroup;
 			children = (
-				EA2081FD1ABD3BF40024246D /* QuartzCore.framework */,
-				EA2081FB1ABD3BEB0024246D /* Security.framework */,
+				EA2082071AC12F030024246D /* Frameworks */,
 				EADAFB9F1AB9FCD1005CF333 /* Warriors */,
 				EADAFBB91AB9FCD1005CF333 /* WarriorsTests */,
 				EADAFB9E1AB9FCD1005CF333 /* Products */,
@@ -445,13 +540,8 @@
 		EADAFB9F1AB9FCD1005CF333 /* Warriors */ = {
 			isa = PBXGroup;
 			children = (
-				EAA136F91ABCE389006F8A2D /* cat1.jpg */,
-				EAA136FA1ABCE389006F8A2D /* cat2.jpg */,
-				EAA136FB1ABCE389006F8A2D /* cat3.jpg */,
-				EAA136FC1ABCE389006F8A2D /* cat4.jpg */,
+				EA2082081AC12F450024246D /* BarChart */,
 				EA2081331ABD08040024246D /* 13.jpg */,
-				EA1547991ABCE0D90094AC4C /* NWPhotosViewController.h */,
-				EA15479A1ABCE0D90094AC4C /* NWPhotosViewController.m */,
 				EA15478C1ABCDD9C0094AC4C /* CollectionViewCell */,
 				EA15478B1ABCDD880094AC4C /* Vender */,
 				EA1547621ABB69EC0094AC4C /* Cell */,
@@ -460,22 +550,22 @@
 				EA1547601ABB69CA0094AC4C /* Model */,
 				EA15475F1ABB69AB0094AC4C /* Resources */,
 				EADAFC9E1ABA69E6005CF333 /* TextViewGrowing */,
-				EA2081F91ABD3BD80024246D /* DropboxSDK.framework */,
 				EADAFC8A1ABA56C4005CF333 /* NWPrefixHeader.pch */,
 				EADAFBCE1ABA20E9005CF333 /* Main.storyboard */,
+				EADAFC921ABA5FF3005CF333 /* BBModalSearchViewController.xib */,
 				EA2081FF1ABD3C350024246D /* NWDropboxSyncViewController.h */,
 				EA2082001ABD3C350024246D /* NWDropboxSyncViewController.m */,
 				EA2081351ABD11560024246D /* CLWeeklyCalendarViewSourceCode */,
-				EADAFC921ABA5FF3005CF333 /* BBModalSearchViewController.xib */,
-				EADAFC311ABA52CA005CF333 /* CoreData.framework */,
 				EADAFBA41AB9FCD1005CF333 /* AppDelegate.h */,
 				EADAFBA51AB9FCD1005CF333 /* AppDelegate.m */,
+				EA1547991ABCE0D90094AC4C /* NWPhotosViewController.h */,
+				EA15479A1ABCE0D90094AC4C /* NWPhotosViewController.m */,
 				EADAFBA71AB9FCD1005CF333 /* ViewController.h */,
+				EADAFBA81AB9FCD1005CF333 /* ViewController.m */,
 				EA1547631ABB6CE60094AC4C /* BBEventInputViewController.h */,
 				EA1547641ABB6CE60094AC4C /* BBEventInputViewController.m */,
 				EADAFC9B1ABA6711005CF333 /* NWAddPersonTableViewController.h */,
 				EADAFC9C1ABA6711005CF333 /* NWAddPersonTableViewController.m */,
-				EADAFBA81AB9FCD1005CF333 /* ViewController.m */,
 				EADAFBCB1ABA1801005CF333 /* NWTimelineTableViewController.h */,
 				EADAFBCC1ABA1801005CF333 /* NWTimelineTableViewController.m */,
 				EADAFC901ABA5FF3005CF333 /* BBModalSearchViewController.h */,
@@ -714,7 +804,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EADAFCC21ABA9531005CF333 /* settings3-50.png in Resources */,
-				EAA136FE1ABCE389006F8A2D /* cat2.jpg in Resources */,
 				EADAFCC61ABA95F2005CF333 /* collect-50.png in Resources */,
 				EADAFCC41ABA95AA005CF333 /* price_tag-50.png in Resources */,
 				EADAFC8F1ABA592B005CF333 /* businesscard.jpg in Resources */,
@@ -736,9 +825,7 @@
 				EADAFCAE1ABA6AD2005CF333 /* MessageEntryBackground@2x.png in Resources */,
 				EADAFCB01ABA6AD2005CF333 /* MessageEntryInputField@2x.png in Resources */,
 				EA2081341ABD08040024246D /* 13.jpg in Resources */,
-				EAA136FD1ABCE389006F8A2D /* cat1.jpg in Resources */,
 				EADAFCB31ABA6AD2005CF333 /* MessageEntrySendButtonPressed.png in Resources */,
-				EAA136FF1ABCE389006F8A2D /* cat3.jpg in Resources */,
 				EADAFCC81ABA9618005CF333 /* mark_as_favourite-50.png in Resources */,
 				EADAFCAD1ABA6AD2005CF333 /* MessageEntryBackground.png in Resources */,
 				EADAFBB11AB9FCD1005CF333 /* LaunchScreen.xib in Resources */,
@@ -747,7 +834,6 @@
 				EADAFC941ABA5FF3005CF333 /* BBModalSearchViewController.xib in Resources */,
 				EADAFBAE1AB9FCD1005CF333 /* Images.xcassets in Resources */,
 				EADAFCD21ABABC03005CF333 /* plus-50.png in Resources */,
-				EAA137001ABCE389006F8A2D /* cat4.jpg in Resources */,
 				EADAFBCA1ABA0CA5005CF333 /* blurrybackground.jpg in Resources */,
 				EADAFBD01ABA20E9005CF333 /* Main.storyboard in Resources */,
 			);
@@ -770,10 +856,12 @@
 				EA1547681ABB6D860094AC4C /* Person.m in Sources */,
 				EA2082061ABD574F0024246D /* NWSettingsTableViewController.m in Sources */,
 				EADAFC771ABA5380005CF333 /* NSManagedObject+MagicalDataImport.m in Sources */,
+				EA20820B1AC12F760024246D /* JBBarChartViewController.m in Sources */,
 				EADAFC841ABA5380005CF333 /* MagicalRecord+iCloud.m in Sources */,
 				EADAFBC81AB9FD05005CF333 /* NWMainViewControllerTableViewController.m in Sources */,
 				EADAFC791ABA5380005CF333 /* NSManagedObject+MagicalRecord.m in Sources */,
 				EADAFC821ABA5380005CF333 /* MagicalRecord+Actions.m in Sources */,
+				EA20820E1AC12F8E0024246D /* JBBarChartView.m in Sources */,
 				EA15476B1ABB6D990094AC4C /* Event.m in Sources */,
 				EADAFC7D1ABA5380005CF333 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				EA15479B1ABCE0D90094AC4C /* NWPhotosViewController.m in Sources */,
@@ -787,20 +875,27 @@
 				EA1547851ABCDD4D0094AC4C /* CHTCollectionViewWaterfallCell.m in Sources */,
 				EADAFC871ABA5380005CF333 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				EA20814A1ABD11560024246D /* UIColor+CL.m in Sources */,
+				EA2082141AC12FAA0024246D /* JBChartInformationView.m in Sources */,
 				EADAFC701ABA5380005CF333 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
+				EA20821C1AC1307E0024246D /* JBChartTooltipTipView.m in Sources */,
 				EADAFC7A1ABA5380005CF333 /* NSManagedObject+MagicalRequests.m in Sources */,
 				EADAFC831ABA5380005CF333 /* MagicalRecord+ErrorHandling.m in Sources */,
+				EA2082291AC130910024246D /* JBBaseViewController.m in Sources */,
 				EADAFC881ABA5380005CF333 /* MagicalRecord.m in Sources */,
 				EA2082011ABD3C350024246D /* NWDropboxSyncViewController.m in Sources */,
 				EA2081451ABD11560024246D /* CLWeeklyCalendarView.m in Sources */,
 				EA15478A1ABCDD7D0094AC4C /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				EA1547861ABCDD4D0094AC4C /* CHTCollectionViewWaterfallFooter.m in Sources */,
+				EA2082261AC130910024246D /* JBBaseChartViewController.m in Sources */,
+				EA2082111AC12F980024246D /* JBBarChartFooterView.m in Sources */,
 				EADAFC851ABA5380005CF333 /* MagicalRecord+Options.m in Sources */,
 				EADAFC761ABA5380005CF333 /* NSManagedObject+MagicalAggregation.m in Sources */,
+				EA2082321AC131580024246D /* JBChartView.m in Sources */,
 				EADAFC751ABA5380005CF333 /* NSString+MagicalDataImport.m in Sources */,
 				EADAFC741ABA5380005CF333 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				EADAFBCD1ABA1801005CF333 /* NWTimelineTableViewController.m in Sources */,
 				EADAFC991ABA61FF005CF333 /* UIImage+ImageEffects.m in Sources */,
+				EA2082281AC130910024246D /* JBBaseTableViewController.m in Sources */,
 				EADAFC9A1ABA61FF005CF333 /* UIView+UIViewExtension.m in Sources */,
 				EADAFC7F1ABA5380005CF333 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				EADAFBA61AB9FCD1005CF333 /* AppDelegate.m in Sources */,
@@ -813,14 +908,17 @@
 				EADAFC861ABA5380005CF333 /* MagicalRecord+Setup.m in Sources */,
 				EA2081491ABD11560024246D /* NSDictionary+CL.m in Sources */,
 				EADAFC711ABA5380005CF333 /* NSEntityDescription+MagicalDataImport.m in Sources */,
+				EA20821D1AC1307E0024246D /* JBChartTooltipView.m in Sources */,
 				EADAFC9D1ABA6711005CF333 /* NWAddPersonTableViewController.m in Sources */,
 				EA20814E1ABD11A30024246D /* NWCalendarViewController.m in Sources */,
 				EADAFC291ABA5010005CF333 /* Model.xcdatamodeld in Sources */,
 				EA2081471ABD11560024246D /* DayTitleLabel.m in Sources */,
 				EADAFC6F1ABA5380005CF333 /* MagicalImportFunctions.m in Sources */,
 				EADAFC781ABA5380005CF333 /* NSManagedObject+MagicalFinders.m in Sources */,
+				EA2082171AC12FC00024246D /* JBChartHeaderView.m in Sources */,
 				EADAFCA41ABA69E6005CF333 /* HPTextViewInternal.m in Sources */,
 				EADAFC721ABA5380005CF333 /* NSNumber+MagicalDataImport.m in Sources */,
+				EA2082271AC130910024246D /* JBBaseNavigationController.m in Sources */,
 				EA2081481ABD11560024246D /* NSDate+CL.m in Sources */,
 				EA20814B1ABD11560024246D /* UIImage+CL.m in Sources */,
 				EADAFC801ABA5380005CF333 /* NSPersistentStore+MagicalRecord.m in Sources */,

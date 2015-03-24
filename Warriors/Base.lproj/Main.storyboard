@@ -356,11 +356,12 @@
                         <segue destination="M9A-RQ-8yE" kind="show" identifier="photos" id="0jX-8V-ymB"/>
                         <segue destination="hVh-gQ-EWv" kind="show" identifier="calendar" id="KXd-8j-3cq"/>
                         <segue destination="3Lc-n3-tZM" kind="show" identifier="settings" id="318-9z-aST"/>
+                        <segue destination="JrM-0J-frL" kind="show" identifier="analytics" id="p5F-cd-Cjd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Km-ST-VtD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1090" y="357"/>
+            <point key="canvasLocation" x="1902" y="357"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="wy8-ls-yj9">
@@ -421,7 +422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qit-sg-HTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1936" y="1210"/>
+            <point key="canvasLocation" x="3560" y="1210"/>
         </scene>
         <!--Timeline Table View Controller-->
         <scene sceneID="7qD-nk-vWk">
@@ -580,17 +581,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Developer" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uZP-KC-6h0">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Developer" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uZP-KC-6h0">
                                 <rect key="frame" x="117" y="100" width="480" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Evernote" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sht-zI-zwS">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Evernote" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sht-zI-zwS">
                                 <rect key="frame" x="116" y="129" width="480" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John Doe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jqg-TY-Btp">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John Doe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jqg-TY-Btp">
                                 <rect key="frame" x="116" y="72" width="480" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="1Bk-fv-3zZ"/>
@@ -598,12 +599,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(801) 358 2197" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nRV-1O-wK7">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(801) 358 2197" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nRV-1O-wK7">
                                 <rect key="frame" x="1" y="170" width="595" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="johndoe@gmail.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eC5-c4-QFv">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="johndoe@gmail.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eC5-c4-QFv">
                                 <rect key="frame" x="0.0" y="198" width="596" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -621,14 +622,14 @@
                                     <action selector="cameraButtonPressed:" destination="0vA-LX-dhU" eventType="touchUpInside" id="7wH-xO-gbC"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_male_circle-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ac8-Gq-ZKm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="user_male_circle-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ac8-Gq-ZKm">
                                 <rect key="frame" x="16" y="72" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="UPV-MP-aJF"/>
                                     <constraint firstAttribute="height" constant="90" id="yIx-ua-I19"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1231 Laker Street, Fresno, CA 94125" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JQr-IF-FjD">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1231 Laker Street, Fresno, CA 94125" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JQr-IF-FjD">
                                 <rect key="frame" x="1" y="227" width="596" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -717,7 +718,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iha-eS-9BU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4950" y="1023"/>
+            <point key="canvasLocation" x="6574" y="1023"/>
         </scene>
         <!--Event Input View Controller-->
         <scene sceneID="keJ-B3-i1F">
@@ -731,22 +732,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Developer" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3GY-nC-u6m">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Developer" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3GY-nC-u6m">
                                 <rect key="frame" x="117" y="100" width="480" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Evernote" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="udP-NH-dnd">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Evernote" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="udP-NH-dnd">
                                 <rect key="frame" x="116" y="129" width="480" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Title - Meet John Doe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JNp-UD-56T">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Title - Meet John Doe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JNp-UD-56T">
                                 <rect key="frame" x="1" y="171" width="595" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rate the Quality of the Meeting" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8d2-t6-luk">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rate the Quality of the Meeting" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8d2-t6-luk">
                                 <rect key="frame" x="0.0" y="199" width="596" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -778,14 +779,14 @@
                                     <action selector="addAPhoto:" destination="ftm-Ux-QU1" eventType="touchUpInside" id="twW-1Y-9i5"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_male_circle-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="zwg-WN-6jp">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="user_male_circle-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="zwg-WN-6jp">
                                 <rect key="frame" x="16" y="72" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="Mms-r9-kud"/>
                                     <constraint firstAttribute="height" constant="90" id="dQn-8c-WM3"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time of the meeting" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pvV-b3-WX8">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time of the meeting" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pvV-b3-WX8">
                                 <rect key="frame" x="1" y="228" width="596" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -796,7 +797,7 @@
                                     <constraint firstAttribute="width" constant="240" id="2o5-Zc-R6a"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John Doe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p6h-1c-cqa">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="John Doe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p6h-1c-cqa">
                                 <rect key="frame" x="116" y="72" width="480" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="4VW-JH-mwf"/>
@@ -881,7 +882,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JQE-v7-yEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6608" y="1033"/>
+            <point key="canvasLocation" x="8232" y="1033"/>
         </scene>
         <!--Photos View Controller-->
         <scene sceneID="CdH-QH-C4c">
@@ -942,7 +943,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N9W-hg-ihM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4138" y="1023"/>
+            <point key="canvasLocation" x="5762" y="1023"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Md6-W6-i1M">
@@ -960,7 +961,32 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tDd-hF-4S5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5779" y="1015"/>
+            <point key="canvasLocation" x="7403" y="1015"/>
+        </scene>
+        <!--Bar Chart View Controller-->
+        <scene sceneID="gut-I4-pqX">
+            <objects>
+                <viewController id="r3s-WR-M9d" customClass="JBBarChartViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G7e-L9-EOk"/>
+                        <viewControllerLayoutGuide type="bottom" id="khH-pW-QwU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yXW-48-ISa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="U2d-br-Dnh">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="sV7-uK-BBz">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="r3s-WR-M9d" id="GCu-os-D6D"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I1w-37-u3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1825" y="1167"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DoN-Rd-L6G">
@@ -978,7 +1004,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q1S-H4-l7W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1124" y="1056"/>
+            <point key="canvasLocation" x="2748" y="1056"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="c4S-iZ-wlT">
@@ -997,6 +1023,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bqp-Nh-Vch" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="754" y="-432"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Tv0-qK-Ok2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JrM-0J-frL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jcX-PQ-sWM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="r3s-WR-M9d" kind="relationship" relationship="rootViewController" id="i5X-V5-M8u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t5A-iV-PxO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1013" y="1167"/>
         </scene>
     </scenes>
     <resources>

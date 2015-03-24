@@ -172,6 +172,10 @@
     else if ([cell.reuseIdentifier isEqualToString:@"Settings"]) {
         [self performSegueWithIdentifier:@"settings" sender:self];
     }
+    else if ([cell.reuseIdentifier isEqualToString:@"Analytics"]) {
+        [self performSegueWithIdentifier:@"analytics" sender:self];
+    }
+
 
 }
 
