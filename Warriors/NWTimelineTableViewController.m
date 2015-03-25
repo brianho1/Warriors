@@ -33,9 +33,11 @@
     [self.tableView reloadData];
     //    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     self.tableView.frame = self.view.bounds;
-    UIImage *background = [UIImage imageNamed:@"13.jpg"];
+    UIImage *background = [UIImage imageNamed:@"blurrybackground.jpg"];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.frame];
     imageView.image = background;
+    imageView.contentMode = UIViewContentModeCenter;
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.tableView setBackgroundView:imageView];
 }
 - (void)viewDidLoad {

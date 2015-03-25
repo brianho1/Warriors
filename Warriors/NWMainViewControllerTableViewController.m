@@ -8,6 +8,7 @@
 
 #import "NWMainViewControllerTableViewController.h"
 #import "NWTimelineTableViewController.h"
+#import "UICountingLabel.h"
 
 @interface NWMainViewControllerTableViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -50,13 +51,19 @@
     //Headview Stats
     float width = self.view.frame.size.width;
     float boxwidth = (width - 40)/3;
-    UILabel * numberofPerson = [[UILabel alloc] initWithFrame:CGRectMake(10, headview.layer.frame.size.height - 50, boxwidth, 20)];
-    numberofPerson.text = @"52";
+    UICountingLabel * numberofPerson = [[UICountingLabel alloc] initWithFrame:CGRectMake(10, headview.layer.frame.size.height - 50, boxwidth, 20)];
+    numberofPerson.method = UILabelCountingMethodEaseInOut;
+    numberofPerson.format = @"%d";
+    [numberofPerson countFrom:1 to:52 withDuration:2];
+    
     UILabel * peopleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, headview.layer.frame.size.height - 30, boxwidth, 20)];
     peopleLabel.text = @"NETWORKS";
     
-    UILabel * goal = [[UILabel alloc] initWithFrame:CGRectMake(20 + boxwidth, headview.layer.frame.size.height - 50, boxwidth, 20)];
-    goal.text = @"3";
+    UICountingLabel * goal = [[UICountingLabel alloc] initWithFrame:CGRectMake(20 + boxwidth, headview.layer.frame.size.height - 50, boxwidth, 20)];
+    goal.method = UILabelCountingMethodLinear;
+    goal.format = @"%d";
+    [goal countFrom:1 to:10 withDuration:2];
+    
     UILabel * goalLabel = [[UILabel alloc] initWithFrame:CGRectMake(20 + boxwidth, headview.layer.frame.size.height - 30, boxwidth, 20)];
     goalLabel.text = @"GOAL/WEEK";
 

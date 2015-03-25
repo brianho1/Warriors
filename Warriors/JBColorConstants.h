@@ -15,10 +15,16 @@
 
 #pragma mark - Bar Chart
 
-#define kJBColorBarChartControllerBackground UIColorFromHex(0x313131)
-#define kJBColorBarChartBackground UIColorFromHex(0x3c3c3c)
-#define kJBColorBarChartBarBlue UIColorFromHex(0x08bcef)
-#define kJBColorBarChartBarGreen UIColorFromHex(0x34b234)
+//#define kJBColorBarChartControllerBackground UIColorFromHex(0x313131)
+#define kJBColorBarChartControllerBackground UIColorFromHex(0x4E5575)
+
+//#define kJBColorBarChartBackground UIColorFromHex(0x3c3c3c)
+#define kJBColorBarChartBackground UIColorFromHex(0x928583)
+//#define kJBColorBarChartBarBlue UIColorFromHex(0x08bcef)
+#define kJBColorBarChartBarBlue UIColorFromHex(0xE8A261)
+//#define kJBColorBarChartBarGreen UIColorFromHex(0x34b234)
+#define kJBColorBarChartBarGreen UIColorFromHex(0x877777)
+
 #define kJBColorBarChartHeaderSeparatorColor UIColorFromHex(0x686868)
 
 #pragma mark - Line Chart

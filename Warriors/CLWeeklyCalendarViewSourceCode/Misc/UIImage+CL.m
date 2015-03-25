@@ -12,8 +12,8 @@
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 @implementation UIImage (CL)
 + (UIImage *)calendarBackgroundImage : (float)height {
-    UIColor *topColor = [UIColor colorWithHex:0x1b92da];
-    UIColor *bottomColor = [UIColor colorWithHex:0x34b5ec];
+    UIColor *topColor = [UIColor colorWithHex:0x877777];
+    UIColor *bottomColor = [UIColor colorWithHex:0xB6A1A1];
     return [self gradientImageWithBounds:CGRectMake(0, 0, SCREEN_WIDTH, height) colors:@[(id)[topColor CGColor], (id)[bottomColor CGColor]]];
 }
 

@@ -80,7 +80,7 @@
 {
     //    DLog(@"mark date selected %@ -- %d",self.date, blnSelected);
     if([self.date isDateToday]){
-        self.dateLabelContainer.backgroundColor = (blnSelected)?[UIColor whiteColor]: [UIColor colorWithHex:0x0081c1];
+        self.dateLabelContainer.backgroundColor = (blnSelected)?[UIColor whiteColor]: [UIColor colorWithHex:0x726565];
         
         self.dateLabel.textColor = (blnSelected)?[UIColor colorWithHex:0x0081c1]:[UIColor whiteColor];
     }else{

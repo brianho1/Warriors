@@ -114,6 +114,7 @@
 		EADAFCD41ABABCD1005CF333 /* undo-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCD31ABABCD1005CF333 /* undo-50.png */; };
 		EADAFCD61ABABD3C005CF333 /* undo-32.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCD51ABABD3C005CF333 /* undo-32.png */; };
 		EADAFCD81ABABD8A005CF333 /* plus-32.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCD71ABABD8A005CF333 /* plus-32.png */; };
+		EAED6E4D1AC238DF007198CE /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = EAED6E4C1AC238DF007198CE /* UICountingLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -313,6 +314,8 @@
 		EADAFCD31ABABCD1005CF333 /* undo-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undo-50.png"; sourceTree = "<group>"; };
 		EADAFCD51ABABD3C005CF333 /* undo-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undo-32.png"; sourceTree = "<group>"; };
 		EADAFCD71ABABD8A005CF333 /* plus-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-32.png"; sourceTree = "<group>"; };
+		EAED6E4B1AC238DF007198CE /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
+		EAED6E4C1AC238DF007198CE /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,6 +345,7 @@
 			children = (
 				EA20814F1ABD145A0024246D /* calendar-50.png */,
 				EADAFCBB1ABA9458005CF333 /* menu-50.png */,
+				EA2081331ABD08040024246D /* 13.jpg */,
 				EADAFCC71ABA9618005CF333 /* mark_as_favourite-50.png */,
 				EADAFCC51ABA95F2005CF333 /* collect-50.png */,
 				EADAFCC31ABA95AA005CF333 /* price_tag-50.png */,
@@ -540,8 +544,9 @@
 		EADAFB9F1AB9FCD1005CF333 /* Warriors */ = {
 			isa = PBXGroup;
 			children = (
+				EAED6E4B1AC238DF007198CE /* UICountingLabel.h */,
+				EAED6E4C1AC238DF007198CE /* UICountingLabel.m */,
 				EA2082081AC12F450024246D /* BarChart */,
-				EA2081331ABD08040024246D /* 13.jpg */,
 				EA15478C1ABCDD9C0094AC4C /* CollectionViewCell */,
 				EA15478B1ABCDD880094AC4C /* Vender */,
 				EA1547621ABB69EC0094AC4C /* Cell */,
@@ -870,6 +875,7 @@
 				EA1547871ABCDD4D0094AC4C /* CHTCollectionViewWaterfallHeader.m in Sources */,
 				EADAFC7E1ABA5380005CF333 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				EADAFC731ABA5380005CF333 /* NSObject+MagicalDataImport.m in Sources */,
+				EAED6E4D1AC238DF007198CE /* UICountingLabel.m in Sources */,
 				EADAFC7B1ABA5380005CF333 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				EADAFCA31ABA69E6005CF333 /* HPGrowingTextView.m in Sources */,
 				EA1547851ABCDD4D0094AC4C /* CHTCollectionViewWaterfallCell.m in Sources */,

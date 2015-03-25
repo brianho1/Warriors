@@ -100,6 +100,12 @@ NSString * const kJBBarChartViewControllerNavButtonViewKey = @"view";
     [super loadView];
     
     self.view.backgroundColor = kJBColorBarChartControllerBackground;
+    UIImageView *iv = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    iv.image = [UIImage imageNamed:@"blurrybackground.jpg"];
+    iv.contentMode = UIViewContentModeCenter;
+    iv.contentMode = UIViewContentModeScaleAspectFill;
+
+    [self.view addSubview:iv];
     self.navigationItem.rightBarButtonItem = [self chartToggleButtonWithTarget:self action:@selector(chartToggleButtonPressed:)];
 
     self.barChartView = [[JBBarChartView alloc] init];

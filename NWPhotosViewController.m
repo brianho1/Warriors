@@ -72,6 +72,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIImageView *iv = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    iv.image = [UIImage imageNamed:@"blurrybackground.jpg"];
+    iv.contentMode = UIViewContentModeCenter;
+    iv.contentMode = UIViewContentModeScaleAspectFill;
+    
     [self.view addSubview:self.collectionView];
     NSMutableArray *events;
     NSString *sortKey = @"time";
