@@ -21,6 +21,7 @@
     UIView *headview;
     UIImageView *image;
     UILabel *quote;
+    float quoteheight;
 }
 
 - (void)viewDidLoad {
@@ -37,6 +38,8 @@
     headview.backgroundColor = [UIColor grayColor];
     image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/2)];
     image.image = [UIImage imageNamed:@"blurrybackground.jpg"];
+    image.contentMode = UIViewContentModeScaleAspectFill;
+    image.clipsToBounds = YES;
     [headview addSubview:image];
     quote = [[UILabel alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height/5 , self.view.frame.size.width - 20, 30)];
     quote.text = @"\"It's not what you know, but who you know that makes the difference.\"";
@@ -109,6 +112,7 @@
     myLabel.textAlignment = NSTextAlignmentCenter;
     [footView addSubview:myLabel];
     self.tableView.tableFooterView = footView;
+    quoteheight = quote.frame.size.height;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -125,23 +129,39 @@
 //This part makes HeadView of TableView has parallex effect. Simple than I thought
 -(void)scrollViewDidScroll:(UIScrollView*)scrollView {
 
-    float y = quote.frame.size.height;
+//    float y = quote.frame.size.height;
+    float y = quoteheight;
     CGRect initialFrame = headview.frame;
     image.frame = headview.frame;
+//    image.contentMode = UIViewContentModeScaleAspectFill;
+//    image.clipsToBounds = YES;
     CGFloat yOffset  = scrollView.contentOffset.y;
     if (yOffset < 0) {
         CGRect f = image.frame;
         f.origin.y = yOffset;
         f.size.height =  -yOffset + initialFrame.size.height;
         image.frame = f;
+//        quote.font = [quote.font fontWithSize:25];
     }
     if (yOffset > 0) {
         CGRect f = image.frame;
         f.origin.y = yOffset;
         f.size.height =  -yOffset + initialFrame.size.height;
+        if (f.size.height < y) {
+            y = f.size.height;
+            
+//            quote.font = [quote.font fontWithSize:15];
+
+        }
+        else {
+//            quote.font = [quote.font fontWithSize:25];
+        }
         image.frame = f;
     }
-    quote.frame = CGRectMake(10, image.frame.size.height/2 - y/2, self.view.frame.size.width - 20, y);
+    quote.transform = CGAffineTransformIdentity;
+    quote.frame = CGRectMake(0, 0, self.view.frame.size.width - 20, y);
+    quote.center = image.center;
+    quote.transform = CGAffineTransformMakeScale(1-yOffset/200, 1-yOffset/200);
 
 }
 

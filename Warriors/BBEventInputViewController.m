@@ -33,6 +33,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"Add an Event";
+    UIImageView *iv = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    iv.image = [UIImage imageNamed:@"blurrybackground.jpg"];
+    iv.contentMode = UIViewContentModeCenter;
+    iv.contentMode = UIViewContentModeScaleAspectFill;
+    [self.view insertSubview:iv atIndex:0];
+    
     self.nameTextField.text = [NSString stringWithFormat:@"%@ %@", self.person.firstName,self.person.lastName];
     self.titleTextField.text = self.person.title;
     self.companyTextField.text = self.person.company;
@@ -235,10 +242,10 @@
 //                                                                  timeStyle:NSDateFormatterShortStyle];
 //            [dict setObject:dateString forKey:@"time"];
 //        }
-        else if ([arrayofString[i] rangeOfString:@"at"].location != NSNotFound) {
-            NSArray * titleAndCompany = [arrayofString[i] componentsSeparatedByString:@"at"];
-            [dict setObject:titleAndCompany[1] forKey:@"location"];
-        }
+//        else if ([arrayofString[i] rangeOfString:@"at"].location != NSNotFound) {
+//            NSArray * titleAndCompany = [arrayofString[i] componentsSeparatedByString:@"at"];
+//            [dict setObject:titleAndCompany[1] forKey:@"location"];
+//        }
         else {
             [dict setObject:arrayofString[i] forKey:@"note"];
         }

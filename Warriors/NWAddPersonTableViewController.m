@@ -28,7 +28,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    UIImageView *iv = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    iv.image = [UIImage imageNamed:@"blurrybackground.jpg"];
+    iv.contentMode = UIViewContentModeCenter;
+    iv.contentMode = UIViewContentModeScaleAspectFill;
+    [self.view insertSubview:iv atIndex:0];
+
     [self.cameraButton setImage:[UIImage imageNamed:@"camera_filled-50.png"] forState:UIControlStateHighlighted];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

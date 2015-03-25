@@ -51,6 +51,7 @@
 //        //        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 //    }
     self.title = @"Timeline";
+    [self.tableView setContentOffset:CGPointMake(0, 44)];
 }
 
 - (void)fetchAllEvent {

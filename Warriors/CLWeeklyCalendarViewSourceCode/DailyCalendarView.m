@@ -82,11 +82,11 @@
     if([self.date isDateToday]){
         self.dateLabelContainer.backgroundColor = (blnSelected)?[UIColor whiteColor]: [UIColor colorWithHex:0x726565];
         
-        self.dateLabel.textColor = (blnSelected)?[UIColor colorWithHex:0x0081c1]:[UIColor whiteColor];
+        self.dateLabel.textColor = (blnSelected)?[UIColor colorWithHex:0x726565]:[UIColor whiteColor];
     }else{
         self.dateLabelContainer.backgroundColor = (blnSelected)?[UIColor whiteColor]: [UIColor clearColor];
         
-        self.dateLabel.textColor = (blnSelected)?[UIColor colorWithRed:52.0/255.0 green:161.0/255.0 blue:255.0/255.0 alpha:1.0]:[self colorByDate];
+        self.dateLabel.textColor = (blnSelected)?[UIColor colorWithRed:114.0/255.0 green:101.0/255.0 blue:101.0/255.0 alpha:1.0]:[self colorByDate];
     }
     
     
@@ -95,7 +95,7 @@
 }
 -(UIColor *)colorByDate
 {
-    return [self.date isPastDate]?[UIColor colorWithHex:0x7BD1FF]:[UIColor whiteColor];
+    return [self.date isPastDate]?[UIColor colorWithHex:0xF6D9D9]:[UIColor whiteColor];
 }
 
 -(void)dailyViewDidClick: (UIGestureRecognizer *)tap
