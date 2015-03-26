@@ -43,6 +43,7 @@
 		EA2082281AC130910024246D /* JBBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2082231AC130910024246D /* JBBaseTableViewController.m */; };
 		EA2082291AC130910024246D /* JBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2082251AC130910024246D /* JBBaseViewController.m */; };
 		EA2082321AC131580024246D /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2082311AC131580024246D /* JBChartView.m */; };
+		EA7CFB981AC3A987008C0E5A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA7CFB971AC3A987008C0E5A /* Icon.png */; };
 		EADAFBA31AB9FCD1005CF333 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA21AB9FCD1005CF333 /* main.m */; };
 		EADAFBA61AB9FCD1005CF333 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA51AB9FCD1005CF333 /* AppDelegate.m */; };
 		EADAFBA91AB9FCD1005CF333 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA81AB9FCD1005CF333 /* ViewController.m */; };
@@ -199,6 +200,7 @@
 		EA20822E1AC130E60024246D /* JBUIConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBUIConstants.h; sourceTree = "<group>"; };
 		EA2082301AC131580024246D /* JBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartView.h; sourceTree = "<group>"; };
 		EA2082311AC131580024246D /* JBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartView.m; sourceTree = "<group>"; };
+		EA7CFB971AC3A987008C0E5A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		EADAFB9D1AB9FCD1005CF333 /* Warriors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Warriors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EADAFBA11AB9FCD1005CF333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EADAFBA21AB9FCD1005CF333 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 		EA15475F1ABB69AB0094AC4C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EA7CFB971AC3A987008C0E5A /* Icon.png */,
 				EA20814F1ABD145A0024246D /* calendar-50.png */,
 				EADAFCBB1ABA9458005CF333 /* menu-50.png */,
 				EA2081331ABD08040024246D /* 13.jpg */,
@@ -777,6 +780,7 @@
 				TargetAttributes = {
 					EADAFB9C1AB9FCD1005CF333 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = CZUC7J98MN;
 					};
 					EADAFBB51AB9FCD1005CF333 = {
 						CreatedOnToolsVersion = 6.2;
@@ -808,6 +812,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA7CFB981AC3A987008C0E5A /* Icon.png in Resources */,
 				EADAFCC21ABA9531005CF333 /* settings3-50.png in Resources */,
 				EADAFCC61ABA95F2005CF333 /* collect-50.png in Resources */,
 				EADAFCC41ABA95AA005CF333 /* price_tag-50.png in Resources */,
@@ -1050,6 +1055,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Warriors",
@@ -1065,6 +1071,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Warriors",
