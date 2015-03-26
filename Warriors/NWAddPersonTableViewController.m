@@ -313,9 +313,9 @@
             [dict setObject:dateString forKey:@"time"];
         }
         // if it is title and company
-        else if (([arrayofString[i] rangeOfString:@"at"].location != NSNotFound) && (countAt ==0)) {
+        else if (([arrayofString[i] rangeOfString:@" at "].location != NSNotFound) && (countAt ==0)) {
             countAt = 1;
-            NSArray * titleAndCompany = [arrayofString[i] componentsSeparatedByString:@"at"];
+            NSArray * titleAndCompany = [arrayofString[i] componentsSeparatedByString:@" at "];
             //            self.titleTextField.text = titleAndCompany[0];
             //            self.companyTextFiled.text = titleAndCompany[1];
             [dict setObject:[titleAndCompany[0] capitalizedString] forKey:@"title"];

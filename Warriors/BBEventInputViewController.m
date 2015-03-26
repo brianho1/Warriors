@@ -33,7 +33,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"Add an Event";
+    if (self.editingMode == NO) {
+        self.title = @"Add an Event";
+    }
+    else {
+        self.title = @"Edit an Event";
+    }
     UIImageView *iv = [[UIImageView alloc] initWithFrame:self.view.bounds];
     iv.image = [UIImage imageNamed:@"blurrybackground.jpg"];
     iv.contentMode = UIViewContentModeCenter;
@@ -519,6 +524,9 @@
 
 }
 
+- (IBAction)photoClick:(id)sender {
+    
+}
 
 - (IBAction)addAPhoto:(id)sender {
     

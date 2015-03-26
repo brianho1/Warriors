@@ -13,6 +13,9 @@
 @interface NWPhotosViewController : UIViewController <UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout>
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray *eventsWithPics;
+@property (strong, nonatomic) Person *personToPass;
+@property (strong, nonatomic) Event *eventToPass;
+
 
 @end
 

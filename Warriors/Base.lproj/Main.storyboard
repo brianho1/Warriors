@@ -824,6 +824,15 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqN-SG-aPV">
+                                <rect key="frame" x="180" y="419" width="240" height="128"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="photoClick:" destination="ftm-Ux-QU1" eventType="touchUpInside" id="Sw0-FU-iVb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -843,6 +852,7 @@
                             <constraint firstItem="8d2-t6-luk" firstAttribute="width" secondItem="vOD-hl-AtS" secondAttribute="width" constant="-1" id="KQF-Io-jdP"/>
                             <constraint firstItem="p6h-1c-cqa" firstAttribute="leading" secondItem="ZHa-pA-uva" secondAttribute="leadingMargin" constant="100" id="L5l-nr-tVk"/>
                             <constraint firstAttribute="centerX" secondItem="pcF-Nh-LLf" secondAttribute="centerX" constant="0.5" id="MsR-ng-47C"/>
+                            <constraint firstItem="Hng-Td-Vg4" firstAttribute="width" secondItem="pqN-SG-aPV" secondAttribute="width" id="NEe-yN-GKl"/>
                             <constraint firstItem="JNp-UD-56T" firstAttribute="width" secondItem="ZHa-pA-uva" secondAttribute="width" constant="-5" id="O1n-FO-XIR"/>
                             <constraint firstItem="vOD-hl-AtS" firstAttribute="top" secondItem="8d2-t6-luk" secondAttribute="bottom" constant="8" id="PBO-Yl-7rK"/>
                             <constraint firstItem="p6h-1c-cqa" firstAttribute="leading" secondItem="3GY-nC-u6m" secondAttribute="leading" constant="-1" id="PWu-Q3-q6M"/>
@@ -852,6 +862,7 @@
                             <constraint firstItem="JNp-UD-56T" firstAttribute="leading" secondItem="ZHa-pA-uva" secondAttribute="leadingMargin" constant="-15" id="Wr6-BO-INv"/>
                             <constraint firstItem="JNp-UD-56T" firstAttribute="top" secondItem="udP-NH-dnd" secondAttribute="bottom" constant="16" id="ZCj-5W-JL5"/>
                             <constraint firstItem="HEl-iS-H0w" firstAttribute="top" secondItem="Hng-Td-Vg4" secondAttribute="bottom" constant="53" id="ZwO-x1-ILx"/>
+                            <constraint firstItem="Hng-Td-Vg4" firstAttribute="top" secondItem="pqN-SG-aPV" secondAttribute="bottom" constant="-128" id="dSN-V2-uNP"/>
                             <constraint firstItem="Hng-Td-Vg4" firstAttribute="top" secondItem="pcF-Nh-LLf" secondAttribute="bottom" constant="3" id="eyA-vC-NhE"/>
                             <constraint firstItem="8d2-t6-luk" firstAttribute="leading" secondItem="JNp-UD-56T" secondAttribute="leading" constant="-1" id="iVE-Ob-8bb"/>
                             <constraint firstItem="Hng-Td-Vg4" firstAttribute="leading" secondItem="pcF-Nh-LLf" secondAttribute="trailing" constant="-172" id="mb9-SP-NqR"/>
@@ -862,6 +873,8 @@
                             <constraint firstItem="8d2-t6-luk" firstAttribute="leading" secondItem="vOD-hl-AtS" secondAttribute="leading" id="q1D-a4-SfK"/>
                             <constraint firstItem="p6h-1c-cqa" firstAttribute="width" secondItem="3GY-nC-u6m" secondAttribute="width" id="qwZ-dy-Asy"/>
                             <constraint firstItem="udP-NH-dnd" firstAttribute="height" secondItem="3GY-nC-u6m" secondAttribute="height" constant="1" id="rox-Zi-J88"/>
+                            <constraint firstItem="Hng-Td-Vg4" firstAttribute="leading" secondItem="pqN-SG-aPV" secondAttribute="trailing" constant="-240" id="t0i-DS-uXS"/>
+                            <constraint firstItem="Hng-Td-Vg4" firstAttribute="height" secondItem="pqN-SG-aPV" secondAttribute="height" id="vdq-Vq-xtm"/>
                             <constraint firstItem="JNp-UD-56T" firstAttribute="width" secondItem="udP-NH-dnd" secondAttribute="width" id="wy0-dS-4Re"/>
                             <constraint firstItem="zwg-WN-6jp" firstAttribute="top" secondItem="VfW-p4-Buh" secondAttribute="bottom" constant="8" id="wzT-Kd-oHY"/>
                             <constraint firstItem="p6h-1c-cqa" firstAttribute="width" secondItem="ZHa-pA-uva" secondAttribute="width" constant="-120" id="xXj-w9-d5D"/>
@@ -923,10 +936,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="cBS-Dh-xB7" kind="show" identifier="eventOfPhoto" id="zGy-n6-i28"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qfi-Vi-Iiz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6084" y="-438"/>
+            <point key="canvasLocation" x="7004" y="-474"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dmd-ui-7mc">
@@ -1080,7 +1096,7 @@
         <image name="user_male_circle-50.png" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="x97-VT-wp4"/>
+        <segue reference="zGy-n6-i28"/>
         <segue reference="4ZS-g8-9hC"/>
     </inferredMetricsTieBreakers>
 </document>

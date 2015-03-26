@@ -12,6 +12,7 @@
 #import "CHTCollectionViewWaterfallCell.h"
 #import "CHTCollectionViewWaterfallHeader.h"
 #import "CHTCollectionViewWaterfallFooter.h"
+#import "BBEventInputViewController.h"
 
 #define CELL_COUNT 10
 #define CELL_IDENTIFIER @"WaterfallCell"
@@ -20,6 +21,7 @@
 
 @interface NWPhotosViewController ()
 @property (nonatomic, strong) NSMutableArray *cellSizes;
+@property (nonatomic, strong) NSMutableArray *events;
 @end
 
 @implementation NWPhotosViewController
@@ -79,6 +81,7 @@
     
     [self.view addSubview:self.collectionView];
     NSMutableArray *events;
+    self.events = [NSMutableArray array];
     NSString *sortKey = @"time";
     BOOL ascending = [sortKey isEqualToString:@"time"] ? NO : YES;
     // Fetch entities with MagicalRecord
@@ -89,6 +92,7 @@
     for (Event *event in events) {
         if (event.picture != nil) {
             [self.eventsWithPics addObject:event.picture];
+            [self.events addObject:event];
         }
     }
     }
@@ -155,6 +159,34 @@
     
     return reusableView;
 }
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    Event *event = self.events[indexPath.item];
+    self.eventToPass = event;
+    self.personToPass = event.person;
+
+    [self performSegueWithIdentifier:@"eventOfPhoto" sender:self];
+
+    
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
+    //didSelectExistingEvent
+    if ([segue.identifier isEqualToString:@"eventOfPhoto"]) {
+        //        UINavigationController *vc = segue.destinationViewController;
+        //        NSArray *viewControllers = vc.viewControllers;
+        UINavigationController *navController = segue.destinationViewController;
+        BBEventInputViewController *eventInput = navController.viewControllers[0];
+        //        BBEventInputViewController *eventInput = segue.destinationViewController;
+        eventInput.person = self.personToPass;
+        eventInput.event = self.eventToPass;
+        eventInput.editingMode = YES;
+    }
+    
+}
+
 
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {

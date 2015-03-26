@@ -24,6 +24,7 @@
     float quoteheight;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -42,37 +43,39 @@
     image.clipsToBounds = YES;
     [headview addSubview:image];
     quote = [[UILabel alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height/5 , self.view.frame.size.width - 20, 30)];
-    quote.text = @"\"It's not what you know, but who you know that makes the difference.\"";
+
+    quote.text = [self randomQuote];
     quote.font = [UIFont fontWithName:@"BodoniSvtyTwoITCTT-BookIta" size:25];
     quote.textColor = [UIColor whiteColor];
     quote.numberOfLines = 0;
     [quote sizeToFit];
     quote.textAlignment = NSTextAlignmentCenter;
+    quote.center = image.center;
     [headview addSubview:quote];
     self.tableView.tableHeaderView = headview;
     
     //Headview Stats
     float width = self.view.frame.size.width;
     float boxwidth = (width - 40)/3;
-    UICountingLabel * numberofPerson = [[UICountingLabel alloc] initWithFrame:CGRectMake(10, headview.layer.frame.size.height - 50, boxwidth, 20)];
+    UICountingLabel * numberofPerson = [[UICountingLabel alloc] initWithFrame:CGRectMake(10, headview.layer.frame.size.height - 35, boxwidth, 20)];
     numberofPerson.method = UILabelCountingMethodEaseInOut;
     numberofPerson.format = @"%d";
     [numberofPerson countFrom:1 to:52 withDuration:2];
     
-    UILabel * peopleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, headview.layer.frame.size.height - 30, boxwidth, 20)];
+    UILabel * peopleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, headview.layer.frame.size.height - 20, boxwidth, 20)];
     peopleLabel.text = @"NETWORKS";
     
-    UICountingLabel * goal = [[UICountingLabel alloc] initWithFrame:CGRectMake(20 + boxwidth, headview.layer.frame.size.height - 50, boxwidth, 20)];
+    UICountingLabel * goal = [[UICountingLabel alloc] initWithFrame:CGRectMake(20 + boxwidth, headview.layer.frame.size.height - 35, boxwidth, 20)];
     goal.method = UILabelCountingMethodLinear;
     goal.format = @"%d";
     [goal countFrom:1 to:10 withDuration:2];
     
-    UILabel * goalLabel = [[UILabel alloc] initWithFrame:CGRectMake(20 + boxwidth, headview.layer.frame.size.height - 30, boxwidth, 20)];
+    UILabel * goalLabel = [[UILabel alloc] initWithFrame:CGRectMake(20 + boxwidth, headview.layer.frame.size.height - 20, boxwidth, 20)];
     goalLabel.text = @"GOAL/WEEK";
 
-    UILabel * today = [[UILabel alloc] initWithFrame:CGRectMake(30 + 2*boxwidth, headview.layer.frame.size.height - 50, boxwidth, 20)];
+    UILabel * today = [[UILabel alloc] initWithFrame:CGRectMake(30 + 2*boxwidth, headview.layer.frame.size.height - 35, boxwidth, 20)];
     today.text = @"1";
-    UILabel * todayLabel = [[UILabel alloc] initWithFrame:CGRectMake(30 + 2*boxwidth, headview.layer.frame.size.height - 30, boxwidth, 20)];
+    UILabel * todayLabel = [[UILabel alloc] initWithFrame:CGRectMake(30 + 2*boxwidth, headview.layer.frame.size.height - 20, boxwidth, 20)];
     todayLabel.text = @"TODAY";
     //white textcolor
     peopleLabel.textColor = [UIColor whiteColor];
@@ -120,6 +123,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(NSString *)randomQuote {
+    NSString * frontQuote = @"";
+    NSArray * quoteArray = @[@"\"Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.\"",@"\"The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.\"",@"\"I can't change the direction of the wind, but I can adjust my sails to always reach my destination.\"",@"\"It's not what you know, but who you know that makes the difference.\""];
+    int i = arc4random() % quoteArray.count;
+    frontQuote = quoteArray[i];
+    return frontQuote;
+}
+
 #pragma mark - Table view data source
 
 //- (void)registerTableView:(UITableView *)tableView {
@@ -161,7 +172,7 @@
     quote.transform = CGAffineTransformIdentity;
     quote.frame = CGRectMake(0, 0, self.view.frame.size.width - 20, y);
     quote.center = image.center;
-    quote.transform = CGAffineTransformMakeScale(1-yOffset/200, 1-yOffset/200);
+    quote.transform = CGAffineTransformMakeScale(1-yOffset/300, 1-yOffset/300);
 
 }
 
