@@ -32,7 +32,13 @@ static CGFloat CALENDER_VIEW_HEIGHT = 150.f;
                                           ascending:YES
                                       withPredicate:pred
                                           inContext:[NSManagedObjectContext defaultContext]] mutableCopy];
+    UIImageView *iv = [[UIImageView alloc] initWithFrame:CGRectMake(0, -50, self.tableView.frame.size.width, self.tableView.frame.size.height)];
+    iv.image = [UIImage imageNamed:@"blurrybackground.jpg"];
+    iv.contentMode = UIViewContentModeScaleAspectFill;
+    iv.clipsToBounds = YES;
 
+//    [self.tableView.backgroundView addSubview:iv];
+    [self.tableView insertSubview:iv atIndex:0];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     [self.tableView reloadData];
 }
@@ -83,17 +89,38 @@ static CGFloat CALENDER_VIEW_HEIGHT = 150.f;
 #pragma mark - TableView Data Source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.eventsByDate.count;
+    return self.eventsByDate.count + 1;
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
 // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"
-                                                            forIndexPath:indexPath];
-    Event *event = self.eventsByDate[indexPath.row];
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"
+//                                                            forIndexPath:indexPath];
+//    
+//    if (cell == nil) {
+       UITableViewCell * cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                       reuseIdentifier:@"Cell"];
+//    }
+//    cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    cell.backgroundColor = [UIColor clearColor];
+    if (indexPath.row == 0) {
+        cell.textLabel.text = @"Create New";
+        cell.detailTextLabel.text = @"Click to generate a new event";
+    }
+    else {
+    Event *event = self.eventsByDate[indexPath.row - 1];
     cell.textLabel.text = event.title;
+    cell.detailTextLabel.text = event.note;
+    NSString *stringPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0]stringByAppendingPathComponent:@"Images"];
+    NSError *error = nil;
+    if (![[NSFileManager defaultManager] fileExistsAtPath:stringPath])
+        [[NSFileManager defaultManager] createDirectoryAtPath:stringPath withIntermediateDirectories:NO attributes:nil error:&error];
+    NSString *fileName = [stringPath stringByAppendingFormat:@"%@.jpg",event.picture];
+    UIImage *image = [UIImage imageWithData:[[NSFileManager defaultManager] contentsAtPath:fileName]];
+    cell.imageView.image = image;
+    }
     return cell;
 }
 

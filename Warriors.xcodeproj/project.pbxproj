@@ -44,6 +44,10 @@
 		EA2082291AC130910024246D /* JBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2082251AC130910024246D /* JBBaseViewController.m */; };
 		EA2082321AC131580024246D /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2082311AC131580024246D /* JBChartView.m */; };
 		EA7CFB981AC3A987008C0E5A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA7CFB971AC3A987008C0E5A /* Icon.png */; };
+		EAC605361AC4E900007CFB27 /* MessageEntryInputField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC605351AC4E900007CFB27 /* MessageEntryInputField@2x.png */; };
+		EAC605381AC4E973007CFB27 /* MessageEntryBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC605371AC4E973007CFB27 /* MessageEntryBackground@2x.png */; };
+		EAC6053B1AC4EA78007CFB27 /* MessageEntrySendButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC605391AC4EA78007CFB27 /* MessageEntrySendButton@2x.png */; };
+		EAC6053C1AC4EA78007CFB27 /* MessageEntrySendButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC6053A1AC4EA78007CFB27 /* MessageEntrySendButtonPressed@2x.png */; };
 		EADAFBA31AB9FCD1005CF333 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA21AB9FCD1005CF333 /* main.m */; };
 		EADAFBA61AB9FCD1005CF333 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA51AB9FCD1005CF333 /* AppDelegate.m */; };
 		EADAFBA91AB9FCD1005CF333 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA81AB9FCD1005CF333 /* ViewController.m */; };
@@ -92,13 +96,13 @@
 		EADAFCA31ABA69E6005CF333 /* HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFCA01ABA69E6005CF333 /* HPGrowingTextView.m */; };
 		EADAFCA41ABA69E6005CF333 /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFCA21ABA69E6005CF333 /* HPTextViewInternal.m */; };
 		EADAFCAD1ABA6AD2005CF333 /* MessageEntryBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCA51ABA6AD2005CF333 /* MessageEntryBackground.png */; };
-		EADAFCAE1ABA6AD2005CF333 /* MessageEntryBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCA61ABA6AD2005CF333 /* MessageEntryBackground@2x.png */; };
-		EADAFCAF1ABA6AD2005CF333 /* MessageEntryInputField.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCA71ABA6AD2005CF333 /* MessageEntryInputField.png */; };
-		EADAFCB01ABA6AD2005CF333 /* MessageEntryInputField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCA81ABA6AD2005CF333 /* MessageEntryInputField@2x.png */; };
+		EADAFCAE1ABA6AD2005CF333 /* MessageEntryBackground@2x1.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCA61ABA6AD2005CF333 /* MessageEntryBackground@2x1.png */; };
+		EADAFCAF1ABA6AD2005CF333 /* MessageEntryInputField_del.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCA71ABA6AD2005CF333 /* MessageEntryInputField_del.png */; };
+		EADAFCB01ABA6AD2005CF333 /* MessageEntryInputField@2x1.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCA81ABA6AD2005CF333 /* MessageEntryInputField@2x1.png */; };
 		EADAFCB11ABA6AD2005CF333 /* MessageEntrySendButton.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCA91ABA6AD2005CF333 /* MessageEntrySendButton.png */; };
-		EADAFCB21ABA6AD2005CF333 /* MessageEntrySendButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCAA1ABA6AD2005CF333 /* MessageEntrySendButton@2x.png */; };
+		EADAFCB21ABA6AD2005CF333 /* MessageEntrySendButton@2x1.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCAA1ABA6AD2005CF333 /* MessageEntrySendButton@2x1.png */; };
 		EADAFCB31ABA6AD2005CF333 /* MessageEntrySendButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCAB1ABA6AD2005CF333 /* MessageEntrySendButtonPressed.png */; };
-		EADAFCB41ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCAC1ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x.png */; };
+		EADAFCB41ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x1.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCAC1ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x1.png */; };
 		EADAFCB61ABA9102005CF333 /* camera-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCB51ABA9102005CF333 /* camera-50.png */; };
 		EADAFCB81ABA9251005CF333 /* camera_filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCB71ABA9251005CF333 /* camera_filled-50.png */; };
 		EADAFCBA1ABA9329005CF333 /* stack_of_photos-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EADAFCB91ABA9329005CF333 /* stack_of_photos-50.png */; };
@@ -201,6 +205,10 @@
 		EA2082301AC131580024246D /* JBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartView.h; sourceTree = "<group>"; };
 		EA2082311AC131580024246D /* JBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartView.m; sourceTree = "<group>"; };
 		EA7CFB971AC3A987008C0E5A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		EAC605351AC4E900007CFB27 /* MessageEntryInputField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntryInputField@2x.png"; sourceTree = "<group>"; };
+		EAC605371AC4E973007CFB27 /* MessageEntryBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntryBackground@2x.png"; sourceTree = "<group>"; };
+		EAC605391AC4EA78007CFB27 /* MessageEntrySendButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntrySendButton@2x.png"; sourceTree = "<group>"; };
+		EAC6053A1AC4EA78007CFB27 /* MessageEntrySendButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntrySendButtonPressed@2x.png"; sourceTree = "<group>"; };
 		EADAFB9D1AB9FCD1005CF333 /* Warriors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Warriors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EADAFBA11AB9FCD1005CF333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EADAFBA21AB9FCD1005CF333 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -293,13 +301,13 @@
 		EADAFCA11ABA69E6005CF333 /* HPTextViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTextViewInternal.h; sourceTree = "<group>"; };
 		EADAFCA21ABA69E6005CF333 /* HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTextViewInternal.m; sourceTree = "<group>"; };
 		EADAFCA51ABA6AD2005CF333 /* MessageEntryBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessageEntryBackground.png; sourceTree = "<group>"; };
-		EADAFCA61ABA6AD2005CF333 /* MessageEntryBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntryBackground@2x.png"; sourceTree = "<group>"; };
-		EADAFCA71ABA6AD2005CF333 /* MessageEntryInputField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessageEntryInputField.png; sourceTree = "<group>"; };
-		EADAFCA81ABA6AD2005CF333 /* MessageEntryInputField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntryInputField@2x.png"; sourceTree = "<group>"; };
+		EADAFCA61ABA6AD2005CF333 /* MessageEntryBackground@2x1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntryBackground@2x1.png"; sourceTree = "<group>"; };
+		EADAFCA71ABA6AD2005CF333 /* MessageEntryInputField_del.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessageEntryInputField_del.png; sourceTree = "<group>"; };
+		EADAFCA81ABA6AD2005CF333 /* MessageEntryInputField@2x1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntryInputField@2x1.png"; sourceTree = "<group>"; };
 		EADAFCA91ABA6AD2005CF333 /* MessageEntrySendButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessageEntrySendButton.png; sourceTree = "<group>"; };
-		EADAFCAA1ABA6AD2005CF333 /* MessageEntrySendButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntrySendButton@2x.png"; sourceTree = "<group>"; };
+		EADAFCAA1ABA6AD2005CF333 /* MessageEntrySendButton@2x1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntrySendButton@2x1.png"; sourceTree = "<group>"; };
 		EADAFCAB1ABA6AD2005CF333 /* MessageEntrySendButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessageEntrySendButtonPressed.png; sourceTree = "<group>"; };
-		EADAFCAC1ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntrySendButtonPressed@2x.png"; sourceTree = "<group>"; };
+		EADAFCAC1ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntrySendButtonPressed@2x1.png"; sourceTree = "<group>"; };
 		EADAFCB51ABA9102005CF333 /* camera-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-50.png"; sourceTree = "<group>"; };
 		EADAFCB71ABA9251005CF333 /* camera_filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera_filled-50.png"; sourceTree = "<group>"; };
 		EADAFCB91ABA9329005CF333 /* stack_of_photos-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stack_of_photos-50.png"; sourceTree = "<group>"; };
@@ -365,14 +373,18 @@
 				EADAFCD51ABABD3C005CF333 /* undo-32.png */,
 				EADAFCD71ABABD8A005CF333 /* plus-32.png */,
 				EADAFCD31ABABCD1005CF333 /* undo-50.png */,
+				EAC605391AC4EA78007CFB27 /* MessageEntrySendButton@2x.png */,
+				EAC6053A1AC4EA78007CFB27 /* MessageEntrySendButtonPressed@2x.png */,
+				EAC605371AC4E973007CFB27 /* MessageEntryBackground@2x.png */,
+				EAC605351AC4E900007CFB27 /* MessageEntryInputField@2x.png */,
 				EADAFCA51ABA6AD2005CF333 /* MessageEntryBackground.png */,
-				EADAFCA61ABA6AD2005CF333 /* MessageEntryBackground@2x.png */,
-				EADAFCA71ABA6AD2005CF333 /* MessageEntryInputField.png */,
-				EADAFCA81ABA6AD2005CF333 /* MessageEntryInputField@2x.png */,
+				EADAFCA61ABA6AD2005CF333 /* MessageEntryBackground@2x1.png */,
+				EADAFCA71ABA6AD2005CF333 /* MessageEntryInputField_del.png */,
+				EADAFCA81ABA6AD2005CF333 /* MessageEntryInputField@2x1.png */,
 				EADAFCA91ABA6AD2005CF333 /* MessageEntrySendButton.png */,
-				EADAFCAA1ABA6AD2005CF333 /* MessageEntrySendButton@2x.png */,
+				EADAFCAA1ABA6AD2005CF333 /* MessageEntrySendButton@2x1.png */,
 				EADAFCAB1ABA6AD2005CF333 /* MessageEntrySendButtonPressed.png */,
-				EADAFCAC1ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x.png */,
+				EADAFCAC1ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x1.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -819,21 +831,24 @@
 				EADAFC8F1ABA592B005CF333 /* businesscard.jpg in Resources */,
 				EADAFCB81ABA9251005CF333 /* camera_filled-50.png in Resources */,
 				EADAFCC01ABA9519005CF333 /* exit-50.png in Resources */,
+				EAC6053B1AC4EA78007CFB27 /* MessageEntrySendButton@2x.png in Resources */,
 				EADAFCD81ABABD8A005CF333 /* plus-32.png in Resources */,
 				EADAFCB11ABA6AD2005CF333 /* MessageEntrySendButton.png in Resources */,
-				EADAFCB41ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x.png in Resources */,
+				EADAFCB41ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x1.png in Resources */,
 				EADAFCD01ABABB53005CF333 /* card.jpg in Resources */,
+				EAC605361AC4E900007CFB27 /* MessageEntryInputField@2x.png in Resources */,
+				EAC6053C1AC4EA78007CFB27 /* MessageEntrySendButtonPressed@2x.png in Resources */,
 				EADAFCCA1ABAAC32005CF333 /* user_male_circle-50.png in Resources */,
 				EADAFCD41ABABCD1005CF333 /* undo-50.png in Resources */,
-				EADAFCAF1ABA6AD2005CF333 /* MessageEntryInputField.png in Resources */,
+				EADAFCAF1ABA6AD2005CF333 /* MessageEntryInputField_del.png in Resources */,
 				EA2081501ABD145A0024246D /* calendar-50.png in Resources */,
 				EADAFCBC1ABA9458005CF333 /* menu-50.png in Resources */,
 				EADAFCD61ABABD3C005CF333 /* undo-32.png in Resources */,
 				EA2082031ABD52A10024246D /* dropbox_copyrighted-50.png in Resources */,
-				EADAFCB21ABA6AD2005CF333 /* MessageEntrySendButton@2x.png in Resources */,
+				EADAFCB21ABA6AD2005CF333 /* MessageEntrySendButton@2x1.png in Resources */,
 				EADAFCB61ABA9102005CF333 /* camera-50.png in Resources */,
-				EADAFCAE1ABA6AD2005CF333 /* MessageEntryBackground@2x.png in Resources */,
-				EADAFCB01ABA6AD2005CF333 /* MessageEntryInputField@2x.png in Resources */,
+				EADAFCAE1ABA6AD2005CF333 /* MessageEntryBackground@2x1.png in Resources */,
+				EADAFCB01ABA6AD2005CF333 /* MessageEntryInputField@2x1.png in Resources */,
 				EA2081341ABD08040024246D /* 13.jpg in Resources */,
 				EADAFCB31ABA6AD2005CF333 /* MessageEntrySendButtonPressed.png in Resources */,
 				EADAFCC81ABA9618005CF333 /* mark_as_favourite-50.png in Resources */,
@@ -841,6 +856,7 @@
 				EADAFBB11AB9FCD1005CF333 /* LaunchScreen.xib in Resources */,
 				EADAFCBA1ABA9329005CF333 /* stack_of_photos-50.png in Resources */,
 				EADAFCBE1ABA9498005CF333 /* bullish-50.png in Resources */,
+				EAC605381AC4E973007CFB27 /* MessageEntryBackground@2x.png in Resources */,
 				EADAFC941ABA5FF3005CF333 /* BBModalSearchViewController.xib in Resources */,
 				EADAFBAE1AB9FCD1005CF333 /* Images.xcassets in Resources */,
 				EADAFCD21ABABC03005CF333 /* plus-50.png in Resources */,

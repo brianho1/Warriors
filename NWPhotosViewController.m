@@ -130,12 +130,12 @@
     CHTCollectionViewWaterfallCell *cell =
     (CHTCollectionViewWaterfallCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CELL_IDENTIFIER
                                                                                 forIndexPath:indexPath];
-    NSString *randomfile = self.eventsWithPics[indexPath.row];
+    NSString *fileNameNoExtension = self.eventsWithPics[indexPath.row];
     NSString *stringPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0]stringByAppendingPathComponent:@"Images"];
     NSError *error = nil;
     if (![[NSFileManager defaultManager] fileExistsAtPath:stringPath])
         [[NSFileManager defaultManager] createDirectoryAtPath:stringPath withIntermediateDirectories:NO attributes:nil error:&error];
-    NSString *fileName = [stringPath stringByAppendingFormat:@"%@.jpg",randomfile];
+    NSString *fileName = [stringPath stringByAppendingFormat:@"%@.jpg",fileNameNoExtension];
     UIImage *image = [UIImage imageWithData:[[NSFileManager defaultManager] contentsAtPath:fileName]];
 
     cell.displayString = [NSString stringWithFormat:@"%ld", (long)indexPath.item];
