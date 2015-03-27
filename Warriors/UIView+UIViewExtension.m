@@ -12,8 +12,8 @@
 
 -(UIImage *)convertViewToImage
 {
-    UIGraphicsBeginImageContext(self.bounds.size);
-    [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:YES];
+    UIGraphicsBeginImageContext(self.frame.size);
+    [self drawViewHierarchyInRect:self.frame afterScreenUpdates:YES];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     

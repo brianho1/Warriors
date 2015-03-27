@@ -261,6 +261,7 @@
     self.modal.view.frame = self.view.frame;
     self.modal.delegate = self;
     [self presentViewController:self.modal animated:YES completion:nil];
+   
     UIImage* imageOfUnderlyingView = [self.view convertViewToImage];
     imageOfUnderlyingView = [imageOfUnderlyingView applyBlurWithRadius:20
                                                              tintColor:[UIColor colorWithWhite:0.5 alpha:0.1]
@@ -268,6 +269,7 @@
                                                              maskImage:nil];
     
     self.modal.view.backgroundColor = [UIColor clearColor];
+
     UIImageView* backView = [[UIImageView alloc] initWithFrame:self.view.frame];
     backView.image = imageOfUnderlyingView;
     backView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.6];

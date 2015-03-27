@@ -27,6 +27,9 @@
     
     [self fetchAllPeople];
     [self.tableView reloadData];
+    CGSize f = self.tableView.frame.size;
+    f.height = f.height + 100;
+    self.tableView.contentSize = f;
     [self registerTableView:self.tableView];
     
     
