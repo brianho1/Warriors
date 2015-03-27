@@ -13,6 +13,7 @@
 #import "JBChartHeaderView.h"
 #import "JBBarChartFooterView.h"
 #import "JBChartInformationView.h"
+#import "Event.h"
 
 // Numerics
 CGFloat const kJBBarChartViewControllerChartHeight = 250.0f;
@@ -78,10 +79,34 @@ NSString * const kJBBarChartViewControllerNavButtonViewKey = @"view";
     return self;
 }
 
+
 #pragma mark - Date
 
 - (void)initFakeData
 {
+    NSMutableArray *countingEvents = [NSMutableArray new];
+    for (int i=0; i<12; i++) {
+        NSNumber * count;
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        //gather date components from date
+        NSDateComponents *dateComponents = [calendar components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear) fromDate:[NSDate date]];
+        //set date components
+        [dateComponents setDay:1];
+        [dateComponents setMonth:i+1];
+        [dateComponents setYear:[dateComponents year]];
+        
+        //save date relative from date
+        NSDate *date = [calendar dateFromComponents:dateComponents];
+        NSDateComponents *oneMonth = [[NSDateComponents alloc] init];
+        [oneMonth setMonth:1];
+        NSDate *beginningOfNextMonth = [calendar dateByAddingComponents:oneMonth toDate:date options:0];
+        NSPredicate *pred = [NSPredicate predicateWithFormat:@"time >= %@ AND time < %@",date, beginningOfNextMonth];
+
+        count = [Event numberOfEntitiesWithPredicate:pred];
+        [countingEvents addObject:count];
+    }
+//    NSLog(@"%@",countingEvents);
+    
     NSMutableArray *mutableChartData = [NSMutableArray array];
     for (int i=0; i<kJBBarChartViewControllerNumBars; i++)
     {
@@ -89,9 +114,11 @@ NSString * const kJBBarChartViewControllerNavButtonViewKey = @"view";
         [mutableChartData addObject:[NSNumber numberWithFloat:MAX((delta * kJBBarChartViewControllerMinBarHeight), arc4random() % (delta * kJBBarChartViewControllerMaxBarHeight))]];
 
     }
+    mutableChartData = countingEvents;
     _chartData = [NSArray arrayWithArray:mutableChartData];
     _monthlySymbols = [[[NSDateFormatter alloc] init] shortMonthSymbols];
 }
+
 
 #pragma mark - View Lifecycle
 
@@ -119,7 +146,9 @@ NSString * const kJBBarChartViewControllerNavButtonViewKey = @"view";
     
     JBChartHeaderView *headerView = [[JBChartHeaderView alloc] initWithFrame:CGRectMake(kJBBarChartViewControllerChartPadding, ceil(self.view.bounds.size.height * 0.5) - ceil(kJBBarChartViewControllerChartHeaderHeight * 0.5), self.view.bounds.size.width - (kJBBarChartViewControllerChartPadding * 2), kJBBarChartViewControllerChartHeaderHeight)];
     headerView.titleLabel.text = [kJBStringLabelAverageMonthlyTemperature uppercaseString];
-    headerView.subtitleLabel.text = kJBStringLabel2012;
+//    headerView.subtitleLabel.text = kJBStringLabel2012;
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
+    headerView.subtitleLabel.text = [NSString stringWithFormat:@"%ld",(long)[components year]];
     headerView.separatorColor = kJBColorBarChartHeaderSeparatorColor;
     self.barChartView.headerView = headerView;
     
@@ -166,8 +195,9 @@ NSString * const kJBBarChartViewControllerNavButtonViewKey = @"view";
 - (void)barChartView:(JBBarChartView *)barChartView didSelectBarAtIndex:(NSUInteger)index touchPoint:(CGPoint)touchPoint
 {
     NSNumber *valueNumber = [self.chartData objectAtIndex:index];
-    [self.informationView setValueText:[NSString stringWithFormat:kJBStringLabelDegreesFahrenheit, [valueNumber intValue], kJBStringLabelDegreeSymbol] unitText:nil];
-    [self.informationView setTitleText:kJBStringLabelWorldwideAverage];
+    [self.informationView setValueText:[NSString stringWithFormat:kJBStringLabelShowNumber, [valueNumber intValue]] unitText:nil];
+
+    [self.informationView setTitleText:kJBStringLabelPeopleMet];
     [self.informationView setHidden:NO animated:YES];
     [self setTooltipVisible:YES animated:YES atTouchPoint:touchPoint];
     [self.tooltipView setText:[[self.monthlySymbols objectAtIndex:index] uppercaseString]];

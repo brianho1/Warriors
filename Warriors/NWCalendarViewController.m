@@ -9,6 +9,7 @@
 #import "NWCalendarViewController.h"
 #import "CLWeeklyCalendarView.h"
 #import "Event.h"
+#import "Person.h"
 
 @interface NWCalendarViewController () <CLWeeklyCalendarViewDelegate>
 @property (nonatomic, strong) CLWeeklyCalendarView* calendarView;
@@ -111,7 +112,7 @@ static CGFloat CALENDER_VIEW_HEIGHT = 150.f;
     }
     else {
     Event *event = self.eventsByDate[indexPath.row - 1];
-    cell.textLabel.text = event.title;
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@ - %@", event.person.firstName, event.person.lastName,event.title];
     cell.detailTextLabel.text = event.note;
     NSString *stringPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0]stringByAppendingPathComponent:@"Images"];
     NSError *error = nil;
