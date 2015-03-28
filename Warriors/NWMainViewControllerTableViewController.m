@@ -207,6 +207,9 @@
     else if ([cell.reuseIdentifier isEqualToString:@"Calendar"]) {
         [self performSegueWithIdentifier:@"calendar" sender:self];
     }
+    else if ([cell.reuseIdentifier isEqualToString:@"Goals"]) {
+        [self performSegueWithIdentifier:@"goals" sender:self];
+    }
     else if ([cell.reuseIdentifier isEqualToString:@"Settings"]) {
         [self performSegueWithIdentifier:@"settings" sender:self];
     }

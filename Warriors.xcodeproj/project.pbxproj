@@ -44,6 +44,9 @@
 		EA2082291AC130910024246D /* JBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2082251AC130910024246D /* JBBaseViewController.m */; };
 		EA2082321AC131580024246D /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2082311AC131580024246D /* JBChartView.m */; };
 		EA7CFB981AC3A987008C0E5A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA7CFB971AC3A987008C0E5A /* Icon.png */; };
+		EA9782A51AC721BD000C9B5A /* UIButton+RWBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9782A21AC721BD000C9B5A /* UIButton+RWBlock.m */; };
+		EA9782A61AC721BD000C9B5A /* UIAlertView+RWBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9782A41AC721BD000C9B5A /* UIAlertView+RWBlock.m */; };
+		EABCE6361AC6F97000A96460 /* NWGoalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EABCE6351AC6F97000A96460 /* NWGoalViewController.m */; };
 		EAC605361AC4E900007CFB27 /* MessageEntryInputField@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC605351AC4E900007CFB27 /* MessageEntryInputField@2x.png */; };
 		EAC605381AC4E973007CFB27 /* MessageEntryBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC605371AC4E973007CFB27 /* MessageEntryBackground@2x.png */; };
 		EAC6053B1AC4EA78007CFB27 /* MessageEntrySendButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC605391AC4EA78007CFB27 /* MessageEntrySendButton@2x.png */; };
@@ -233,6 +236,12 @@
 		EA2082301AC131580024246D /* JBChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChartView.h; sourceTree = "<group>"; };
 		EA2082311AC131580024246D /* JBChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBChartView.m; sourceTree = "<group>"; };
 		EA7CFB971AC3A987008C0E5A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		EA9782A11AC721BD000C9B5A /* UIButton+RWBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+RWBlock.h"; sourceTree = "<group>"; };
+		EA9782A21AC721BD000C9B5A /* UIButton+RWBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+RWBlock.m"; sourceTree = "<group>"; };
+		EA9782A31AC721BD000C9B5A /* UIAlertView+RWBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+RWBlock.h"; sourceTree = "<group>"; };
+		EA9782A41AC721BD000C9B5A /* UIAlertView+RWBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+RWBlock.m"; sourceTree = "<group>"; };
+		EABCE6341AC6F97000A96460 /* NWGoalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWGoalViewController.h; sourceTree = "<group>"; };
+		EABCE6351AC6F97000A96460 /* NWGoalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWGoalViewController.m; sourceTree = "<group>"; };
 		EAC605351AC4E900007CFB27 /* MessageEntryInputField@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntryInputField@2x.png"; sourceTree = "<group>"; };
 		EAC605371AC4E973007CFB27 /* MessageEntryBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntryBackground@2x.png"; sourceTree = "<group>"; };
 		EAC605391AC4EA78007CFB27 /* MessageEntrySendButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntrySendButton@2x.png"; sourceTree = "<group>"; };
@@ -597,6 +606,17 @@
 			name = Base;
 			sourceTree = "<group>";
 		};
+		EA9782A01AC72189000C9B5A /* Reminders */ = {
+			isa = PBXGroup;
+			children = (
+				EA9782A11AC721BD000C9B5A /* UIButton+RWBlock.h */,
+				EA9782A21AC721BD000C9B5A /* UIButton+RWBlock.m */,
+				EA9782A31AC721BD000C9B5A /* UIAlertView+RWBlock.h */,
+				EA9782A41AC721BD000C9B5A /* UIAlertView+RWBlock.m */,
+			);
+			name = Reminders;
+			sourceTree = "<group>";
+		};
 		EAC605A21AC65713007CFB27 /* pics */ = {
 			isa = PBXGroup;
 			children = (
@@ -673,6 +693,9 @@
 				EADAFC8A1ABA56C4005CF333 /* NWPrefixHeader.pch */,
 				EADAFBCE1ABA20E9005CF333 /* Main.storyboard */,
 				EADAFC921ABA5FF3005CF333 /* BBModalSearchViewController.xib */,
+				EABCE6341AC6F97000A96460 /* NWGoalViewController.h */,
+				EABCE6351AC6F97000A96460 /* NWGoalViewController.m */,
+				EA9782A01AC72189000C9B5A /* Reminders */,
 				EA2081FF1ABD3C350024246D /* NWDropboxSyncViewController.h */,
 				EA2082001ABD3C350024246D /* NWDropboxSyncViewController.m */,
 				EA2081351ABD11560024246D /* CLWeeklyCalendarViewSourceCode */,
@@ -1015,8 +1038,10 @@
 				EADAFBC81AB9FD05005CF333 /* NWMainViewControllerTableViewController.m in Sources */,
 				EADAFC791ABA5380005CF333 /* NSManagedObject+MagicalRecord.m in Sources */,
 				EADAFC821ABA5380005CF333 /* MagicalRecord+Actions.m in Sources */,
+				EA9782A61AC721BD000C9B5A /* UIAlertView+RWBlock.m in Sources */,
 				EA20820E1AC12F8E0024246D /* JBBarChartView.m in Sources */,
 				EA15476B1ABB6D990094AC4C /* Event.m in Sources */,
+				EABCE6361AC6F97000A96460 /* NWGoalViewController.m in Sources */,
 				EADAFC7D1ABA5380005CF333 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				EA15479B1ABCE0D90094AC4C /* NWPhotosViewController.m in Sources */,
 				EADAFC811ABA5380005CF333 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
@@ -1076,6 +1101,7 @@
 				EA2082271AC130910024246D /* JBBaseNavigationController.m in Sources */,
 				EA2081481ABD11560024246D /* NSDate+CL.m in Sources */,
 				EA20814B1ABD11560024246D /* UIImage+CL.m in Sources */,
+				EA9782A51AC721BD000C9B5A /* UIButton+RWBlock.m in Sources */,
 				EADAFC801ABA5380005CF333 /* NSPersistentStore+MagicalRecord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
