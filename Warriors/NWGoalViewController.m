@@ -89,7 +89,8 @@
     iv.image = [UIImage imageNamed:@"blurrybackground.jpg"];
     iv.contentMode = UIViewContentModeScaleAspectFill;
     iv.clipsToBounds = YES;
-
+    [self.goalTextField setBorderStyle:UITextBorderStyleNone];
+//    self.goalTextField.layer.borderWidth
     [self.view insertSubview:iv atIndex:0];
     self.slider.maximumValue = 20;
     self.slider.minimumValue = 0;
@@ -97,14 +98,22 @@
     [self.slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
     self.stepValue = 1.0f;
     self.lastStep = (self.slider.value) / self.stepValue;
-    self.tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 200, self.view.frame.size.width, self.view.frame.size.height)];
+    self.tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 200, self.view.frame.size.width, self.view.frame.size.height - 200)];
     //add a header Label
-    UIView *headview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
-    UILabel *headerLabel = [[UILabel alloc] initWithFrame:headview.layer.frame];
+    UIView *headview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40)];
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
+    UILabel *subHeaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 20)];
     headerLabel.text = @"Plan on your next meeting";
-    headerLabel.backgroundColor = [UIColor grayColor];
+    subHeaderLabel.text = @"Click 🔔 to sync with Apple Reminders";
+    subHeaderLabel.backgroundColor = [UIColor clearColor];
+    subHeaderLabel.font = [UIFont fontWithName:@"Avenir-Light" size:10];
+    headerLabel.font = [UIFont fontWithName:@"Avenir-Light" size:20];
+    headerLabel.backgroundColor = [UIColor clearColor];
     headerLabel.textAlignment = NSTextAlignmentCenter;
+    subHeaderLabel.textAlignment = NSTextAlignmentCenter;
     [headview addSubview:headerLabel];
+    [headview addSubview:subHeaderLabel];
+    headview.backgroundColor = [UIColor grayColor];
     self.tableview.tableHeaderView = headview;
     self.tableview.layer.backgroundColor = [[UIColor clearColor] CGColor];
     self.tableview.delegate = self;
@@ -157,8 +166,8 @@
     if (![self itemHasReminder:object]) {
         // Add a button as accessory view that says 'Add Reminder'.
         UIButton *addReminderButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        addReminderButton.frame = CGRectMake(0.0, 0.0, 100.0, 30.0);
-        [addReminderButton setTitle:@"➕" forState:UIControlStateNormal];
+        addReminderButton.frame = CGRectMake(0.0, 0.0, 50, 30.0);
+        [addReminderButton setTitle:@"🔔" forState:UIControlStateNormal];
         
         [addReminderButton addActionblock:^(UIButton *sender) {
             [self addReminderForToDoItem:object];

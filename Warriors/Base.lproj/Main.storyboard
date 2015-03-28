@@ -1044,20 +1044,22 @@
                                 <color key="minimumTrackTintColor" red="0.29522590604785309" green="0.25412073539597552" blue="0.66102430555555558" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="thumbTintColor" red="0.097202398674172366" green="0.249349135073856" blue="0.35953282828282829" alpha="1" colorSpace="calibratedRGB"/>
                             </slider>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NSt-Qe-ulk">
-                                <rect key="frame" x="252" y="101" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NSt-Qe-ulk">
+                                <rect key="frame" x="245" y="91" width="110" height="45"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="wzm-IN-6dX"/>
+                                    <constraint firstAttribute="height" constant="45" id="gKs-7n-X0f"/>
+                                    <constraint firstAttribute="width" constant="110" id="wzm-IN-6dX"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gpF-W3-41E" firstAttribute="top" secondItem="NSt-Qe-ulk" secondAttribute="bottom" constant="23" id="5DC-UU-HyC"/>
-                            <constraint firstItem="NSt-Qe-ulk" firstAttribute="top" secondItem="gRG-iC-oP1" secondAttribute="bottom" constant="37" id="9xO-Cb-yyE"/>
+                            <constraint firstItem="gpF-W3-41E" firstAttribute="top" secondItem="NSt-Qe-ulk" secondAttribute="bottom" constant="18" id="5DC-UU-HyC"/>
+                            <constraint firstItem="NSt-Qe-ulk" firstAttribute="top" secondItem="gRG-iC-oP1" secondAttribute="bottom" constant="27" id="9xO-Cb-yyE"/>
                             <constraint firstAttribute="centerX" secondItem="NSt-Qe-ulk" secondAttribute="centerX" constant="-0.5" id="UZa-RG-Uh8"/>
                             <constraint firstItem="gpF-W3-41E" firstAttribute="centerX" secondItem="NSt-Qe-ulk" secondAttribute="centerX" constant="-0.5" id="vqd-L3-M5g"/>
                         </constraints>
