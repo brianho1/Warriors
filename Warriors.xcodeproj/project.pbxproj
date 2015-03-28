@@ -51,6 +51,7 @@
 		EAC605951AC6170F007CFB27 /* cancel_filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC605941AC6170F007CFB27 /* cancel_filled-50.png */; };
 		EAC605971AC62DFC007CFB27 /* dropbox.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC605961AC62DFC007CFB27 /* dropbox.png */; };
 		EAC6059B1AC6468A007CFB27 /* johndoeBusinessCard.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC6059A1AC6468A007CFB27 /* johndoeBusinessCard.png */; };
+		EAC605A11AC6493F007CFB27 /* addPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC605A01AC6493F007CFB27 /* addPhoto.png */; };
 		EADAFBA31AB9FCD1005CF333 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA21AB9FCD1005CF333 /* main.m */; };
 		EADAFBA61AB9FCD1005CF333 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA51AB9FCD1005CF333 /* AppDelegate.m */; };
 		EADAFBA91AB9FCD1005CF333 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA81AB9FCD1005CF333 /* ViewController.m */; };
@@ -215,6 +216,7 @@
 		EAC605941AC6170F007CFB27 /* cancel_filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel_filled-50.png"; sourceTree = "<group>"; };
 		EAC605961AC62DFC007CFB27 /* dropbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dropbox.png; sourceTree = "<group>"; };
 		EAC6059A1AC6468A007CFB27 /* johndoeBusinessCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = johndoeBusinessCard.png; sourceTree = "<group>"; };
+		EAC605A01AC6493F007CFB27 /* addPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addPhoto.png; sourceTree = "<group>"; };
 		EADAFB9D1AB9FCD1005CF333 /* Warriors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Warriors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EADAFBA11AB9FCD1005CF333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EADAFBA21AB9FCD1005CF333 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 				EADAFCD11ABABC03005CF333 /* plus-50.png */,
 				EADAFBC91ABA0CA5005CF333 /* blurrybackground.jpg */,
 				EADAFCD51ABABD3C005CF333 /* undo-32.png */,
+				EAC605A01AC6493F007CFB27 /* addPhoto.png */,
 				EADAFCD71ABABD8A005CF333 /* plus-32.png */,
 				EADAFCD31ABABCD1005CF333 /* undo-50.png */,
 				EAC605391AC4EA78007CFB27 /* MessageEntrySendButton@2x.png */,
@@ -857,6 +860,7 @@
 				EA2082031ABD52A10024246D /* dropbox_copyrighted-50.png in Resources */,
 				EADAFCB21ABA6AD2005CF333 /* MessageEntrySendButton@2x1.png in Resources */,
 				EADAFCB61ABA9102005CF333 /* camera-50.png in Resources */,
+				EAC605A11AC6493F007CFB27 /* addPhoto.png in Resources */,
 				EADAFCAE1ABA6AD2005CF333 /* MessageEntryBackground@2x1.png in Resources */,
 				EADAFCB01ABA6AD2005CF333 /* MessageEntryInputField@2x1.png in Resources */,
 				EA2081341ABD08040024246D /* 13.jpg in Resources */,

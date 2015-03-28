@@ -80,7 +80,6 @@
                 self.eventImage.contentMode=UIViewContentModeScaleAspectFill;
                 self.eventImage.clipsToBounds = YES;
                 self.eventImage.layer.cornerRadius = 5;
-                self.eventImage.layer.masksToBounds = YES;
         }
 
     };
@@ -549,6 +548,9 @@
     
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.eventImage.image = chosenImage;
+    self.eventImage.contentMode=UIViewContentModeScaleAspectFill;
+    self.eventImage.clipsToBounds = YES;
+    self.eventImage.layer.cornerRadius = 5;
 
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
