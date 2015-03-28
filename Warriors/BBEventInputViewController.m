@@ -8,6 +8,7 @@
 
 #import "BBEventInputViewController.h"
 #import "Event.h"
+#import "Person.h"
 
 @interface BBEventInputViewController () <UITextFieldDelegate,UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 //@property (weak, nonatomic) IBOutlet UITextField *quickAddTextField;
@@ -48,6 +49,16 @@
     self.nameTextField.text = [NSString stringWithFormat:@"%@ %@", self.person.firstName,self.person.lastName];
     self.titleTextField.text = self.person.title;
     self.companyTextField.text = self.person.company;
+    if (self.person.profilePicture != nil) {
+        NSString *stringPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0]stringByAppendingPathComponent:@"Images"];
+        NSError *error = nil;
+        if (![[NSFileManager defaultManager] fileExistsAtPath:stringPath])
+            [[NSFileManager defaultManager] createDirectoryAtPath:stringPath withIntermediateDirectories:NO attributes:nil error:&error];
+        NSString *fileName = [stringPath stringByAppendingFormat:@"%@.jpg",self.person.profilePicture];
+        UIImage * image = [UIImage imageWithData:[[NSFileManager defaultManager] contentsAtPath:fileName]];
+
+        self.faceImage.image = image;
+    }
     if (self.event != nil) {
         self.eventTitleTextField.text = self.event.title;
         if (self.event.score != nil) {
@@ -603,8 +614,13 @@
     }
     
     [self saveContext];
+    
+    if ([self.sourceVC isEqualToString:@"Calendar"]) {
+        [self performSegueWithIdentifier:@"backToCalendar" sender:self];
+    }
+    else {
     [self performSegueWithIdentifier:@"backToTimeline" sender:self];
-   
+    }
 }
 
 #pragma mark - sync to core data

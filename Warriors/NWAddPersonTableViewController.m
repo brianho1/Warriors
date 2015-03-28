@@ -10,7 +10,7 @@
 #import "BBEventInputViewController.h"
 
 
-@interface NWAddPersonTableViewController ()
+@interface NWAddPersonTableViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *companyTextFiled;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *noteTextView;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 
 @property (weak, nonatomic) IBOutlet UITextField *addressTextField;
 @property (strong, nonatomic) UIView *containerView;
@@ -221,7 +222,55 @@
 }
 - (IBAction)cameraButtonPressed:(id)sender {
     NSLog(@"Camera Pressed");
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Please select an option"
+                                                                   message:@"Photo?"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Taking a Photo" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              
+                                                              UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+                                                              picker.delegate = self;
+                                                              picker.allowsEditing = YES;
+                                                              picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                                                              
+                                                              [self presentViewController:picker animated:YES completion:NULL];
+                                                              
+                                                              
+                                                          }];
+    UIAlertAction* existingUser = [UIAlertAction actionWithTitle:@"Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        picker.allowsEditing = YES;
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentViewController:picker animated:YES completion:NULL];
+    }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    
+    [alert addAction:defaultAction];
+    [alert addAction:existingUser];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
+
+    
 }
+#pragma mark - Image Picker Controller delegate methods
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    self.profileImage.image = chosenImage;
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
 
 #pragma mark - analyzing string
 
@@ -377,6 +426,9 @@
         BBEventInputViewController *eventInputVC = [BBEventInputViewController new];
         eventInputVC.person = self.person;
         [self performSegueWithIdentifier:@"addEventForExistingUser" sender:self];
+        if (self.sourceVC) {
+            eventInputVC.sourceVC = self.sourceVC;
+        }
     }
     else {
         
@@ -399,14 +451,20 @@
         person.email = data[4];
         person.userId = [NSNumber numberWithInt:(arc4random() % 10000) + 99999];
         self.person = person;
-        //convert time string to nsdate
-//        NSString *str =data[3];
-//        NSDateFormatter *sdateFormatter = [[NSDateFormatter alloc] init];
-//        //        sdateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-//        [sdateFormatter setDateFormat:@"MMM d, yyyy, hh:mm a"];
-//        event.time = [sdateFormatter dateFromString:str];
-//        event.person.userId = [NSNumber numberWithInt:(arc4random() % 10000) + 99999];
-    
+        if (self.profileImage.image != nil) {
+        
+            NSString *stringPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0]stringByAppendingPathComponent:@"Images"];
+            // New Folder is your folder name
+            NSError *error = nil;
+            if (![[NSFileManager defaultManager] fileExistsAtPath:stringPath])
+                [[NSFileManager defaultManager] createDirectoryAtPath:stringPath withIntermediateDirectories:NO attributes:nil error:&error];
+            NSNumber *randomfileName = [NSNumber numberWithInt:(arc4random() % 10000) + 99999];
+            person.profilePicture = [randomfileName stringValue];
+            NSString *fileName = [stringPath stringByAppendingFormat:@"%@.jpg",person.profilePicture];
+            NSData *imageData = UIImageJPEGRepresentation(self.profileImage.image, 1.0);
+            [imageData writeToFile:fileName atomically:YES];
+        }
+
 }
 
 - (void)saveContext {

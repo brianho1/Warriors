@@ -20,5 +20,6 @@
 
 @property (strong, nonatomic) Event * event;
 @property (strong, nonatomic) Person *person;
+@property (strong, nonatomic) NSString *sourceVC;
 
 @end

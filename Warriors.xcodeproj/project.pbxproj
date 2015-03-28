@@ -48,6 +48,7 @@
 		EAC605381AC4E973007CFB27 /* MessageEntryBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC605371AC4E973007CFB27 /* MessageEntryBackground@2x.png */; };
 		EAC6053B1AC4EA78007CFB27 /* MessageEntrySendButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC605391AC4EA78007CFB27 /* MessageEntrySendButton@2x.png */; };
 		EAC6053C1AC4EA78007CFB27 /* MessageEntrySendButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC6053A1AC4EA78007CFB27 /* MessageEntrySendButtonPressed@2x.png */; };
+		EAC605951AC6170F007CFB27 /* cancel_filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC605941AC6170F007CFB27 /* cancel_filled-50.png */; };
 		EADAFBA31AB9FCD1005CF333 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA21AB9FCD1005CF333 /* main.m */; };
 		EADAFBA61AB9FCD1005CF333 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA51AB9FCD1005CF333 /* AppDelegate.m */; };
 		EADAFBA91AB9FCD1005CF333 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA81AB9FCD1005CF333 /* ViewController.m */; };
@@ -209,6 +210,7 @@
 		EAC605371AC4E973007CFB27 /* MessageEntryBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntryBackground@2x.png"; sourceTree = "<group>"; };
 		EAC605391AC4EA78007CFB27 /* MessageEntrySendButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntrySendButton@2x.png"; sourceTree = "<group>"; };
 		EAC6053A1AC4EA78007CFB27 /* MessageEntrySendButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntrySendButtonPressed@2x.png"; sourceTree = "<group>"; };
+		EAC605941AC6170F007CFB27 /* cancel_filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel_filled-50.png"; sourceTree = "<group>"; };
 		EADAFB9D1AB9FCD1005CF333 /* Warriors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Warriors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EADAFBA11AB9FCD1005CF333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EADAFBA21AB9FCD1005CF333 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 		EA15475F1ABB69AB0094AC4C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EAC605941AC6170F007CFB27 /* cancel_filled-50.png */,
 				EA7CFB971AC3A987008C0E5A /* Icon.png */,
 				EA20814F1ABD145A0024246D /* calendar-50.png */,
 				EADAFCBB1ABA9458005CF333 /* menu-50.png */,
@@ -854,6 +857,7 @@
 				EADAFCC81ABA9618005CF333 /* mark_as_favourite-50.png in Resources */,
 				EADAFCAD1ABA6AD2005CF333 /* MessageEntryBackground.png in Resources */,
 				EADAFBB11AB9FCD1005CF333 /* LaunchScreen.xib in Resources */,
+				EAC605951AC6170F007CFB27 /* cancel_filled-50.png in Resources */,
 				EADAFCBA1ABA9329005CF333 /* stack_of_photos-50.png in Resources */,
 				EADAFCBE1ABA9498005CF333 /* bullish-50.png in Resources */,
 				EAC605381AC4E973007CFB27 /* MessageEntryBackground@2x.png in Resources */,

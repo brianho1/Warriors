@@ -419,6 +419,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Bnf-wS-R3f" id="RK0-pR-JHS"/>
+                        <segue destination="cBS-Dh-xB7" kind="show" identifier="viewEventFromCalendar" id="zCI-Td-uE7"/>
+                        <segue destination="cBS-Dh-xB7" kind="show" identifier="didSelectExistingUserFromCalendar" id="pZE-cG-kOo"/>
+                        <segue destination="WwD-fa-GJS" kind="show" identifier="addEventForNewUserFromCalendar" id="Mzc-Ca-kUN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qit-sg-HTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -722,6 +725,7 @@
                         <outlet property="nameTextField" destination="Jqg-TY-Btp" id="hSM-xd-tbe"/>
                         <outlet property="noteTextView" destination="ioz-QA-OmQ" id="yjP-Q2-sFf"/>
                         <outlet property="phoneNumber" destination="nRV-1O-wK7" id="QhM-Pm-6GF"/>
+                        <outlet property="profileImage" destination="Ac8-Gq-ZKm" id="G2Y-3A-y41"/>
                         <outlet property="titleTextField" destination="uZP-KC-6h0" id="bo4-nu-1AO"/>
                         <segue destination="cBS-Dh-xB7" kind="show" identifier="addEventForExistingUser" id="x97-VT-wp4"/>
                     </connections>
@@ -910,11 +914,12 @@
                         <outlet property="timeTextField" destination="pvV-b3-WX8" id="h3R-e6-nAE"/>
                         <outlet property="titleTextField" destination="3GY-nC-u6m" id="bxI-Ai-4Vp"/>
                         <segue destination="Whh-4U-2uh" kind="show" identifier="backToTimeline" id="4ZS-g8-9hC"/>
+                        <segue destination="kmz-mq-rjE" kind="show" identifier="backToCalendar" id="0BI-UO-xTk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JQE-v7-yEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8232" y="1033"/>
+            <point key="canvasLocation" x="8360" y="1056"/>
         </scene>
         <!--Photos View Controller-->
         <scene sceneID="CdH-QH-C4c">
@@ -1096,7 +1101,9 @@
         <image name="user_male_circle-50.png" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zGy-n6-i28"/>
         <segue reference="4ZS-g8-9hC"/>
+        <segue reference="pZE-cG-kOo"/>
+        <segue reference="0BI-UO-xTk"/>
+        <segue reference="Mzc-Ca-kUN"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,17 +10,26 @@
 #import "CLWeeklyCalendarView.h"
 #import "Event.h"
 #import "Person.h"
+#import "BBEventInputViewController.h"
+#import "BBModalSearchViewController.h"
+#import "UIImage+ImageEffects.h"
+#import "UIView+UIViewExtension.h"
+#import "NWAddPersonTableViewController.h"
 
-@interface NWCalendarViewController () <CLWeeklyCalendarViewDelegate>
+@interface NWCalendarViewController () <CLWeeklyCalendarViewDelegate, BBModalSearchViewControllerDelegate>
 @property (nonatomic, strong) CLWeeklyCalendarView* calendarView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *eventsByDate;
+@property (strong, nonatomic) BBModalSearchViewController *modal;
 
 @end
 
 static CGFloat CALENDER_VIEW_HEIGHT = 150.f;
 
-@implementation NWCalendarViewController
+@implementation NWCalendarViewController {
+    Event *eventToPass;
+    Person *personToPass;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -124,6 +133,102 @@ static CGFloat CALENDER_VIEW_HEIGHT = 150.f;
     }
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Please select an option"
+                                                                       message:@"Adding a new event for new user or for existing user?"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Add New" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {
+                                                                  [self performSegueWithIdentifier:@"addEventForNewUserFromCalendar" sender:self];
+                                                              }];
+        UIAlertAction* existingUser = [UIAlertAction actionWithTitle:@"Existing Network" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            //        [self performSegueWithIdentifier:@"addEventForExistingUser" sender:self];
+            [self presentModalVC];
+        }];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+        
+        [alert addAction:defaultAction];
+        [alert addAction:existingUser];
+        [alert addAction:cancel];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    else {
+        NSLog(@"%ld",(long)indexPath.row);
+        eventToPass = self.eventsByDate[indexPath.row -1];
+        personToPass = eventToPass.person;
+        [self performSegueWithIdentifier:@"viewEventFromCalendar" sender:self];
+    }
+}
+
+#pragma mark - Modal
+- (void)presentModalVC {
+    self.modal = [[BBModalSearchViewController alloc] init];
+    self.modal.view.frame = self.view.frame;
+    self.modal.delegate = self;
+    [self presentViewController:self.modal animated:YES completion:nil];
+    
+    UIImage* imageOfUnderlyingView = [self.view convertViewToImage];
+    imageOfUnderlyingView = [imageOfUnderlyingView applyBlurWithRadius:20
+                                                             tintColor:[UIColor colorWithWhite:0.5 alpha:0.1]
+                                                 saturationDeltaFactor:1.3
+                                                             maskImage:nil];
+    
+    self.modal.view.backgroundColor = [UIColor clearColor];
+    
+    UIImageView* backView = [[UIImageView alloc] initWithFrame:self.view.frame];
+    backView.image = imageOfUnderlyingView;
+    backView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.6];
+    [self.modal.view insertSubview:backView atIndex:0];
+    
+}
+
+- (void)doneWithSearch:(Person *)person {
+    personToPass = person;
+    [self performSegueWithIdentifier:@"didSelectExistingUserFromCalendar" sender:self];
+}
+
+
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"viewEventFromCalendar"]) {
+        //        UINavigationController *vc = segue.destinationViewController;
+        //        NSArray *viewControllers = vc.viewControllers;
+        UINavigationController *navController = segue.destinationViewController;
+        BBEventInputViewController *eventInput = navController.viewControllers[0];
+        //        BBEventInputViewController *eventInput = segue.destinationViewController;
+        eventInput.person = personToPass;
+        eventInput.event = eventToPass;
+        eventInput.editingMode = YES;
+        eventInput.sourceVC = @"Calendar";
+    }
+    else if ([segue.identifier isEqualToString:@"didSelectExistingUserFromCalendar"]) {
+        UINavigationController *navController = segue.destinationViewController;
+        BBEventInputViewController *eventInput = navController.viewControllers[0];
+        //        BBEventInputViewController *eventInput = segue.destinationViewController;
+        eventInput.person = personToPass;
+        eventInput.event = nil;
+        eventInput.editingMode = NO;
+        eventInput.sourceVC = @"Calendar";
+    }
+    else if ([segue.identifier isEqualToString:@"addEventForNewUserFromCalendar"]) {
+        UINavigationController *navController = segue.destinationViewController;
+        NWAddPersonTableViewController *personInput = navController.viewControllers[0];
+        //        BBEventInputViewController *eventInput = segue.destinationViewController;
+        personInput.sourceVC = @"Calendar";
+    }
+
+    
+}
+
+
+
+#pragma mark - Predicate select current date
 
 - (NSPredicate *) predicateToRetrieveEventsForDate:(NSDate *)aDate {
     

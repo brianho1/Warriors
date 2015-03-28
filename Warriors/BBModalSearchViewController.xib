@@ -8,7 +8,6 @@
             <connections>
                 <outlet property="searchBar" destination="pum-u1-kgW" id="FSc-0M-Zio"/>
                 <outlet property="sqView" destination="ojt-Z0-dAR" id="yfd-tB-ogh"/>
-                <outlet property="tableView" destination="diO-vz-Nmv" id="j0t-Pl-dfE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,28 +26,16 @@
                             </constraints>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="diO-vz-Nmv">
-                            <rect key="frame" x="0.0" y="44" width="300" height="329"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <outlet property="dataSource" destination="-1" id="Ogg-Vu-Ldj"/>
-                                <outlet property="delegate" destination="-1" id="Ce4-vU-0hu"/>
-                            </connections>
-                        </tableView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="285" id="0jC-RA-wbs"/>
-                        <constraint firstAttribute="height" secondItem="diO-vz-Nmv" secondAttribute="height" constant="-44" id="8AF-g5-bBi"/>
-                        <constraint firstAttribute="width" secondItem="diO-vz-Nmv" secondAttribute="width" id="BHE-YY-wka"/>
-                        <constraint firstItem="diO-vz-Nmv" firstAttribute="top" secondItem="pum-u1-kgW" secondAttribute="bottom" id="FUI-N6-4oC"/>
                         <constraint firstItem="pum-u1-kgW" firstAttribute="top" secondItem="ojt-Z0-dAR" secondAttribute="top" id="GKo-ni-mCz"/>
                         <constraint firstItem="pum-u1-kgW" firstAttribute="leading" secondItem="ojt-Z0-dAR" secondAttribute="leading" id="NX1-7C-M3R"/>
                         <constraint firstAttribute="width" constant="346" id="SbV-r9-RVn"/>
                         <constraint firstAttribute="width" constant="300" id="XI3-sL-JO5"/>
                         <constraint firstItem="pum-u1-kgW" firstAttribute="width" secondItem="ojt-Z0-dAR" secondAttribute="width" id="eos-4y-Pa4"/>
                         <constraint firstAttribute="trailing" secondItem="pum-u1-kgW" secondAttribute="trailing" id="f3t-dV-TIA"/>
-                        <constraint firstItem="diO-vz-Nmv" firstAttribute="leading" secondItem="ojt-Z0-dAR" secondAttribute="leading" id="pAg-dd-BCc"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
@@ -56,11 +43,29 @@
                         </mask>
                     </variation>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvB-3R-5vT">
+                    <rect key="frame" x="248" y="472" width="105" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="105" id="1Wd-Mg-R1O"/>
+                        <constraint firstAttribute="height" constant="50" id="51q-IM-adE"/>
+                    </constraints>
+                    <state key="normal" image="cancel_filled-50.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelClick:" destination="-1" eventType="touchUpInside" id="S6B-qE-InG"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="ojt-Z0-dAR" secondAttribute="centerX" id="3kM-q4-zOV"/>
+                <constraint firstItem="RvB-3R-5vT" firstAttribute="top" secondItem="ojt-Z0-dAR" secondAttribute="bottom" constant="30" id="KF6-mx-5Ds"/>
+                <constraint firstItem="ojt-Z0-dAR" firstAttribute="centerX" secondItem="RvB-3R-5vT" secondAttribute="centerX" constant="-0.5" id="O7S-0O-G2k"/>
                 <constraint firstItem="ojt-Z0-dAR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="157" id="S3R-4h-doU"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="cancel_filled-50.png" width="50" height="50"/>
+    </resources>
 </document>

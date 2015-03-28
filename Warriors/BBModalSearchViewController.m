@@ -13,7 +13,7 @@
 
 @interface BBModalSearchViewController () <UITableViewDataSource,UITableViewDelegate, UISearchBarDelegate>
 @property (nonatomic, retain) NSMutableArray * people;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *sqView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @end
@@ -26,12 +26,13 @@
     
     
     [self fetchAllPeople];
-    [self.tableView reloadData];
-    CGSize f = self.tableView.frame.size;
-    f.height = f.height + 100;
-    self.tableView.contentSize = f;
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 44, self.sqView.frame.size.width, self.sqView.frame.size.height - 44)];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     [self registerTableView:self.tableView];
-    
+    [self.sqView addSubview:self.tableView];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    [self.tableView reloadData];
     
 }
 -(void)viewWillAppear:(BOOL)animated {
