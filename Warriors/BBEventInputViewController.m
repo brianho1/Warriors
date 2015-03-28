@@ -10,7 +10,7 @@
 #import "Event.h"
 #import "Person.h"
 
-@interface BBEventInputViewController () <UITextFieldDelegate,UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface BBEventInputViewController () <UITextFieldDelegate,UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate>
 //@property (weak, nonatomic) IBOutlet UITextField *quickAddTextField;
 //@property (weak, nonatomic) IBOutlet UITextField *locationTextField;
 @property (weak, nonatomic) IBOutlet UITextField *timeTextField;
@@ -26,7 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *faceImage;
 @property (weak, nonatomic) IBOutlet UITextView *noteTextView;
 @property (strong, nonatomic) UIView *containerView;
-
+@property (strong, nonatomic) UIImageView *modalImageView;
 @end
 
 @implementation BBEventInputViewController
@@ -77,6 +77,10 @@
                 NSString *fileName = [stringPath stringByAppendingFormat:@"%@.jpg",self.event.picture];
                 UIImage * image = [UIImage imageWithData:[[NSFileManager defaultManager] contentsAtPath:fileName]];
                 self.eventImage.image = image;
+                self.eventImage.contentMode=UIViewContentModeScaleAspectFill;
+                self.eventImage.clipsToBounds = YES;
+                self.eventImage.layer.cornerRadius = 5;
+                self.eventImage.layer.masksToBounds = YES;
         }
 
     };
@@ -539,40 +543,6 @@
     
 }
 
-- (IBAction)addAPhoto:(id)sender {
-    
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Please select an option"
-                                                                   message:@"Photo?"
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Taking a Photo" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {
-                                                              
-                                                              UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-                                                              picker.delegate = self;
-                                                              picker.allowsEditing = YES;
-                                                              picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-                                                              
-                                                              [self presentViewController:picker animated:YES completion:NULL];
-
-
-                                                          }];
-    UIAlertAction* existingUser = [UIAlertAction actionWithTitle:@"Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-        picker.delegate = self;
-        picker.allowsEditing = YES;
-        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        [self presentViewController:picker animated:YES completion:NULL];
-    }];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
-    
-    [alert addAction:defaultAction];
-    [alert addAction:existingUser];
-    [alert addAction:cancel];
-    [self presentViewController:alert animated:YES completion:nil];
-
-}
-
 #pragma mark - Image Picker Controller delegate methods
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
@@ -752,6 +722,86 @@
     self.containerView.frame = r;
 }
 
+- (IBAction)viewPicture:(id)sender {
+    if (self.event.picture) {
+    UIViewController *modalCon = [[UIViewController alloc] init];
+    
+    modalCon.view.backgroundColor=[UIColor blackColor];
+    modalCon.view.userInteractionEnabled=YES;
+    
+    self.modalImageView = [[UIImageView alloc] initWithFrame:modalCon.view.frame];
+    self.modalImageView.contentMode=UIViewContentModeScaleAspectFit;
+    self.modalImageView.image = self.eventImage.image;
+//    imageView.image=self.eventImage.image;
+    [modalCon.view addSubview:self.modalImageView];
+    self.modalImageView.center = modalCon.view.center;
+    UITapGestureRecognizer *modalTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissModalView)];
+    UIPinchGestureRecognizer *recognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handleGuesture:)];
+    [modalCon.view addGestureRecognizer:modalTap];
+    [modalCon.view addGestureRecognizer:recognizer];
+    [self presentViewController:modalCon animated:YES completion:nil];
+    }
+    else {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Please select an option"
+                                                                       message:@"Photo?"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Taking a Photo" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {
+                                                                  
+                                                                  UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+                                                                  picker.delegate = self;
+                                                                  picker.allowsEditing = YES;
+                                                                  picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                                                                  
+                                                                  [self presentViewController:picker animated:YES completion:NULL];
+                                                                  
+                                                                  
+                                                              }];
+        UIAlertAction* existingUser = [UIAlertAction actionWithTitle:@"Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+            picker.delegate = self;
+            picker.allowsEditing = YES;
+            picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            [self presentViewController:picker animated:YES completion:NULL];
+        }];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+        
+        [alert addAction:defaultAction];
+        [alert addAction:existingUser];
+        [alert addAction:cancel];
+        [self presentViewController:alert animated:YES completion:nil];
+
+    }
+}
+
+-(void)handleGuesture:(UIPinchGestureRecognizer *)gesture {
+    if (gesture.state == UIGestureRecognizerStateEnded
+        || gesture.state == UIGestureRecognizerStateChanged) {
+        NSLog(@"gesture.scale = %f", gesture.scale);
+        
+        CGFloat currentScale = self.modalImageView.frame.size.width / self.modalImageView.bounds.size.width;
+        CGFloat newScale = currentScale * gesture.scale;
+        
+        if (newScale < 1.0f) {
+            newScale = 1.0f;
+        }
+        if (newScale > 6.0f) {
+            newScale = 6.0f;
+        }
+        
+        CGAffineTransform transform = CGAffineTransformMakeScale(newScale, newScale);
+        self.modalImageView.transform = transform;
+        gesture.scale = 1;
+    }
+
+}
+
+
+-(void)dismissModalView {
+    NSLog(@"dismissed");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 

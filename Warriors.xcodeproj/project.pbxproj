@@ -49,6 +49,8 @@
 		EAC6053B1AC4EA78007CFB27 /* MessageEntrySendButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC605391AC4EA78007CFB27 /* MessageEntrySendButton@2x.png */; };
 		EAC6053C1AC4EA78007CFB27 /* MessageEntrySendButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC6053A1AC4EA78007CFB27 /* MessageEntrySendButtonPressed@2x.png */; };
 		EAC605951AC6170F007CFB27 /* cancel_filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC605941AC6170F007CFB27 /* cancel_filled-50.png */; };
+		EAC605971AC62DFC007CFB27 /* dropbox.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC605961AC62DFC007CFB27 /* dropbox.png */; };
+		EAC6059B1AC6468A007CFB27 /* johndoeBusinessCard.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC6059A1AC6468A007CFB27 /* johndoeBusinessCard.png */; };
 		EADAFBA31AB9FCD1005CF333 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA21AB9FCD1005CF333 /* main.m */; };
 		EADAFBA61AB9FCD1005CF333 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA51AB9FCD1005CF333 /* AppDelegate.m */; };
 		EADAFBA91AB9FCD1005CF333 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EADAFBA81AB9FCD1005CF333 /* ViewController.m */; };
@@ -211,6 +213,8 @@
 		EAC605391AC4EA78007CFB27 /* MessageEntrySendButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntrySendButton@2x.png"; sourceTree = "<group>"; };
 		EAC6053A1AC4EA78007CFB27 /* MessageEntrySendButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MessageEntrySendButtonPressed@2x.png"; sourceTree = "<group>"; };
 		EAC605941AC6170F007CFB27 /* cancel_filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel_filled-50.png"; sourceTree = "<group>"; };
+		EAC605961AC62DFC007CFB27 /* dropbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dropbox.png; sourceTree = "<group>"; };
+		EAC6059A1AC6468A007CFB27 /* johndoeBusinessCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = johndoeBusinessCard.png; sourceTree = "<group>"; };
 		EADAFB9D1AB9FCD1005CF333 /* Warriors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Warriors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EADAFBA11AB9FCD1005CF333 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EADAFBA21AB9FCD1005CF333 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -355,6 +359,7 @@
 		EA15475F1ABB69AB0094AC4C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EAC605961AC62DFC007CFB27 /* dropbox.png */,
 				EAC605941AC6170F007CFB27 /* cancel_filled-50.png */,
 				EA7CFB971AC3A987008C0E5A /* Icon.png */,
 				EA20814F1ABD145A0024246D /* calendar-50.png */,
@@ -388,6 +393,7 @@
 				EADAFCAA1ABA6AD2005CF333 /* MessageEntrySendButton@2x1.png */,
 				EADAFCAB1ABA6AD2005CF333 /* MessageEntrySendButtonPressed.png */,
 				EADAFCAC1ABA6AD2005CF333 /* MessageEntrySendButtonPressed@2x1.png */,
+				EAC6059A1AC6468A007CFB27 /* johndoeBusinessCard.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -847,6 +853,7 @@
 				EA2081501ABD145A0024246D /* calendar-50.png in Resources */,
 				EADAFCBC1ABA9458005CF333 /* menu-50.png in Resources */,
 				EADAFCD61ABABD3C005CF333 /* undo-32.png in Resources */,
+				EAC605971AC62DFC007CFB27 /* dropbox.png in Resources */,
 				EA2082031ABD52A10024246D /* dropbox_copyrighted-50.png in Resources */,
 				EADAFCB21ABA6AD2005CF333 /* MessageEntrySendButton@2x1.png in Resources */,
 				EADAFCB61ABA9102005CF333 /* camera-50.png in Resources */,
@@ -862,6 +869,7 @@
 				EADAFCBE1ABA9498005CF333 /* bullish-50.png in Resources */,
 				EAC605381AC4E973007CFB27 /* MessageEntryBackground@2x.png in Resources */,
 				EADAFC941ABA5FF3005CF333 /* BBModalSearchViewController.xib in Resources */,
+				EAC6059B1AC6468A007CFB27 /* johndoeBusinessCard.png in Resources */,
 				EADAFBAE1AB9FCD1005CF333 /* Images.xcassets in Resources */,
 				EADAFCD21ABABC03005CF333 /* plus-50.png in Resources */,
 				EADAFBCA1ABA0CA5005CF333 /* blurrybackground.jpg in Resources */,
