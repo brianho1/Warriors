@@ -917,6 +917,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="i4w-4j-MCY">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="sOa-ab-MJh">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="addNewEvent:" destination="ftm-Ux-QU1" id="m8C-em-kv8"/>
                             </connections>

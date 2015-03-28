@@ -104,6 +104,65 @@
     return YES;
 }
 
+-(void)generateFakeData {
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"People"];
+    
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"MR_AvailablePeople"]) {
+
+        
+        
+        
+        // Save Managed Object Context
+        [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:nil];
+        // Set User Default to prevent another preload of data on startup.
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"MR_AvailablePeople"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+
+}
+
+-(NSString *)randomeName {
+    NSArray *arrayOfRandomName = @[@"Divina Rizzo",@"Dorathy Sponsler",@"Gaynell Turnipseed",@"Jovan Duppstadt",@"Milagro Wheatley",@"Armandina Mcgaugh",@"Trinity Kittrell",@"Sarina Melton",@"June Thrash",@"Aleen Dotson",@"Vincent Pavone",@"Janessa Liakos",@"Marlin Burdick",@"Fallon Bibbins",@"Britteny Woodley",@"Jeramy Masden",@"Gilberto Caple",@"Rachelle Wolery",@"Juanita Sharber",@"Tomoko Huntley",@"Arla Muszynski",@"Alica Winrow",@"Corina Burgett",@"Candis Clair",@"Jeri Nevers",@"Russel Gatto",@"Nicolasa Titsworth",@"Armanda Snelgrove",@"Jan Trieu",@"Iona Douglass"];
+    NSUInteger randomIndex = arc4random() % [arrayOfRandomName count];
+    return arrayOfRandomName[randomIndex];
+}
+
+-(NSString *)randomeJobTitle {
+    NSArray *arrayOfRandomName = @[@"Developer",@"Analyst",@"Vice President",@"Associate",@"Consultant",@"Senior Programmer",@"Software Engineer",@"Staff",@"Business Strategy Analyst"];
+    NSUInteger randomIndex = arc4random() % [arrayOfRandomName count];
+    return arrayOfRandomName[randomIndex];
+}
+
+-(NSString *)randomeCompanyName {
+    NSArray *arrayOfRandomName = @[@"Qtrax",@"Thunderclap",@"Moz",@"Fancy",@"Upworthy",@"Glide",@"OPPRTUNITY",@"Lyft",@"CoinDesk",@"Ad Magnet",@"AgentsBids",@"Nifti",@"Heml.is",@"Floobits",@"Blue Apron",@"Searchmetrics",@"DuckDuckGo",@"Divshot",@"VAVEL",@"XingCloud",@"The Oatmeal",@"Total Sports Madness",@"Sverve",@"Silp",@"FanBoom.net",@"Spinnakr",@"Flyvpn",@"BlogHer",@"Zapacos",@"Udemy",@"ContaAzul",@"Askmefast",@"Sensor Tower",@"Coub",@"Impact Radius",@"Lockitron",@"Nitrous.IO",@"Stitch Fix",@"B5M",@"Vox Media",@"Circa",@"Runrun.it",@"Mattermark",@"Soldsie",@"MetricsCat",@"pricegenie.in",@"Path.To",@"Travel Videos",@"Widbook",@"Noble Samurai",@"boo-box",@"iZettle",@"Fotolia",@"Postable",@"CareerDean",@"Peek",@"Collage.com",@"Narrato",@"Ink",@"Omaze",@"WP Engine",@"Urban Daddy",@"Fieldoo",@"Kapost",@"Empire Avenue",@"Shopgate",@"BuzzFeed",@"Check",@"Puppet Labs",@"Recon Instruments",@"Teespring",@"Kisskissbankbank",@"Archive.is",@"Tile",@"Konga Online",@"Grovo",@"Smiirl",@"Oppa",@"Fetise.com",@"99dealr.com",@"RelateIQ",@"Routehappy",@"3scale",@"grenadine",@"CARD",@"Help Scout",@"Sched.org",@"Triberr",@"United Sound Army",@"AgoraPulse",@"ShopClues.com",@"FindSimilarSites",@"Famecrowd",@"Venddo",@"LendUp",@"Dealflicks",@"Awe.sm",@"Snaglur",@"Sharecare",@"ITmozg"];
+    NSUInteger randomIndex = arc4random() % [arrayOfRandomName count];
+    return arrayOfRandomName[randomIndex];
+}
+
+-(NSString *)randomEventTitle {
+    return @"Meet ";
+}
+
+-(NSNumber *)randomScore {
+    NSUInteger randomIndex = 1+ arc4random() % 5;
+    NSNumber *randomNumber = [NSNumber numberWithLong:randomIndex];
+    return randomNumber;
+}
+
+-(NSDate *)randomDate {
+    NSDate *randomDate = [NSDate date];
+    NSUInteger randomIndex = arc4random() % 300;
+    NSUInteger daysToAdd = -randomIndex;
+    return [randomDate dateByAddingTimeInterval:60*60*24*daysToAdd];
+}
+-(NSString *)randomNote {
+    NSArray *arrayOfRandomNote = @[@"sneaky",@"dry",@"many",@"tedious",@"accidental",@"delicious",@"plastic",@"reflective",@"flimsy",@"eatable",@"colossal",@"obese",@"lewd",@"flowery",@"romantic",@"third",@"wise",@"thick",@"understood",@"nifty",@"screeching",@"flaky",@"immense",@"murky",@"squeamish",@"exclusive",@"decorous",@"verdant",@"cold",@"combative",@"tasteless",@"concerned",@"extra-large",@"skillful",@"ubiquitous",@"icy",@"legal",@"faithful",@"overwrought",@"determined"];
+    NSUInteger randomIndex = arc4random() % [arrayOfRandomNote count];
+    return [NSString stringWithFormat:@"He/She is %@. Note was generated randomly",arrayOfRandomNote[randomIndex]];
+}
+
+
+#pragma mark - link with Dropbox
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url
   sourceApplication:(NSString *)source annotation:(id)annotation {
     if ([[DBSession sharedSession] handleOpenURL:url]) {
