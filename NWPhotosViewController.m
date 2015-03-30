@@ -14,7 +14,7 @@
 #import "CHTCollectionViewWaterfallFooter.h"
 #import "BBEventInputViewController.h"
 
-#define CELL_COUNT 10
+#define CELL_COUNT 30
 #define CELL_IDENTIFIER @"WaterfallCell"
 #define HEADER_IDENTIFIER @"WaterfallHeader"
 #define FOOTER_IDENTIFIER @"WaterfallFooter"
@@ -88,14 +88,13 @@
     events = [[Event findAllSortedBy:sortKey ascending:ascending] mutableCopy];
     
     self.eventsWithPics = [NSMutableArray new];
-    for (int i = 1; i< 5; i++) {
     for (Event *event in events) {
         if (event.picture != nil) {
             [self.eventsWithPics addObject:event.picture];
             [self.events addObject:event];
         }
     }
-    }
+
     self.title = @"Photos";
 
 }
@@ -137,7 +136,7 @@
         [[NSFileManager defaultManager] createDirectoryAtPath:stringPath withIntermediateDirectories:NO attributes:nil error:&error];
     NSString *fileName = [stringPath stringByAppendingFormat:@"%@.jpg",fileNameNoExtension];
     UIImage *image = [UIImage imageWithData:[[NSFileManager defaultManager] contentsAtPath:fileName]];
-
+    if (indexPath.row >= 10) NSLog(@"%ld %@",(long)indexPath.item,fileNameNoExtension);
     cell.displayString = [NSString stringWithFormat:@"%ld", (long)indexPath.item];
     cell.imageView.image = image;
     
